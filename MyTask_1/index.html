@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Homework - 1</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/index.css">
+	<script src='js/index.js'></script>
+</head>
+<body>
+  <div id="background-div">
+    <header>
+      <nav>
+        <a href="#hero-info">英雄信息</a>
+        <a href="#skill-intro">技能介绍</a>
+        <a href="#view-show">视讯展示</a>
+        <ul>
+          <li><a href="#">我的作业链接</a></li>
+          <li><a href="#">我的作业_2</a></li>
+          <li><a href="#">我的作业_3</a></li>
+          <li><a href="#">我的作业_4</a></li>
+        </ul>
+      </nav>
+      <img src="images/header-moon.png" class="header-moon">
+      <span id="coins">0</span>
+      <span id="times">00:00:00</span>
+    </header>
+    <main>
+      <img src="images/head-sculpture.jpg" id="head-sculpture-img" alt="影魔头像">
+      <section id="hero-info">
+        <p>英雄：<span>影魔（Shadowfiend）</span></p>
+        <p>中文名：<span>奈文摩尔</span></p>
+        <p>英文名：<span>Nevermore</span></p>
+        <p>属性：<span>敏捷</span></p>
+        <p>攻击类型：<span>远程</span></p>
+        <p>阵容归属：<span>天灾军团</span></p>
+        <p>英雄定位：<span>中单，gank，秀，后期</span></p>
+      </section>
+      <article id="skill-intro">
+        <section>
+          <h2>毁灭阴影</h2>
+          <a href="javascript:void(0)" class="skillicon">
+            <img src="images/skill-Z.jpg" alt="毁灭阴影">
+            <img src="images/skill1-pic.jpg" alt="毁灭阴影描述">
+          </a>
+          <p class="sill-desc">
+            影魔能运用他的力量污染正前方不同距离的区域。<br>等级1：对正前方200/450/700距离的区域造成75点的伤害。<br>
+            等级2：对正前方200/450/700距离的区域造成150点的伤害。<br>
+            等级3：对正前方200/450/700距离的区域造成225点的伤害。<br>
+            等级4：对正前方200/450/700距离的区域造成300点的伤害。<br>
+            通过对快捷键Z,X,C的合理运用可以在极短时间内输出极高的伤害，只要2s的时间造成900点法伤，就问你怕不怕！
+          </p>
+        </section>
+        <section>
+          <h2>支配死灵</h2>
+          <a href="javascript:void(0)" class="skillicon">
+            <img src="images/skill-N.jpg" alt="支配死灵">
+            <img src="images/skill2-pic.jpg" alt="支配死灵描述">
+          </a>
+          <p class="sill-desc">
+            每当影魔杀死一个生物，他就将这个可怜的灵魂储存在体内，若杀死一个英雄,支配死灵将获得12个灵魂。每个灵魂会为他提供2点额外的攻击力。不过当他死亡时，有一半的灵魂将逃逸出去。 通过-souls命令查看已收集的灵魂数。<br>
+            等级1：灵魂存储量最多为12，最多增加24点的攻击力。<br>
+            等级2：灵魂存储量最多为20，最多增加40点的攻击力。<br>
+            等级3：灵魂存储量最多为28，最多增加56点的攻击力。<br>
+            等级4：灵魂存储量最多为36，最多增加72点的攻击力。<br>
+            这个被动技能不需要主动使用，但是不可否认的实用，72点攻击加成放在任何单位身上都是不可小觑的伤害，就问你怂不怂！
+          </p>
+        </section>
+        <section>
+          <h2>魔王降临</h2>
+          <a href="javascript:void(0)" class="skillicon">
+            <img src="images/skill-P.jpg" alt="魔王降临">
+            <img src="images/skill3-pic.jpg" alt="魔王降临描述">
+          </a>
+          <p class="sill-desc">
+            这个可怕的生物的出现使附近900范围内的敌方单位受到了惊吓，减少他们的护甲 无视魔法免疫。<br>
+            等级1：减少3点的护甲。<br>
+            等级2：减少4点的护甲。<br>
+            等级3：减少5点的护甲。<br>
+            等级4：减少6点的护甲。<br>
+            当然是魔王的降临，还记得shadowfiend中的fiend是什么意思么，这就是王者的气场，无视魔免的不可抗拒，就问你吓不吓！
+          </p>
+        </section>
+        <section>
+          <h2>魂之挽歌</h2>
+          <a href="javascript:void(0)" class="skillicon">
+            <img src="images/skill-R.jpg" alt="魂之挽歌">
+            <img src="images/skill4-pic.jpg" alt="魂之挽歌描述">
+          </a>
+          <p class="sill-desc">
+            召唤恶灵以均匀的角度向四周发射造成伤害，靠近的单位自然同时受到更多恶灵的打击，降低敌方单位的攻击力和移动速度，持续5秒。恶灵的数目和之前储存的灵魂之比为1：2。影魔死亡时，将要损失掉的灵魂也会以魂之挽歌的形式发出来。<br>
+            等级1：每个恶灵对1条直线上的敌方单位造成80点的伤害，降低900范围内的敌方单位20%的移动速度和50%的基础攻击力。<br>
+            等级2：每个恶灵对1条直线上的敌方单位造成120点的伤害，降低900范围内的敌方单位20%的移动速度和50%的基础攻击力。<br>
+            等级3：每个恶灵对1条直线上的敌方单位造成160点的伤害，降低900范围内的敌方单位20%的移动速度和50%的基础攻击力。<br>
+            和毁灭阴影共同作为影魔的招牌技能，扭动着他的小蛮腰，同时爆发出毁灭一切的伤害，看到影魔开大了，假如你没有BKB的话，最好离他尽量远一些，不然你又得在泉水看动画了，就问你diao不diao！
+          </p>
+        </section>
+      </article>
+      <article id="view-show">
+        <h2>精彩视讯</h2>
+        <nav>
+          <h3>更多精彩</h3>
+          <ul class="view-show-ul">
+            <li>
+              <a href="http://v.youku.com/v_show/id_XMTg4MzYwMTI5Ng==.html?spm=a2h0z.8244218.2371631.3" target="_blank">DotA Top10 第二百五十六弹</a>
+            </li>
+            <li>
+              <a href="http://v.youku.com/v_show/id_XMTgzODU4MjczNg==.html?spm=a2h0z.8244218.2371631.3" target="_blank">DotA Top10 第二百五十二弹</a>
+            </li>
+            <li>
+              <a href="http://dota.178.com/201505/226891726149.html" target="_blank">DotA Top10 第208弹</a>
+            </li>
+            <li>
+              <a href="http://v.youku.com/v_show/id_XMTg3MTgxNDIxNg==.html?spm=a2h0z.8244218.2371631.3" target="_blank">DotA Top10 第二百五十五弹</a>
+            </li>
+            <li>
+              <a href="http://v.youku.com/v_show/id_XMTg0OTczMjAyMA==.html?spm=a2h0z.8244218.2371631.3" target="_blank">DotA Top10 第二百五十三弹</a>
+            </li>
+            <li>
+              <a href="http://dota.178.com/201505/226287473291.html" target="_blank">DotA Top10第207弹</a>
+            </li>
+            <li>
+              <a href="http://dota.178.com/201505/225661842033.html" target="_blank">DotA Top10第206弹</a>
+            </li>
+          </ul>
+        </nav>
+        <embed src="http://player.youku.com/player.php/sid/XOTI5Njg3NzI4/v.swf" height="500" width='800'></embed>
+      </article>
+    </main>
+    <footer>
+      <audio src="sounds/background-music.mp3" autoplay="" id="sound-background"></audio>
+      <audio src="sounds/Whatmortal.wav" id="sound-whatmortal"></audio>
+      <audio src="" id="sound-random"></audio>
+      <a href="#" id="backtop">返回顶部</a>
+      <p id="myword">饿得越狠的人，找起吃的来就越拼命。— — 饥-人-谷</p>
+    </footer>
+  </div>
+</body>
+</html>
