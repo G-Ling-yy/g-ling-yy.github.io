@@ -26,10 +26,8 @@
       width: calc(100% - 10px);
     }
     a{
-      animation: rotating 2s linear infinite;
-//      animation-direction: alternate;
-      -webkit-animation: rotating 2s linear infinite;
-//      -webkit-animation-direction: alternate;
+      animation: rotating 2s linear infinite, runningball 10s linear infinite alternate;
+      -webkit-animation: rotating 2s linear infinite, runningball 10s linear infinite alternate;
       background: #ff0;
       color: #00f;
       font-size: 47px;
@@ -55,9 +53,38 @@
     @-webkit-keyframes rotating{
       0% {transform: rotate(0);}
       100% {transform: rotate(360deg);}
-    }
+    } 
     @keyframes runningball{
-
+      0% {left: 0;top: 0;}
+      10% {left: 40%;top: 230px;}
+      17.7% {left: 60%;top: 0;}
+      25.4% {left: 80%;top: 230px;}
+      32.1% {left: calc(100% - 70px);top: 115px;}
+      39.8% {left: 80%;top: 0;}
+      47.5% {left: 60%;top: 230px;transform: scale(1);}
+      55.2% {left: 40%;top: 115px;transform: scale(1.5);}
+      62.9% {left: 20%;top: 230px;transform: scale(1);}
+      70.6% {left: 0;top: 115px}
+      78.3% {left: 20%;top: 0;}
+      86% {left: 47%;top: 230px;}
+      93.7% {left: 74%;top: 0;}
+      100% {left: calc(100% - 70px);top: 230px}
+    }
+    @-webkit-keyframes runningball{
+      0% {left: 0;top: 0;}
+      10% {left: 40%;top: 230px;}
+      17.7% {left: 60%;top: 0;}
+      25.4% {left: 80%;top: 230px;}
+      32.1% {left: calc(100% - 70px);top: 115px;}
+      39.8% {left: 80%;top: 0;}
+      47.5% {left: 60%;top: 230px;transform: scale(1);}
+      55.2% {left: 40%;top: 115px;transform: scale(1.5);}
+      62.9% {left: 20%;top: 230px;transform: scale(1);}
+      70.6% {left: 0;top: 115px}
+      78.3% {left: 20%;top: 0;}
+      86% {left: 47%;top: 230px;}
+      93.7% {left: 74%;top: 0;}
+      100% {left: calc(100% - 70px);top: 230px}
     }
   </style>
 </head>
