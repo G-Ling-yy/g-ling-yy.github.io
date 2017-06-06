@@ -11,29 +11,66 @@
       padding: 0;
       list-style: none;
     }
-    ul{
+    body{
       background: #0ff;
+    }
+    ul{
       margin: 0 auto;
       width: 90%;
     }
     li{
       border: 5px solid #f0f;
       border-radius: 10px;
-      height: 100px;
+      height: 300px;
+      margin: 30px 0;
       width: calc(100% - 10px);
+    }
+    a{
+      animation: rotating 2s linear infinite;
+//      animation-direction: alternate;
+      -webkit-animation: rotating 2s linear infinite;
+//      -webkit-animation-direction: alternate;
+      background: #ff0;
+      color: #00f;
+      font-size: 47px;
+      font-weight: bold;
+      display: block;
+      border-radius: 50%;
+      height: 70px;
+      line-height: 70px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      transition: background 1s, color 1s;
+      width: 70px;
+    }
+    a:hover{
+      background: #00f;
+      color: #ff0;
+    }
+    @keyframes rotating{
+      0% {transform: rotate(0);}
+      100% {transform: rotate(360deg);}
+    }
+    @-webkit-keyframes rotating{
+      0% {transform: rotate(0);}
+      100% {transform: rotate(360deg);}
+    }
+    @keyframes runningball{
+
     }
   </style>
 </head>
 <body>
   <ul>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
+    <li><a href="https://g-ling-yy.github.io/MyTask_1/">1</a></li>
+    <li><a href="https://g-ling-yy.github.io/">2</a></li>
+    <li><a href="https://g-ling-yy.github.io/">3</a></li>
+    <li><a href="https://g-ling-yy.github.io/">4</a></li>
+    <li><a href="https://g-ling-yy.github.io/">5</a></li>
+    <li><a href="https://g-ling-yy.github.io/">6</a></li>
+    <li><a href="https://g-ling-yy.github.io/">7</a></li>
+    <li><a href="https://g-ling-yy.github.io/">8</a></li>
   </ul>
 </body>
 </html>
