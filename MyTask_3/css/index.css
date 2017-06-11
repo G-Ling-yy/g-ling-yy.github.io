@@ -1,0 +1,149 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+body {
+	background: linear-gradient(to bottom, #fff, #eee);
+	-webkit-background: linear-gradient(to bottom, #fff, #eee);
+	min-width: 1080px;
+}
+header > h1 {
+	text-align: center;
+}
+.header-a {
+	animation: ltrshake 1.5s linear infinite alternate;
+	-webkit-animation: ltrshake 1.5s linear infinite alternate;
+	color: #f0f;
+	margin: 0 20px;
+	transition: color 1s;
+}
+.header-a:hover {
+	color: #0ff;
+}
+main {
+	margin: 20px auto;
+	width: 94%;
+}
+table {
+	background: linear-gradient(to bottom, gray 30%, green,yellow);
+	-webkit-background: linear-gradient(to bottom, gray 30%, green,yellow);
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+caption {
+	color: #a9a9a9;
+	font-size: 26px;
+	font-weight: bold;
+	margin: 7px auto;
+}
+th, td {
+	border: 2px dotted #89ee00;
+	height: 80px;
+	padding: 5px;
+	text-align: center;
+}
+th {
+	color: #fff;
+	text-shadow: 0 0 5px #ffe;
+}
+th:nth-child(-n+4), td:nth-child(-n+4) {
+	min-width: 60px;
+}
+td > img {
+	transition: transform 1s;
+}
+td > img:hover {
+	transform: rotate(360deg);
+}
+tr:first-child td:nth-child(2), tr:nth-child(3) td:nth-child(2) {
+	transition: text-shadow 3s; 
+}
+tr:first-child td:nth-child(2):hover , tr:nth-child(3) td:nth-child(2):hover {
+	cursor: crosshair;
+	text-shadow: 0 0 19px #000;
+}
+.showbigger {
+	transition: transform 2s, opacity 2s;
+}
+td.hero-intro {
+	user-modify: read-write-plaintext-only;
+	-webkit-user-modify: read-write-plaintext-only;
+}
+#aform {
+	border: 2px solid #0ff;
+	border-radius: 4px;
+	margin: 17px auto;
+	padding: 5px;
+	text-align: center;
+	width: 100%;
+}
+#aform h2 {
+	text-align: left;
+}
+#aform p {
+	height: 50px;
+	margin: 7px auto;
+}
+[type=radio], [type=checkbox] {
+	margin-left: 15px;
+}
+#aform input, textarea, button {
+	outline: none;
+}
+#aform button {
+	background-color: #0ff;
+	border: none;
+	border-radius: 10px;
+	display: inline-block;
+	font-size: 26px;
+	font-weight: bold;
+	height: 40px;
+	margin-left: 200px;
+	transform: translate(-100px);
+	transition: text-shadow 1s;
+	width: 150px;
+}
+#aform button:hover {
+	cursor: pointer;
+	text-shadow: 0 0 20px #000;
+}
+footer {
+	height: 100px;
+}
+#backtop {
+	height: 50px;
+	display: none;
+	position: fixed;
+	right: 20px;
+  top: 80%;
+  transition: opacity 3s;
+	width: 20px;
+}
+#backtop:hover {
+	font-weight: bold;
+	opacity: 0;
+}
+#backtop:active {
+	color: #000;
+}
+#myword {
+	color: #000;
+	font-weight: bold;
+	font-size: 36px;
+	text-align: center;
+	transition: color 5s;
+}
+@keyframes ltrshake {
+	0% {transform: rotate(30deg);}
+  50% {transform: rotate(0deg);}
+	100% {transform: rotate(-30deg);}
+}
+@-webkit-keyframes ltrshake {
+	0% {transform: rotate(30deg);}
+  50% {transform: rotate(0deg);}
+	100% {transform: rotate(-30deg);}
+}
