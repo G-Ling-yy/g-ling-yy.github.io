@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>知乎 - 与世界分享你的知识、经验和见解</title>
+	<meta charset="utf-8">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+	<link rel="stylesheet" href="css/index.css">
+	<script src='js/index.js'></script>
+</head>
+<body>
+<!--背景不会写，响应式的@meida也没写-->
+  <header>
+    <section>
+      <p>与世界分享你的知识、经验和见解</p>
+    </section>
+    <!--这个fiexd按钮因为我没来及学img base64所以先用截图代替一下，质量有点不好看-->
+    <a href="javascript:void(0)" id="feedback" title="建议反馈"><div></div></a>
+  </header>
+  <main>
+    <div class="sign-uporin">
+      <a href="#" id="sign-up" class="sign-active">注册</a>
+      <a href="#" id="sign-in">登录</a>
+      <div id="slide-underline"></div>
+    </div>
+    <form id="signup-form" action="" method="post">
+      <div class="group-inputs">
+        <div class="input-wrapper">
+          <input type="text" name="username" placeholder="姓名" required>
+        </div>
+        <div class="input-wrapper">
+          <input type="text" name="userphone" placeholder="手机号" required>
+        </div>
+        <div class="input-wrapper">
+          <input type="password" name="password" placeholder="密码（不少于 6 位）" required>
+        </div>
+      </div>
+      <button type="submit" class="sign-btn" id="signup-btn">注册知乎</button>
+      <p class="formtips">点击「注册」按钮，即代表你同意<a href="https://www.zhihu.com/terms" target="_blank">《知乎协议》</a></p>
+    </form>
+    <form action="" id="signin-form" method="post">
+      <div class="group-inputs groupinputs-login" id="groupinputs-loginbypwd">
+        <div class="input-wrapper">
+          <input type="text" name="username" placeholder="手机号或邮箱" required>
+        </div>
+        <div class="input-wrapper">
+          <input type="password" name="password" placeholder="密码" required>
+        </div>
+      </div>
+      <div class="group-inputs groupinputs-login" id="groupinputs-loginbymesg">
+        <div class="input-wrapper">
+          <input type="text" name="username" placeholder="手机号" required>
+        </div>
+        <div class="input-wrapper">
+          <input type="text" name="messagenum" placeholder="短信验证码" required>
+          <button type="button">获取验证码</button>
+        </div>
+      </div>
+      <button type="submit" class="sign-btn" id="signin-btn">登录</button>
+      <button type="button" id="signin-switch-btn">手机验证码登录</button>
+      <button type="button" id="unable-login">无法登录？</button>
+      <button type="button" id="signinbyotheraccounts">社交帐号登录</button>
+      <ul class="accounts-visible">
+        <li><a href="https://open.weixin.qq.com/connect/qrconnect?appid=wx268fcfe924dcb171&redirect_uri=https%3A%2F%2Fwww.zhihu.com%2Foauth%2Fcallback%2Fwechat&response_type=code&scope=snsapi_login&state=d91f6a7fc0af466d24da5cdbc9e52db8#wechat" target="_blank" title="微信登录"></a></li>
+        <li><a href="https://api.weibo.com/oauth2/authorize?scope=email&state=d91f6a7fc0af466d24da5cdbc9e52db8&redirect_uri=http%3A%2F%2Fwww.zhihu.com%2Foauth%2Fcallback%2Fsina&response_type=code&client_id=3063806388" target="_self" title="微博登录"></a></li>
+        <li><a href="https://graph.qq.com/oauth/show?which=Login&display=pc&scope=get_user_info%2Cget_info%2Cadd_t%2Cadd_pic_t%2Cget_other_info%2Cget_fanslist%2Cget_idollist%2Cadd_idol%2Cadd_share&state=d91f6a7fc0af466d24da5cdbc9e52db8&redirect_uri=https%3A%2F%2Fwww.zhihu.com%2Foauth%2Fcallback%2Fqqconn&response_type=code&client_id=100490701" target="_blank" title="QQ 登录"></a></li>
+      </ul>
+    </form>
+    <div class="QRcode">
+      <button class="downloadapp-btn">下载知乎 App</button>
+      <div class="QRcode-card"><div></div></div>
+    </div>
+  </main>
+  <div class="dialog-bg">
+    <div class="unable-login-dialog">
+      <a href="javascript:void(0)" id="unable-dialog-close"></a>
+      <h1>无法登录</h1>
+      <p>我们提供两种方式帮助你重新登录知乎</p>
+      <button type="button" >找回密码</button>
+      <button type="button" >人工申诉</button>
+    </div>
+  </div>
+  <footer>
+    <span>© 2017 知乎</span>
+    <span class="dot">·</span>
+    <a target="_blank" href="https://zhuanlan.zhihu.com">知乎专栏</a>
+    <span class="dot">·</span>
+    <a target="_blank" href="https://www.zhihu.com/roundtable">知乎圆桌</a>
+    <span class="dot">·</span>
+    <a target="_blank" href="https://www.zhihu.com/explore">发现</a>
+    <span class="dot">·</span>
+    <a target="_blank" href="https://www.zhihu.com/app/">移动应用</a>
+    <span class="dot">·</span>
+    <a target="_blank" href="https://www.zhihu.com/org/signin">使用机构帐号登陆</a>
+    <span class="dot">·</span>
+    <a target="_blank" href="https://www.zhihu.com/contact">联系我们</a>
+    <span class="dot">·</span>
+    <a target="_blank" href="http://zhihu.zhiye.com/home">来知乎工作</a><br>
+    <a href="http://www.miibeian.gov.cn/" target="_blank">京 ICP 证 110745 号</a>
+    <span class="dot">·</span>
+    <span>京公网安备 11010802010035 号</span>
+    <span class="dot">·</span>
+    <a href="http://zhstatic.zhihu.com/assets/zhihu/publish-license.jpg" target="_blank">出版物经营许可证</a>
+    <span class="dot">·</span>
+    <a target="_blank" href="https://www.zhihu.com/jubao">侵权投诉</a>
+    <span class="dot">·</span>
+    <span>违法和不良信息举报：010-82716601</span>
+    <div class="chengxin">
+      <a href="https://credit.szfw.org/CX20170607038331320388.html">
+        <img src="images/chengxing_logo.png">
+      </a>
+    </div>
+  </footer>
+</body>
+</html>
