@@ -42,10 +42,12 @@ window.onload = function(){
     if (this.innerHTML == '手机验证码登录') {
       document.querySelector('#groupinputs-loginbypwd').style.display = 'none';
       document.querySelector('#groupinputs-loginbymesg').style.display = 'block';
+      document.querySelector('#unable-login').style.display = 'none';
       this.innerHTML = '密码登录（手机号或邮箱）';
     }else{
       document.querySelector('#groupinputs-loginbymesg').style.display = 'none';
       document.querySelector('#groupinputs-loginbypwd').style.display = 'block';
+      document.querySelector('#unable-login').style.display = 'block';
       this.innerHTML = '手机验证码登录';
     }
   })
