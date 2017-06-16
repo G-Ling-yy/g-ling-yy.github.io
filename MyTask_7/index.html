@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>命令行交互教程截图</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    html, body {
+      background: linear-gradient(to bottom, #fff, #3984be);
+      height: 100%;
+      overflow: hidden;
+    }
+    ul {
+      bottom: 0;
+      height: 50%;
+      left: 0;
+      margin: auto;
+      min-width: 555px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 80%;
+    }
+    ul li {
+      font-size: 5em;
+      font-weight: bold;
+      display: inline-block;
+      position: absolute;
+      transition: all 2s;
+    }
+    ul li:first-child {
+      left: 0;
+      top: 40%;
+      transform: rotate(-30deg);
+    }
+    ul li:nth-child(2) {
+      left: 30%;
+      top: 10%;
+      transform: rotate(-9deg);
+    }
+    ul li:nth-child(3) {
+      left: 60%;
+      top: 10%;
+      transform: rotate(9deg);
+    }
+    ul li:nth-child(4) {
+      right: 0;
+      top: 40%;
+      transform: rotate(30deg);
+    }
+    ul img {
+      bottom: 0;
+      cursor: pointer;
+      height: 130px;
+      left: 50%;
+      margin-left: -135px;
+      position: absolute;
+      transition: all 1s;
+      width: 270px;
+    }
+    .bigimg {
+      height: 100vh;
+      left: 0;
+      margin: 0 auto;
+      opacity: .7;
+      position: fixed;
+      right: 0;
+      transform: rotate(360deg);
+      width: 100vw;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>点</li>
+    <li>击</li>
+    <li>大</li>
+    <li>图</li>
+    <img src="images/image.jpg" alt="命令行交互教程截图">
+  </ul>
+  <script type="text/javascript">
+    (function(){
+      setInterval(function(){
+        var a = Math.floor(Math.random()*255);
+      var b = Math.floor(Math.random()*255);
+      var c = Math.floor(Math.random()*255);
+      var d = Math.random();
+      var lis = document.querySelectorAll('li');
+      for (var i = lis.length - 1; i >= 0; i--) {
+        lis[i].style.color = 'rgba(' + a + ',' + b + ',' + c + ',' + d + ')';
+      }
+      },2000);
+      document.querySelector('img').onclick = function(){
+        this.classList.toggle('bigimg');
+        var li3 = document.querySelectorAll('li')[2];
+        if (li3.innerHTML == '大') {
+          li3.innerHTML = '小';
+        }else{
+          li3.innerHTML = '大';
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
