@@ -1,0 +1,252 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+html, body {
+	height: 100%;
+}
+#topsix {
+	overflow: hidden;
+}
+#topsix ul {
+	height: 50px;
+	padding: 0 2%;
+	width: 100%;
+}
+#topsix ul li {
+	float: left;
+	height: 50px;
+	width: calc(100% / 6);
+}
+#topsix ul li a {
+	background: linear-gradient(to bottom, #0ff, #fff, #fff);
+	-webkit-background: linear-gradient(to bottom, #0ff, #fff, #fff);
+	color: #00f;
+	display: block;
+	font-size: 19px;
+	line-height: 50px;
+	text-align: center;
+	transition: all .5s;
+}
+#topsix ul li:nth-child(-n+3) a:hover {
+	transform: rotate(-30deg);
+}
+#topsix ul li:nth-child(-n+3) a:hover span {
+	transform: rotate(30deg);
+}
+#topsix ul li:nth-child(n+4) a:hover {
+	transform: rotate(30deg);
+}
+#topsix ul li:nth-child(n+4) a:hover span {
+	transform: rotate(-30deg);
+}
+#topsix ul li a span {
+	background: url(../images/icons.png) no-repeat;
+	display: inline-block;
+	height: 16px;
+	margin: 0 10px 0;
+	transition: all .5s;
+	width: 16px;
+}
+#topsix ul li:nth-child(2) a span {
+	background-position: -17px 0;
+}
+#topsix ul li:nth-child(3) a span {
+	background-position: -34px 0;
+}
+#topsix ul li:nth-child(4) a span {
+	background-position: -51px 0;
+}
+#topsix ul li:nth-child(5) a span {
+	background-position: -68px 0;
+}
+#topsix ul li:nth-child(6) a span {
+	background-position: -85px 0;
+}
+hr {
+	margin: 50px 0;
+}
+#myrectnav {
+	border-top-left-radius: 70px;
+	border-bottom-right-radius: 70px;
+	height: 70px;
+	margin: 0 auto;
+	width: 95%;
+}
+#myrectnav ul {
+	border-radius: 20px;
+	height: 100%;
+	padding: 0 1%;
+	width: 100%;
+}
+#myrectnav ul li {
+	float: left;
+	height: 100%;
+	line-height: 70px;
+	position: relative;
+	text-align: center;
+	width: calc(100% / 6);
+}
+#myrectnav ul li:first-child {
+	overflow: hidden;
+}
+#myrectnav ul li span {
+	background: #f0f;
+	border-radius: 35px;
+	display: inline-block;
+	height: 100%;
+	transition: all 1s;
+	width: 80%;
+}
+#myrectnav ul li:hover span {
+	background: #9400d4;
+	border-radius: 50%;
+	cursor: pointer;
+	width: 70px;
+}
+#myrectnav ul li div {
+	background: rgba(0,0,0,.7);
+	border: 1px solid #eee;
+	border-radius: 5px;
+	color: #fff;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	transition: all 1s;
+	visibility: hidden;
+	width: 100%;
+}
+#myrectnav ul li:hover div {
+	opacity: 1;
+	visibility: visible;
+}
+#myrectnav input, #myrectnav button {
+	display: none;
+}
+#myroundnav {
+	animation: rotating 36s linear infinite;
+	-webkit-animation: rotating 36s linear infinite;
+	border-radius: 50%;
+	height: 465px;
+	left: 10%;
+	overflow: hidden;
+	position: absolute;
+	top: 550px;
+	width: 465px;
+}
+#myroundnav ul {
+	background-color: #fff;
+	border-radius: 50%;
+	height: 500px;
+	left: -19px;
+	position: relative;
+	top: -19px;
+	width: 500px;
+}
+#myroundnav ul::before {
+	background: #fff;
+	content: '';
+	height: 160px;
+	left: 83px;
+	position: absolute;
+	top: 66px;
+	transform: rotate(-45deg);
+	width: 127.3px;
+	z-index: 99;
+}
+#myroundnav ul::after {
+	background: #fff;
+	content: '';
+	height: 160px;
+	right: 85px;
+	position: absolute;
+	top: 68px;
+	transform: rotate(45deg);
+	width: 127.3px;
+	z-index: 99;
+}
+#myroundnav ul li {
+	border: 160px solid #eee;opacity: .5;
+	border-radius: 50%;
+	height: 0;
+	margin: auto;
+	position: absolute;
+	width: 0;
+}
+#myroundnav ul li:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+#myroundnav ul li:first-child {
+	border-top-color: #f00; 
+	left: 0;
+	right: 0;
+}
+#myroundnav ul li:nth-child(2) {
+	border-right-color: #0f0;
+	bottom: 0;
+	right: 0;
+	top: 0;
+}
+#myroundnav ul li:nth-child(3) {
+	border-bottom-color: #00f;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+#myroundnav ul li:nth-child(4) {
+	border-left-color: #ff0;
+	bottom: 0;
+	left: 0;
+	top: 0;
+}
+#myroundnav ul div {
+	background-color: #fff;
+	border-radius: 50%;
+	height: 340px;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 340px;
+}
+#myroundnav ul div::before {
+	background: #fff;
+	content: '';
+	height: 160px;
+	left: 5px;
+	position: absolute;
+	top: 192px;
+	transform: rotate(45deg);
+	width: 127.3px;
+	z-index: 99;
+}
+#myroundnav ul div::after {
+	background: #fff;
+	content: '';
+	height: 160px;
+	right: 5px;
+	position: absolute;
+	top: 192px;
+	transform: rotate(-45deg);
+	width: 127.3px;
+	z-index: 99;
+}
+@keyframes rotating {
+	0% {transform: rotate(0);}
+	100% {transform: rotate(360deg);}
+}
+@-webkit-keyframes rotating {
+	0% {transform: rotate(0);}
+	100% {transform: rotate(360deg);}
+}
+#mytriaglenav {
+	background: linear-gradient(to bottom, #fff, #00f);
+	height: 800px;
+	margin: 1000px 0 0;
+}
