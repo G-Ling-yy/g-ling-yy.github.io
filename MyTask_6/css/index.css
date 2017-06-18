@@ -6,7 +6,7 @@
 	text-decoration: none;
 	list-style: none;
 }
-html, body {
+html {
 	height: 100%;
 }
 #topsix {
@@ -134,10 +134,17 @@ hr {
 	border-radius: 50%;
 	height: 465px;
 	left: 10%;
+	opacity: 0;
 	overflow: hidden;
 	position: absolute;
 	top: 550px;
+	transition: all 2s;
+	visibility: hidden;
 	width: 465px;
+}
+#myroundnav:hover {
+	animation-play-state: paused;
+	-webkit-animation-play-state: paused;
 }
 #myroundnav ul {
 	background-color: #fff;
@@ -246,7 +253,43 @@ hr {
 	100% {transform: rotate(360deg);}
 }
 #mytriaglenav {
+	align-items: center;
 	background: linear-gradient(to bottom, #fff, #00f);
+	display: flex;
 	height: 800px;
+	justify-content: center;
 	margin: 1000px 0 0;
+}
+#myroundnav.visibility-visible {
+	opacity: 1;
+	visibility: visible;
+}
+#triangletop, #trianglebottom {
+	
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	
+	height: 0;
+	opacity: .7;
+	position: fixed;
+	right: 50px;
+	width: 0;
+}
+#triangletop {
+	border-bottom: 45px solid #00f;
+	bottom: 120px;
+}
+#trianglebottom {
+	border-top: 45px solid #00f;
+	bottom: 50px;
+}
+#triangletop:hover, #trianglebottom:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+#myword {
+	color: #fff;
+	font-size: 19px;
+	font-weight: bold;
+	transition: 5s;
 }
