@@ -14,7 +14,6 @@ body {
 	color: #555;
 	font-size: 15px;
 	height: 100%;
-	line-height: 1.7;
 	padding-bottom: 60px;
 }
 header {
@@ -58,6 +57,7 @@ header #feedback:hover div {
 	background-repeat: no-repeat;
 }
 main {
+	height: 392px;
 	margin: 5px auto;
 	width: 300px;
 }
@@ -379,8 +379,7 @@ a.sign-main {
 footer {
 	text-align: center;
 	height: 95px;
-	position: absolute;
-	top: 678px;
+	margin: 79px 0 0;
 	width: 100%;
 }
 footer span, footer a {
