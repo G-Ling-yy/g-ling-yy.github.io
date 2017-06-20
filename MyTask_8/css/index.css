@@ -149,6 +149,7 @@ footer {
 footer #myword {
 	font-size: 19px;
 	text-align: center;
+	transition: 5s;
 }
 #triangletop, #trianglebottom {
 	border-left: 20px solid transparent;
