@@ -7,6 +7,8 @@
 	list-style: none;
 }
 body {
+	background: url(../images/timg.gif) no-repeat fixed;
+	background-size: 100% 100%;
 	margin: 0 auto;
 	overflow-x: hidden;
 	width: 95%;
