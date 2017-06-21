@@ -46,7 +46,7 @@ main section {
 	width: 100%;
 }
 main section:last-child {
-	perspective: 600px;
+	perspective: 300px;
 }
 .mmbox {
 	border-radius: 10px;
@@ -121,19 +121,19 @@ main section:last-child {
 	opacity: 1;
 }
 .figure1 {
-	transform: rotateY(0) translateZ(430px);
+	transform: rotateY(0) translateZ(230px);
 }
 .figure2 {
-	transform: rotateY(72deg) translateZ(430px);
+	transform: rotateY(72deg) translateZ(230px);
 }
 .figure3 {
-	transform: rotateY(144deg) translateZ(430px);
+	transform: rotateY(144deg) translateZ(230px);
 }
 .figure4 {
-	transform: rotateY(216deg) translateZ(430px);
+	transform: rotateY(216deg) translateZ(230px);
 }
 .figure5 {
-	transform: rotateY(288deg) translateZ(430px);
+	transform: rotateY(288deg) translateZ(230px);
 }
 @keyframes rotatingY {
 	0% {transform: rotateY(0);}
