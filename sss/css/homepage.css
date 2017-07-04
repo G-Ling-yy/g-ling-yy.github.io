@@ -1,0 +1,160 @@
+main {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0;
+  padding: .6rem;
+  width: 100%;
+}
+
+main section h1 {
+  color: #0c3b9d;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+main section {
+  padding: .3rem .5rem;
+  position: relative;
+  transition: .3s;
+}
+
+main section:hover {
+  top: -.1rem;
+  box-shadow: 0 0 .5rem #0c3b9d;
+}
+/*第一个section*/
+.company-pic {
+  padding: .3rem .5rem;
+}
+
+.company-pic-show {
+  height: 10rem;
+  margin-bottom: .5rem;
+  overflow: hidden;
+  position: relative;
+  width: 6.18rem;
+}
+
+.company-pic-show:hover .companypicbtns.companypicbtn-left {
+  left: -1.5rem;
+}
+
+.company-pic-show:hover .companypicbtns.companypicbtn-right {
+  right: -1.5rem;
+}
+
+.company-pic-show ul {
+  height: inherit;
+  overflow: hidden;
+  position: absolute;
+  transition: .3s;
+  width: 24.72rem;
+}
+
+.company-pic-show ul li {
+  height: inherit;
+  float: left;
+  width: 6.18rem;
+}
+
+.company-pic-show ul li:first-child {
+  background: #f00;
+}
+
+.company-pic-show ul li:nth-child(2) {
+  background: #0f0;
+}
+
+.company-pic-show ul li:nth-child(3) {
+  background: #00f;
+}
+
+.company-pic-show ul li:nth-child(4) {
+  background: #f0f;
+}
+
+.companypicbtns {
+  background: rgba(0,0,0,.5);
+  border-radius: 50%;
+  height: 3rem;
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  transition: .3s;
+  width: 3rem;
+}
+
+.companypicbtns:hover {
+  cursor: pointer;
+}
+
+.companypicbtns.companypicbtn-left {
+  left: -3rem;
+}
+
+.companypicbtns.companypicbtn-right {
+  right: -3rem;
+}
+/*第二个section*/
+.company-intro {
+  flex: .5;
+}
+
+.company-intro p {
+  font-size: .8rem;
+  margin: 0 0 .2rem;
+  text-indent: 2rem;
+}
+/*第三个section*/
+.video-stage {
+  margin: 2rem;
+  perspective: 70rem;
+}
+
+.video-stage:hover .video-container {
+  transform: rotateX(90deg);
+}
+
+.video-container {
+  height: 9rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .7s;
+  width: 16rem;
+}
+
+.video-container img {
+  backface-visibility: hidden;
+  height: inherit;
+  position: absolute;
+  transform: translateZ(4.5rem);
+  width: inherit;
+}
+
+.video-container video {background: pink;
+  height: inherit;
+  position: absolute;
+  transform: rotateX(-90deg) translateZ(4.5rem);
+  width: inherit;
+}
+
+@media (max-width: 1080px) {
+  main {
+    flex-flow: column;
+  }
+
+  .company-pic {
+    width: 100%;
+  }
+
+  .company-pic-wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .conpany-videosection {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+  }
+}
