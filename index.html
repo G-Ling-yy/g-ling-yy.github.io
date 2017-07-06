@@ -25,7 +25,10 @@
       margin: 30px 0;
       width: calc(100% - 10px);
     }
-    a{
+    li:first-child {
+      margin-top: 0; 
+    }
+    ul li a{
       animation: rotating 2s linear infinite, runningball 10s linear infinite alternate;
       -webkit-animation: rotating 2s linear infinite, runningball 10s linear infinite alternate;
       background: #ff0;
@@ -42,7 +45,7 @@
       transition: background 1s, color 1s;
       width: 70px;
     }
-    a:hover{
+    ul li a:hover{
       animation-play-state: paused;
       -webkit-animation-play-state: paused;
       background: #00f;
@@ -88,9 +91,34 @@
       93.7% {left: 74%;top: 0;}
       100% {left: calc(100% - 70px);top: 230px}
     }
+    label {
+      display: flex;
+      justify-content: flex-end;
+      margin: 30px auto 5px;
+      padding-right: 5%;
+    }
+    label input {
+      width: 50px;
+    }
+    .backtop {
+      background-color: #fff;
+      bottom: 3rem;
+      border-radius: 50%;
+      box-shadow: 0 0 1rem #666;
+      color: #000;
+      display: block;
+      height: 2rem;
+      line-height: 2rem;
+      position: fixed;
+      right: 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      width: 2rem;
+    }
   </style>
 </head>
 <body>
+  <label>跳转到第<input type="number" value="0">份作业</label>
   <ul>
     <li><a href="https://g-ling-yy.github.io/MyTask_1/">1</a></li>
     <li><a href="https://g-ling-yy.github.io/">2</a></li>
@@ -106,6 +134,43 @@
     <li><a href="https://g-ling-yy.github.io/MyTask_12/">12</a></li>
     <li><a href="https://g-ling-yy.github.io/MyTask_13/">13</a></li>
     <li><a href="https://g-ling-yy.github.io/MyTask_14/">14</a></li>
+    <li><a href="https://g-ling-yy.github.io/MyTask_15/">15</a></li>
+    <li><a href="https://g-ling-yy.github.io/MyTask_16/">16</a></li>
+    <li><a href="https://g-ling-yy.github.io/MyTask_17/">17</a></li>
+    <li><a href="https://g-ling-yy.github.io/MyTask_18/">18</a></li>
+    <li><a href="https://g-ling-yy.github.io/MyTask_19/">19</a></li>
+    <li><a href="https://g-ling-yy.github.io/MyTask_20/">20</a></li>
+    <li><a href="https://g-ling-yy.github.io/MyTask_21/">21</a></li>
+    <li><a href="https://g-ling-yy.github.io/MyTask_22/">22</a></li>
+    <li><a href="https://g-ling-yy.github.io/MyTask_23/">23</a></li>
+    <li><a href="https://g-ling-yy.github.io/MyTask_24/">24</a></li>
   </ul>
+  <script type="text/javascript">
+    (function(){
+      var count = document.querySelector('label input');
+      function inputClick(){
+        count.addEventListener('click',function(){
+          this.value = (Number(this.value) + 1);
+        })
+      }
+      function inputEnter(){
+        count.addEventListener('keypress',function(){
+          if (event.keyCode === 13) {
+            document.body.scrollTop = (Number(this.value) - 1) * 330;
+          }
+        })
+      }
+      function backTop(){
+        var bt = document.createElement('a');
+        bt.href = '#';
+        bt.innerHTML = 'top';
+        bt.classList.add('backtop');
+        document.body.appendChild(bt);
+      }
+      inputClick();
+      inputEnter();
+      backTop();
+    })();
+  </script>
 </body>
 </html>
