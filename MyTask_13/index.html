@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>JS简介和JS历史</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/favicon.ico" type=”image/x-icon”/>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      font-family: 'KaiTi','_GB2312 KaiTi_GB2312','Microsoft YaHei',Arial,sans-serif;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+    html {
+      font-size: 20px;
+    }
+    body {
+      padding-top: 6rem;
+    }
+    header {
+      height: 5.04rem;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    header nav {
+      height: 50%;
+      padding: 0 10%;
+      width: inherit;
+    }
+    .header-nav {
+      border-bottom-left-radius: .4rem;
+      border-bottom-right-radius: .4rem;
+      display: flex;
+      height: 100%;
+      width: inherit;
+    }
+    .header-nav li:first-child {
+      border-bottom-left-radius: .4rem;
+    }
+    .header-nav li:last-child {
+      border-bottom-right-radius: .4rem;
+    }
+    .header-nav li {
+      background: rgba(0,0,0,.5);
+      flex: 1;
+      height: 100%;
+      transition: .3s;
+      min-width: 5.07rem;
+    }
+    .header-nav li:hover {
+      border-bottom-left-radius: .4rem;
+      border-bottom-right-radius: .4rem;
+      height: 160%;
+    }
+    .header-nav li a {
+      align-items: center;
+      color: #fff;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+    }
+    main {
+      margin: 0 auto;
+      width: 95%;
+    }
+    main section {
+      margin-bottom: 1rem;
+    }
+    main section h1 {
+      transition: 3s;
+    }
+    div.wrapper {
+      height: 10rem;
+      margin: 1rem auto;
+      overflow: hidden;
+      position: relative;
+      transition: .3s;
+      width: 15rem;
+    }
+    div.wrapper:hover {
+      box-shadow: 0 0 1rem #eee;
+      cursor: pointer;
+      top: -.1rem;
+    }
+    div.wrapperfixed {
+      align-items: center;
+      background: rgba(0,0,0,.7);
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 99;
+    }
+
+    .backtop {
+      background-color: #fff;
+      bottom: 3rem;
+      border-radius: 50%;
+      box-shadow: 0 0 1rem #666;
+      color: #000;
+      display: block;
+      height: 2rem;
+      line-height: 2rem;
+      position: fixed;
+      right: 2rem;
+      text-align: center;
+      width: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="header-nav">
+        <li><a href="#question1">console</a></li>
+        <li><a href="#question2">API</a></li>
+        <li><a href="#question3">difference</a></li>
+        <li><a href="#question4">methods</a></li>
+        <li><a href="#question5">bottom</a></li>
+        <li><a href="#question6">aim</a></li>
+        <li><a href="#question7">ECMAScript</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="question1">
+      <h1>1.入门的同学吧讲义里面的 JS 手敲进去 Google Console 看看实际效果。</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic1.jpg" alt="答案1截图">
+        </div>
+      </div>
+    </section>
+    <section id="question2">
+      <h1>2.去找一个讲义没有提及的 API 并尝试使用。</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic2.jpg" alt="答案2截图">
+        </div>
+      </div>
+    </section>
+    <section id="question3">
+      <h1>3.解析型语言和编译型语言的主要差别是什么？</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic3.jpg" alt="答案3截图">
+        </div>
+      </div>
+    </section>
+    <section id="question4">
+      <h1>4.有哪几种在网页中应用 JS 的方法？</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic4.jpg" alt="答案4截图">
+        </div>
+      </div>
+    </section>
+    <section id="question5">
+      <h1>5.为什么推荐把 script 标签都放在页面底部？</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic5.jpg" alt="答案5截图">
+        </div>
+      </div>
+    </section>
+    <section id="question6">
+      <h1>6.写注释的主要目的是什么？</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic6.jpg" alt="答案6截图">
+        </div>
+      </div>
+    </section>
+    <section id="question7">
+      <h1>7.ECMAScript 是什么？跟 JavaScript 有什么关系？</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic7.jpg" alt="答案7截图">
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="text/javascript">
+    (function(){
+      function backTop(){
+        var bt = document.createElement('a');
+        bt.href = '#';
+        bt.innerHTML = 'top';
+        bt.classList.add('backtop');
+        document.body.appendChild(bt);
+      }
+      function picShow(){
+        var pics = document.querySelectorAll('.wrapper div');
+        for (var i = pics.length - 1; i >= 0; i--) {
+          (function(i){
+            pics[i].addEventListener('click',function(){
+              this.classList.toggle('wrapperfixed');
+            })
+          })(i);
+        }
+      }
+      function h1ColorRgba(){
+        var h1s = document.querySelectorAll('h1');
+        for (var i = h1s.length - 1; i >= 0; i--) {
+          var c = Math.random() * .2 + .7 + '';
+          h1s[i].style.color = 'rgba(0,0,0,'+ c + ')';
+        }
+      }
+      backTop();
+      picShow();
+      setInterval(h1ColorRgba,3000);
+    })();
+  </script>
+</body>
+</html>
