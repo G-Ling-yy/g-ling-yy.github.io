@@ -231,14 +231,16 @@
       function judge7Or9(){
         document.querySelector('#input7or9').addEventListener('keypress',function(){
           var getInt = this.value;
-          if (getInt % 7 === 0 && getInt % 9 ===0) {
-            alert('该整数能同时被7和9整除。')
-          }else if (getInt % 7 === 0) {
-            alert('该整数能被7整除。')
-          }else if (getInt % 9 === 0) {
-            alert('该整数能被9整除。')
-          }else {
-            alert('该整数不能被7或9整除。')
+          if (event.keyCode === 13) {
+            if (getInt % 7 === 0 && getInt % 9 ===0) {
+              alert('该整数能同时被7和9整除。')
+            }else if (getInt % 7 === 0) {
+              alert('该整数能被7整除。')
+            }else if (getInt % 9 === 0) {
+              alert('该整数能被9整除。')
+            }else {
+              alert('该整数不能被7或9整除。')
+            }
           }
         })
       }
