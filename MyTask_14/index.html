@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>JS运算符&amp;字符串&amp;数组&amp;变量&amp;条件</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/favicon.ico" type=”image/x-icon”/>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      font-family: 'KaiTi','_GB2312 KaiTi_GB2312','Microsoft YaHei',Arial,sans-serif;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+    html {
+      font-size: 20px;
+    }
+    body {
+      padding-top: 6rem;
+    }
+    header {
+      height: 5.04rem;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    header nav {
+      height: 50%;
+      padding: 0 10%;
+      width: inherit;
+    }
+    .header-nav {
+      border-bottom-left-radius: .4rem;
+      border-bottom-right-radius: .4rem;
+      display: flex;
+      height: 100%;
+      width: inherit;
+    }
+    .header-nav li:first-child {
+      border-bottom-left-radius: .4rem;
+    }
+    .header-nav li:last-child {
+      border-bottom-right-radius: .4rem;
+    }
+    .header-nav li {
+      background: rgba(0,0,0,.5);
+      flex: 1;
+      height: 100%;
+      transition: .3s;
+      min-width: 5.07rem;
+    }
+    .header-nav li:hover {
+      border-bottom-left-radius: .4rem;
+      border-bottom-right-radius: .4rem;
+      height: 160%;
+    }
+    .header-nav li a {
+      align-items: center;
+      color: #fff;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+    }
+    main {
+      margin: 0 auto;
+      width: 95%;
+    }
+    main section {
+      margin-bottom: 1rem;
+    }
+    main section h1 {
+      transition: 3s;
+    }
+    div.wrapper {
+      height: 10rem;
+      margin: 1rem auto;
+      overflow: hidden;
+      position: relative;
+      transition: .3s;
+      width: 15rem;
+    }
+    div.wrapper:hover {
+      box-shadow: 0 0 1rem #eee;
+      cursor: pointer;
+      top: -.1rem;
+    }
+    div.wrapperfixed {
+      align-items: center;
+      background: rgba(0,0,0,.7);
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 99;
+    }
+    #question2 .wrapper+div {
+      display: flex;
+      justify-content: center;
+    }
+    button.btn-center {
+      border: 0;
+      border-radius: .5rem;
+      display: block;
+      height: 1.5rem;
+      margin: 0 auto;
+      outline: none;
+      padding: 0 2rem;
+    }
+    button.btn-center:hover {
+      cursor: pointer;
+    }
+    .backtop {
+      background-color: #fff;
+      bottom: 3rem;
+      border-radius: 50%;
+      box-shadow: 0 0 1rem #666;
+      color: #000;
+      display: block;
+      height: 2rem;
+      line-height: 2rem;
+      position: fixed;
+      right: 2rem;
+      text-align: center;
+      width: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="header-nav">
+        <li><a href="#question1">try</a></li>
+        <li><a href="#question2">int7or9</a></li>
+        <li><a href="#question3">switch</a></li>
+        <li><a href="#question4">findYing</a></li>
+        <li><a href="#question5">replace</a></li>
+        <li><a href="#question6">findTwotu</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="question1">
+      <h1>1.入门的同学还是要把讲义的代码手敲一下，建立感觉。长的代码可以到 jsbin.com 上面敲，看下输出结果。同时也改一下变量，换一下代码顺序，看看输出结果有什么不同。</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic1.jpg" alt="答案1截图">
+        </div>
+      </div>
+    </section>
+    <section id="question2">
+      <h1>2.给定一个整数，当它可以被 7 整除或被 9 整除或同时能被 7 和 9 整除时，输出相应提示信息。（声明一个变量，赋予不同的值，看输出结果）</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic2.jpg" alt="答案2截图">
+        </div>
+      </div>
+      <div>
+        <label>请输入整数：
+          <input type="number" id="input7or9">
+        </label>
+      </div>
+    </section>
+    <section id="question3">
+      <h1>3.变量 var day = new Date().getDay()，写一个 switch 或 if ...else 语句，根据 day 的值在工作日输出 ‘上班’，周六日输出 ‘玩耍’。</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic3.jpg" alt="答案3截图">
+        </div>
+      </div>
+      <button id="workorplay-btn" class="btn-center">Alert</button>
+    </section>
+    <section id="question4">
+      <h1>4.编程找出字符串 "赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢嬴赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢" 中 "嬴" 的下标</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic4.jpg" alt="答案4截图">
+        </div>
+      </div>
+      <button id="findying-btn" class="btn-center">嬴</button>
+    </section>
+    <section id="question5">
+      <h1>5.将上题字符串中的 ‘嬴’ 替换成 '赢' 并返回一个新字符串(JS 的字符串一旦声明不能更改)</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic5.jpg" alt="答案5截图">
+        </div>
+      </div>
+      <button id="newstring-btn" class="btn-center">新字符串</button>
+    </section>
+    <section id="question6">
+      <h1>6.编程找出 "免免免免免免免免免免免免免免兔免免免免免免免免免免免免兔免免免免免免免免免免免免免免免免免免免免免免免免" 里面第二个 "兔" 的下标</h1>
+      <div class="wrapper">
+        <div>
+          <img src="images/pic6.jpg" alt="答案6截图">
+        </div>
+      </div>
+      <button id="twotu-btn" class="btn-center">兔2's index</button>
+    </section>
+  </main>
+  <script type="text/javascript">
+    (function(){
+      function backTop(){
+        var bt = document.createElement('a');
+        bt.href = '#';
+        bt.innerHTML = 'top';
+        bt.classList.add('backtop');
+        document.body.appendChild(bt);
+      }
+      function picShow(){
+        var pics = document.querySelectorAll('.wrapper div');
+        for (var i = pics.length - 1; i >= 0; i--) {
+          (function(i){
+            pics[i].addEventListener('click',function(){
+              this.classList.toggle('wrapperfixed');
+            })
+          })(i);
+        }
+      }
+      function h1ColorRgba(){
+        var h1s = document.querySelectorAll('h1');
+        for (var i = h1s.length - 1; i >= 0; i--) {
+          var c = Math.random() * .2 + .7 + '';
+          h1s[i].style.color = 'rgba(0,0,0,'+ c + ')';
+        }
+      }
+      function judge7Or9(){
+        document.querySelector('#input7or9').addEventListener('keypress',function(){
+          var getInt = this.value;
+          if (getInt % 7 === 0 && getInt % 9 ===0) {
+            alert('该整数能同时被7和9整除。')
+          }else if (getInt % 7 === 0) {
+            alert('该整数能被7整除。')
+          }else if (getInt % 9 === 0) {
+            alert('该整数能被9整除。')
+          }else {
+            alert('该整数不能被7或9整除。')
+          }
+        })
+      }
+      function workOrPlay(){
+        document.querySelector('#workorplay-btn').addEventListener('click',function(){
+          var day = new Date().getDay();
+          switch (true) {
+            case 0 < day && day < 6: alert('上班');break;
+            default: alert('玩耍');
+          }
+        })
+      }
+      function findYing(){
+        document.querySelector('#findying-btn').addEventListener('click',function(){
+          var yings = '赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢嬴赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢';
+          var ying = '嬴';
+          for (var i = yings.length - 1; i >= 0; i--) {
+            if (yings[i] === ying) {
+              alert(i);
+            }
+          }
+        })
+      }
+      function newString(){
+        document.querySelector('#newstring-btn').addEventListener('click',function(){
+          var yings = '赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢嬴赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢';
+          var ying = '赢';
+          alert(ying.repeat(yings.length-1));
+        })
+      }
+      function findTwoTu(){
+        document.querySelector('#twotu-btn').addEventListener('click',function(){
+          var tus = '免免免免免免免免免免免免免免兔免免免免免免免免免免免免兔免免免免免免免免免免免免免免免免免免免免免免免免';
+          var tu = '兔';
+          alert(tus.indexOf(tu,tus.indexOf(tu)+1));
+        })
+      }
+      function actFunctions(){
+        backTop();
+        picShow();
+        setInterval(h1ColorRgba,3000);
+        judge7Or9();
+        workOrPlay();
+        findYing();
+        newString();
+        findTwoTu();
+      }
+      actFunctions();
+    })();
+  </script>
+</body>
+</html>
