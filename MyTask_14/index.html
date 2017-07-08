@@ -267,8 +267,8 @@
       function newString(){
         document.querySelector('#newstring-btn').addEventListener('click',function(){
           var yings = '赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢嬴赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢赢';
-          var ying = '赢';
-          alert(ying.repeat(yings.length-1));
+          var newying = yings.replace(/\S/g,'赢');
+          alert(newying);
         })
       }
       function findTwoTu(){
