@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>SASS 3D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+  <link rel="stylesheet" type="text/css" href="css/css.css">
+  <link rel="stylesheet" type="text/css" href="css/heroes.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="header-nav">
+        <li><a href="sccode1.html" target="_blank">SASS code</a></li>
+        <li><a href="sccode2.html" target="_blank">CSS code</a></li>
+        <li><a href="easysass.html" target="_blank">easySassPage</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="heroes">
+        <div class="hero aa"></div>
+        <div class="hero bane"></div>
+        <div class="hero bat"></div>
+        <div class="hero chen"></div>
+        <div class="hero dp"></div>
+        <div class="hero ds"></div>
+        <div class="hero enig"></div>
+        <div class="hero fs"></div>
+        <div class="hero fur"></div>
+        <div class="hero gm"></div>
+        <div class="hero goblin"></div>
+      </div>
+    </section>
+    <section>
+      <div class="heroes">
+        <div class="hero jb"></div>
+        <div class="hero kael"></div>
+        <div class="hero kotl"></div>
+        <div class="hero lich"></div>
+        <div class="hero lina"></div>
+        <div class="hero lion"></div>
+        <div class="hero meepo"></div>
+        <div class="hero nec"></div>
+        <div class="hero od"></div>
+        <div class="hero om"></div>
+        <div class="hero pa"></div>
+      </div>
+    </section>
+    <section>
+      <div class="heroes">
+        <div class="hero pg"></div>
+        <div class="hero qop"></div>
+        <div class="hero sd"></div>
+        <div class="hero sf"></div>
+        <div class="hero sil"></div>
+        <div class="hero sm"></div>
+        <div class="hero sp"></div>
+        <div class="hero ss"></div>
+        <div class="hero storm"></div>
+        <div class="hero tb"></div>
+        <div class="hero thd"></div>
+      </div>
+    </section>
+    <section>
+      <div class="heroes">
+        <div class="hero tk"></div>
+        <div class="hero ts"></div>
+        <div class="hero veno"></div>
+        <div class="hero vip"></div>
+        <div class="hero vis"></div>
+        <div class="hero wd"></div>
+        <div class="hero wl"></div>
+        <div class="hero wr"></div>
+        <div class="hero ww"></div>
+        <div class="hero zet"></div>
+        <div class="hero zeus"></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div id="picbg"></div>
+  </footer>
+  <script type="text/javascript">
+    (function(){
+      function heroInfo(){
+        var heros = document.querySelectorAll('.hero');
+        var picbg = document.querySelector('#picbg');
+        for (var i = heros.length - 1; i >= 0; i--) {
+          (function(j){
+            heros[j].addEventListener('click',function(){
+              picbg.classList.add('picbg');
+              var clonepic = document.createElement('img');
+              clonepic.src = 'images/' + this.classList[1] + '.jpg';
+              picbg.appendChild(clonepic);
+            })
+          })(i)
+        }
+        picbg.addEventListener('click',function(e){
+          if (e.target.nodeName !== 'IMG') {
+            this.classList.remove('picbg');
+            this.removeChild(this.childNodes[0]);
+          }
+        })
+      }
+      heroInfo();
+    })()
+  </script>
+</body>
+</html>

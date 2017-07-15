@@ -1,0 +1,109 @@
+body {
+  background-image: url(../images/bg-pic.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow-y: hidden;
+}
+a.navbar-brand.mylogo {
+  background: url(../images/sf.jpg) no-repeat -280px -202px ;
+  margin-right: 40px;
+  width: 50px;
+}
+div.navbar-header {
+  padding-left: 55px;
+}
+header nav.navbar.navbar-default, ul.nav.navbar-nav li.dropdown ul.dropdown-menu {
+  background-color: rgba(248,248,248,.7);
+}
+main {
+  margin: 300px auto 0;
+  width: 95%;
+}
+main > div {
+  box-sizing: border-box;
+  height: 220px;
+  overflow: hidden;
+  width: 100%;
+  min-width: 640px;
+}
+main > div > ul {
+  display: flex;
+  flex-flow: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+main > div > ul~* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+main > div > ul > li {
+  align-items: center;
+  display: flex;
+  height: 220px;
+  justify-content: center;
+  width: 25%;
+}
+div.stage {
+  height: 200px;
+  perspective: 800px;
+  width: 160px;
+}
+div.stage ul {
+  border-radius: 5px;
+  box-shadow: 0 0 10px #333;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  position: relative;
+  transform-style: preserve-3d;
+  width: 100%; 
+}
+div.stage:hover ul{
+  animation: rotatexy .5s linear alternate both;
+  cursor: pointer;
+}
+div.stage ul li {
+  backface-visibility: hidden;
+  border-radius: 5px;
+  height: inherit;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: inherit;
+}
+ul .face {
+  transform: rotateY(180deg);background: red;
+}
+ul .back {
+  align-items: center;
+  background-color: rgba(248,248,248,.6);
+  display: flex;
+  justify-content: center;
+}
+ul .back::after {
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+}
+.picbg {
+  align-items: center;
+  background: rgba(0,0,255,.3);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+@keyframes rotatexy {
+  0% {transform: rotateX(0) rotateY(0);}
+  50% {transform: rotateX(75deg) rotateY(90deg);}
+  100% {transform: rotateX(0) rotateY(180deg);}
+}
+

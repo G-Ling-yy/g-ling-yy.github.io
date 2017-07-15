@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Microsoft YaHei',Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+html {
+  background-color: rgba(0,0,0,.8);
+  font-size: 20px;
+}
+body {
+  overflow-x: hidden;
+  padding-top: 6rem;
+  min-width: 68.3rem;
+}
+header {
+  height: 5.4rem;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80%;
+  min-width: 22rem;
+}
+header nav {
+  height: 50%;
+  width: 100%;
+}
+.header-nav {
+  border-bottom-left-radius: .35rem;
+  border-bottom-right-radius: .35rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.header-nav li {
+  background-color: rgba(255,255,255,.95);
+  flex: 1;
+  height: 100%;
+  transition: .3s;
+}
+.header-nav li:first-child {
+  border-bottom-left-radius: .35rem;
+}
+.header-nav li:last-child {
+  border-bottom-right-radius: .35rem;
+}
+.header-nav li:hover {
+  border-bottom-left-radius: .35rem;
+  border-bottom-right-radius: .35rem;
+  height: 200%;
+}
+.header-nav li a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+main {
+  margin: 3rem auto;
+  width: 95%;
+}
+main section {
+  align-items: center;
+  display: flex;
+  height: 25rem;
+  justify-content: center;
+  margin: 3rem auto;
+  perspective: 40rem;
+  width: 100%;
+}
+.heroes {
+  height: 10rem;
+  position: relative;
+  transform-style: preserve-3d;
+  width: 8rem;
+}
+.hero {
+  height: inherit;
+  opacity: .95;
+  position: absolute;
+  width: inherit;
+}
+.hero:hover {
+  cursor: pointer;
+}
+main section:nth-child(odd) .heroes {
+  animation: rotateyinga 22s linear infinite;
+}
+main section:nth-child(even) .heroes {
+  animation: rotateyingc 22s linear infinite;
+}
+main section:first-child {
+  perspective-origin: center 100%;
+}
+main section:last-child {
+  height: 60rem;
+  margin: 5rem auto;
+  padding-bottom: 20rem;
+  perspective-origin: center 20%;
+}
+@keyframes rotateyingc {
+  0% {transform: rotateY(0);}
+  100% {transform: rotateY(360deg);}
+}
+@keyframes rotateyinga {
+  0% {transform: rotateY(0);}
+  100% {transform: rotateY(-360deg);}
+}
+.picbg {
+  align-items: center;
+  background: rgba(0,0,255,.3);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}

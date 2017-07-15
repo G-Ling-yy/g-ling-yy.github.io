@@ -1,0 +1,16 @@
+$heroes: aa bane bat chen dp ds enig fs fur gm goblin jb kael kotl lich lina lion meepo nec od om pa pg qop sd sf sil sm sp ss storm tb thd tk ts veno vip vis wd wl wr ww zet zeus;
+
+@each $name in $heroes {
+  $i: index($heroes, $name);
+  main > div ul li:nth-child(#{$i}) div.stage ul li.back::after {
+    content: '#{$name}';
+  }
+}
+
+@each $name in $heroes {
+  $i: index($heroes, $name);
+  main > div ul li:nth-child(#{$i}) div.stage ul li.face {
+    background-image: url(../images/#{$name}.jpg);
+    background-size: 100% 100%;
+  }
+}

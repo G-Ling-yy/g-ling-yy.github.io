@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      width: 100vw;
+    }
+    section {
+      flex: .5;
+      overflow-y: scroll;
+    }
+    section:first-child {
+      background-color: rgba(0,255,255,.7);
+    }
+    section:last-child {
+      background-color: rgba(39,40,34,.7);
+    }
+    pre.font-white {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <pre>
+      cards.scss:
+
+
+      $heroes: aa bane bat chen dp ds enig fs fur gm goblin jb kael kotl lich lina lion meepo nec od om pa pg qop sd sf sil sm sp ss storm tb thd tk ts veno vip vis wd wl wr ww zet zeus;
+
+      @each $name in $heroes {
+        $i: index($heroes, $name);
+        main > div ul li:nth-child(#{$i}) div.stage ul li.back::after {
+          content: '#{$name}';
+        }
+      }
+
+      @each $name in $heroes {
+        $i: index($heroes, $name);
+        main > div ul li:nth-child(#{$i}) div.stage ul li.face {
+          background-image: url(../images/#{$name}.jpg);
+          background-size: 100% 100%;
+        }
+      }
+
+    </pre>
+  </section>
+  <section>
+    <pre class="font-white">
+      cards.css:
+
+      main > div ul li:nth-child(1) div.stage ul li.back::after {
+        content: "aa"; }
+
+      main > div ul li:nth-child(2) div.stage ul li.back::after {
+        content: "bane"; }
+
+      main > div ul li:nth-child(3) div.stage ul li.back::after {
+        content: "bat"; }
+
+      main > div ul li:nth-child(4) div.stage ul li.back::after {
+        content: "chen"; }
+
+      main > div ul li:nth-child(5) div.stage ul li.back::after {
+        content: "dp"; }
+
+      main > div ul li:nth-child(6) div.stage ul li.back::after {
+        content: "ds"; }
+
+      main > div ul li:nth-child(7) div.stage ul li.back::after {
+        content: "enig"; }
+
+      main > div ul li:nth-child(8) div.stage ul li.back::after {
+        content: "fs"; }
+
+      main > div ul li:nth-child(9) div.stage ul li.back::after {
+        content: "fur"; }
+
+      main > div ul li:nth-child(10) div.stage ul li.back::after {
+        content: "gm"; }
+
+      main > div ul li:nth-child(11) div.stage ul li.back::after {
+        content: "goblin"; }
+
+      main > div ul li:nth-child(12) div.stage ul li.back::after {
+        content: "jb"; }
+
+      main > div ul li:nth-child(13) div.stage ul li.back::after {
+        content: "kael"; }
+
+      main > div ul li:nth-child(14) div.stage ul li.back::after {
+        content: "kotl"; }
+
+      main > div ul li:nth-child(15) div.stage ul li.back::after {
+        content: "lich"; }
+
+      main > div ul li:nth-child(16) div.stage ul li.back::after {
+        content: "lina"; }
+
+      main > div ul li:nth-child(17) div.stage ul li.back::after {
+        content: "lion"; }
+
+      main > div ul li:nth-child(18) div.stage ul li.back::after {
+        content: "meepo"; }
+
+      main > div ul li:nth-child(19) div.stage ul li.back::after {
+        content: "nec"; }
+
+      main > div ul li:nth-child(20) div.stage ul li.back::after {
+        content: "od"; }
+
+      main > div ul li:nth-child(21) div.stage ul li.back::after {
+        content: "om"; }
+
+      main > div ul li:nth-child(22) div.stage ul li.back::after {
+        content: "pa"; }
+
+      main > div ul li:nth-child(23) div.stage ul li.back::after {
+        content: "pg"; }
+
+      main > div ul li:nth-child(24) div.stage ul li.back::after {
+        content: "qop"; }
+
+      main > div ul li:nth-child(25) div.stage ul li.back::after {
+        content: "sd"; }
+
+      main > div ul li:nth-child(26) div.stage ul li.back::after {
+        content: "sf"; }
+
+      main > div ul li:nth-child(27) div.stage ul li.back::after {
+        content: "sil"; }
+
+      main > div ul li:nth-child(28) div.stage ul li.back::after {
+        content: "sm"; }
+
+      main > div ul li:nth-child(29) div.stage ul li.back::after {
+        content: "sp"; }
+
+      main > div ul li:nth-child(30) div.stage ul li.back::after {
+        content: "ss"; }
+
+      main > div ul li:nth-child(31) div.stage ul li.back::after {
+        content: "storm"; }
+
+      main > div ul li:nth-child(32) div.stage ul li.back::after {
+        content: "tb"; }
+
+      main > div ul li:nth-child(33) div.stage ul li.back::after {
+        content: "thd"; }
+
+      main > div ul li:nth-child(34) div.stage ul li.back::after {
+        content: "tk"; }
+
+      main > div ul li:nth-child(35) div.stage ul li.back::after {
+        content: "ts"; }
+
+      main > div ul li:nth-child(36) div.stage ul li.back::after {
+        content: "veno"; }
+
+      main > div ul li:nth-child(37) div.stage ul li.back::after {
+        content: "vip"; }
+
+      main > div ul li:nth-child(38) div.stage ul li.back::after {
+        content: "vis"; }
+
+      main > div ul li:nth-child(39) div.stage ul li.back::after {
+        content: "wd"; }
+
+      main > div ul li:nth-child(40) div.stage ul li.back::after {
+        content: "wl"; }
+
+      main > div ul li:nth-child(41) div.stage ul li.back::after {
+        content: "wr"; }
+
+      main > div ul li:nth-child(42) div.stage ul li.back::after {
+        content: "ww"; }
+
+      main > div ul li:nth-child(43) div.stage ul li.back::after {
+        content: "zet"; }
+
+      main > div ul li:nth-child(44) div.stage ul li.back::after {
+        content: "zeus"; }
+
+      main > div ul li:nth-child(1) div.stage ul li.face {
+        background-image: url(../images/aa.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(2) div.stage ul li.face {
+        background-image: url(../images/bane.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(3) div.stage ul li.face {
+        background-image: url(../images/bat.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(4) div.stage ul li.face {
+        background-image: url(../images/chen.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(5) div.stage ul li.face {
+        background-image: url(../images/dp.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(6) div.stage ul li.face {
+        background-image: url(../images/ds.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(7) div.stage ul li.face {
+        background-image: url(../images/enig.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(8) div.stage ul li.face {
+        background-image: url(../images/fs.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(9) div.stage ul li.face {
+        background-image: url(../images/fur.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(10) div.stage ul li.face {
+        background-image: url(../images/gm.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(11) div.stage ul li.face {
+        background-image: url(../images/goblin.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(12) div.stage ul li.face {
+        background-image: url(../images/jb.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(13) div.stage ul li.face {
+        background-image: url(../images/kael.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(14) div.stage ul li.face {
+        background-image: url(../images/kotl.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(15) div.stage ul li.face {
+        background-image: url(../images/lich.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(16) div.stage ul li.face {
+        background-image: url(../images/lina.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(17) div.stage ul li.face {
+        background-image: url(../images/lion.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(18) div.stage ul li.face {
+        background-image: url(../images/meepo.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(19) div.stage ul li.face {
+        background-image: url(../images/nec.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(20) div.stage ul li.face {
+        background-image: url(../images/od.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(21) div.stage ul li.face {
+        background-image: url(../images/om.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(22) div.stage ul li.face {
+        background-image: url(../images/pa.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(23) div.stage ul li.face {
+        background-image: url(../images/pg.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(24) div.stage ul li.face {
+        background-image: url(../images/qop.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(25) div.stage ul li.face {
+        background-image: url(../images/sd.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(26) div.stage ul li.face {
+        background-image: url(../images/sf.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(27) div.stage ul li.face {
+        background-image: url(../images/sil.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(28) div.stage ul li.face {
+        background-image: url(../images/sm.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(29) div.stage ul li.face {
+        background-image: url(../images/sp.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(30) div.stage ul li.face {
+        background-image: url(../images/ss.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(31) div.stage ul li.face {
+        background-image: url(../images/storm.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(32) div.stage ul li.face {
+        background-image: url(../images/tb.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(33) div.stage ul li.face {
+        background-image: url(../images/thd.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(34) div.stage ul li.face {
+        background-image: url(../images/tk.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(35) div.stage ul li.face {
+        background-image: url(../images/ts.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(36) div.stage ul li.face {
+        background-image: url(../images/veno.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(37) div.stage ul li.face {
+        background-image: url(../images/vip.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(38) div.stage ul li.face {
+        background-image: url(../images/vis.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(39) div.stage ul li.face {
+        background-image: url(../images/wd.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(40) div.stage ul li.face {
+        background-image: url(../images/wl.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(41) div.stage ul li.face {
+        background-image: url(../images/wr.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(42) div.stage ul li.face {
+        background-image: url(../images/ww.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(43) div.stage ul li.face {
+        background-image: url(../images/zet.jpg);
+        background-size: 100% 100%; }
+
+      main > div ul li:nth-child(44) div.stage ul li.face {
+        background-image: url(../images/zeus.jpg);
+        background-size: 100% 100%; }
+    </pre>
+  </section>
+</body>
+</html>

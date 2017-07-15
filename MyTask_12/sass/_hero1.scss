@@ -1,0 +1,10 @@
+$hero1: aa bane bat chen dp ds enig fs fur gm goblin;
+
+@each $name in $hero1 {
+  $i: index($hero1, $name) - 1;
+  .hero.#{$name} {
+    background-image: url(../images/#{$name}.jpg);
+    background-size: 100% 100%;
+    transform: rotateY(360deg / length($hero1) * $i) translateZ(15rem);
+  }
+}

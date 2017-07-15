@@ -1,0 +1,9 @@
+$hero4: tk ts veno vip vis wd wl wr ww zet zeus;
+@each $name in $hero4 {
+  $i: index($hero4, $name) - 1;
+  .hero.#{$name} {
+    background-image: url(../images/#{$name}.jpg);
+    background-size: 100% 100%;
+    transform: rotateY(360deg / length($hero4) * $i) translateZ(30rem);
+  }
+}

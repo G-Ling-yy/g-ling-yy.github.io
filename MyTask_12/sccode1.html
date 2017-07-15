@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      width: 100vw;
+    }
+    section {
+      flex: .5;
+      overflow-y: scroll;
+    }
+    section:first-child {
+      background-color: rgba(0,255,255,.7);
+    }
+    section:last-child {
+      background-color: rgba(39,40,34,.7);
+    }
+    pre.font-white {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <pre>
+      _hero1,2,3,4.scss:
+
+
+      $hero1: aa bane bat chen dp ds enig fs fur gm goblin;
+      @each $name in $hero1 {
+        $i: index($hero1, $name) - 1;
+        .hero.#{$name} {
+          background-image: url(../images/#{$name}.jpg);
+          background-size: 100% 100%;
+          transform: rotateY(360deg / length($hero1) * $i) translateZ(30rem);
+        }
+      }
+
+      $hero2: jb kael kotl lich lina lion meepo nec od om pa;
+      @each $name in $hero2 {
+        $i: index($hero2, $name) - 1;
+        .hero.#{$name} {
+          background-image: url(../images/#{$name}.jpg);
+          background-size: 100% 100%;
+          transform: rotateY(360deg / length($hero2) * $i) translateZ(30rem);
+        }
+      }
+
+      $hero3: pg qop sd sf sil sm sp ss storm tb thd;
+      @each $name in $hero3 {
+        $i: index($hero3, $name) - 1;
+        .hero.#{$name} {
+          background-image: url(../images/#{$name}.jpg);
+          background-size: 100% 100%;
+          transform: rotateY(360deg / length($hero3) * $i) translateZ(30rem);
+        }
+      }
+
+      $hero4: tk ts veno vip vis wd wl wr ww zet zeus;
+      @each $name in $hero4 {
+        $i: index($hero4, $name) - 1;
+        .hero.#{$name} {
+          background-image: url(../images/#{$name}.jpg);
+          background-size: 100% 100%;
+          transform: rotateY(360deg / length($hero4) * $i) translateZ(30rem);
+        }
+      }
+
+
+      heroes.scss:
+
+
+      main section:nth-child(1) {
+        @import 'hero1';
+      }
+      main section:nth-child(2) {
+        @import 'hero2';
+      }
+      main section:nth-child(3) {
+        @import 'hero3';
+      }
+      main section:nth-child(4) {
+        @import 'hero4';
+      }
+
+    </pre>
+  </section>
+  <section>
+    <pre class="font-white">
+      heroes.css:
+
+      main section:nth-child(1) .hero.aa {
+        background-image: url(../images/aa.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(0deg) translateZ(15rem); }
+
+      main section:nth-child(1) .hero.bane {
+        background-image: url(../images/bane.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(32.72727deg) translateZ(15rem); }
+
+      main section:nth-child(1) .hero.bat {
+        background-image: url(../images/bat.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(65.45455deg) translateZ(15rem); }
+
+      main section:nth-child(1) .hero.chen {
+        background-image: url(../images/chen.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(98.18182deg) translateZ(15rem); }
+
+      main section:nth-child(1) .hero.dp {
+        background-image: url(../images/dp.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(130.90909deg) translateZ(15rem); }
+
+      main section:nth-child(1) .hero.ds {
+        background-image: url(../images/ds.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(163.63636deg) translateZ(15rem); }
+
+      main section:nth-child(1) .hero.enig {
+        background-image: url(../images/enig.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(196.36364deg) translateZ(15rem); }
+
+      main section:nth-child(1) .hero.fs {
+        background-image: url(../images/fs.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(229.09091deg) translateZ(15rem); }
+
+      main section:nth-child(1) .hero.fur {
+        background-image: url(../images/fur.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(261.81818deg) translateZ(15rem); }
+
+      main section:nth-child(1) .hero.gm {
+        background-image: url(../images/gm.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(294.54545deg) translateZ(15rem); }
+
+      main section:nth-child(1) .hero.goblin {
+        background-image: url(../images/goblin.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(327.27273deg) translateZ(15rem); }
+
+      main section:nth-child(2) .hero.jb {
+        background-image: url(../images/jb.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(0deg) translateZ(20rem); }
+
+      main section:nth-child(2) .hero.kael {
+        background-image: url(../images/kael.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(32.72727deg) translateZ(20rem); }
+
+      main section:nth-child(2) .hero.kotl {
+        background-image: url(../images/kotl.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(65.45455deg) translateZ(20rem); }
+
+      main section:nth-child(2) .hero.lich {
+        background-image: url(../images/lich.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(98.18182deg) translateZ(20rem); }
+
+      main section:nth-child(2) .hero.lina {
+        background-image: url(../images/lina.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(130.90909deg) translateZ(20rem); }
+
+      main section:nth-child(2) .hero.lion {
+        background-image: url(../images/lion.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(163.63636deg) translateZ(20rem); }
+
+      main section:nth-child(2) .hero.meepo {
+        background-image: url(../images/meepo.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(196.36364deg) translateZ(20rem); }
+
+      main section:nth-child(2) .hero.nec {
+        background-image: url(../images/nec.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(229.09091deg) translateZ(20rem); }
+
+      main section:nth-child(2) .hero.od {
+        background-image: url(../images/od.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(261.81818deg) translateZ(20rem); }
+
+      main section:nth-child(2) .hero.om {
+        background-image: url(../images/om.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(294.54545deg) translateZ(20rem); }
+
+      main section:nth-child(2) .hero.pa {
+        background-image: url(../images/pa.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(327.27273deg) translateZ(20rem); }
+
+      main section:nth-child(3) .hero.pg {
+        background-image: url(../images/pg.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(0deg) translateZ(25rem); }
+
+      main section:nth-child(3) .hero.qop {
+        background-image: url(../images/qop.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(32.72727deg) translateZ(25rem); }
+
+      main section:nth-child(3) .hero.sd {
+        background-image: url(../images/sd.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(65.45455deg) translateZ(25rem); }
+
+      main section:nth-child(3) .hero.sf {
+        background-image: url(../images/sf.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(98.18182deg) translateZ(25rem); }
+
+      main section:nth-child(3) .hero.sil {
+        background-image: url(../images/sil.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(130.90909deg) translateZ(25rem); }
+
+      main section:nth-child(3) .hero.sm {
+        background-image: url(../images/sm.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(163.63636deg) translateZ(25rem); }
+
+      main section:nth-child(3) .hero.sp {
+        background-image: url(../images/sp.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(196.36364deg) translateZ(25rem); }
+
+      main section:nth-child(3) .hero.ss {
+        background-image: url(../images/ss.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(229.09091deg) translateZ(25rem); }
+
+      main section:nth-child(3) .hero.storm {
+        background-image: url(../images/storm.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(261.81818deg) translateZ(25rem); }
+
+      main section:nth-child(3) .hero.tb {
+        background-image: url(../images/tb.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(294.54545deg) translateZ(25rem); }
+
+      main section:nth-child(3) .hero.thd {
+        background-image: url(../images/thd.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(327.27273deg) translateZ(25rem); }
+
+      main section:nth-child(4) .hero.tk {
+        background-image: url(../images/tk.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(0deg) translateZ(30rem); }
+
+      main section:nth-child(4) .hero.ts {
+        background-image: url(../images/ts.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(32.72727deg) translateZ(30rem); }
+
+      main section:nth-child(4) .hero.veno {
+        background-image: url(../images/veno.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(65.45455deg) translateZ(30rem); }
+
+      main section:nth-child(4) .hero.vip {
+        background-image: url(../images/vip.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(98.18182deg) translateZ(30rem); }
+
+      main section:nth-child(4) .hero.vis {
+        background-image: url(../images/vis.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(130.90909deg) translateZ(30rem); }
+
+      main section:nth-child(4) .hero.wd {
+        background-image: url(../images/wd.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(163.63636deg) translateZ(30rem); }
+
+      main section:nth-child(4) .hero.wl {
+        background-image: url(../images/wl.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(196.36364deg) translateZ(30rem); }
+
+      main section:nth-child(4) .hero.wr {
+        background-image: url(../images/wr.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(229.09091deg) translateZ(30rem); }
+
+      main section:nth-child(4) .hero.ww {
+        background-image: url(../images/ww.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(261.81818deg) translateZ(30rem); }
+
+      main section:nth-child(4) .hero.zet {
+        background-image: url(../images/zet.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(294.54545deg) translateZ(30rem); }
+
+      main section:nth-child(4) .hero.zeus {
+        background-image: url(../images/zeus.jpg);
+        background-size: 100% 100%;
+        transform: rotateY(327.27273deg) translateZ(30rem); }
+
+    </pre>
+  </section>
+</body>
+</html>
