@@ -15,8 +15,10 @@
   function createArtist(name, from) {
     var bio = name + "，来自" + from;
     return {
-      name,from,bio,      
-      intro: function() {
+      name,
+      from,
+      bio,      
+      intro(){
         return "大家好！我是" + this.bio + "。";
       }
     };
