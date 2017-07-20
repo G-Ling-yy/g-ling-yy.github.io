@@ -9,7 +9,7 @@ html {
 }
 body {
   background-color: #f7f7f7;
-  overflow-y: hidden;
+  padding: 1rem 3%;
 }
 a {
   animation: rotating 10s linear infinite;
