@@ -176,7 +176,7 @@
     if (digits[0] === 0) {
       return '虽然是数组但好赖是表示数字好吧，不能以0开头。';
     }
-    return ((Number(digits.join('')) + 1) + '').split('').map(function(item,i){return Number(item)});
+    return ((Number(digits.join('')) + 1) + '').split('').map(Number);
   }
   /**
    * 给定一个只包含 '(', ')', '{', '}', '[', ']' 的字符串，判断字符串内的括号是否匹配。
