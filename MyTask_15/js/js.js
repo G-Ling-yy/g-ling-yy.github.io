@@ -189,17 +189,31 @@
     if (s === '' || typeof s != 'string' || s.match(reg1)) {
       return '请输入只包含(){}[]的字符串。';
     }
-    return s.split('').every(function(item,i,arr){
-      if (i % 2 === 0) {
-        if ((item === '(' && arr[i+1] !== ')') || (item === '[' && arr[i+1] !== ']') || (item === '{' && arr[i+1] !== '}')) {
-          return false;
-        }else {
-          return true;
+    return (function(){
+      function isStart(v) {
+        return v === '(' || v === '[' || v === '{';
+      }
+      function isEnd(v) {
+        return v === ')' || v === ']' || v === '}';
+      }
+      function match(a,b) {
+        return a==='('&&b===')' || a==='['&&b===']' || a==='{'&&b==='}' ;
+      }
+      var jugg = [];
+      for (var v of s) {
+        if (isStart(v)) {
+          jugg.push(v);
+        }else if (isEnd(v)) {
+          var t = jugg[jugg.length - 1];
+          if (match(t,v)) {
+            jugg.pop();
+          }else {
+            return false;
+          }
         }
-      }else {
-          return true;
-        }
-    });
+      }
+      return !jugg.length;
+    })();
   }
   function actAllFunctions(){
     bigShowPic();
