@@ -1,0 +1,38 @@
+div.calculator .btns .wrapper {
+  flex-basis: 25%;
+  height: calc((20rem - 3rem) / 4); }
+  div.calculator .btns .wrapper div {
+    background-color: #1F2834;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    transition: .1s;
+    width: 100%; }
+  div.calculator .btns .wrapper div:hover {
+    cursor: pointer; }
+  div.calculator .btns .wrapper div.number {
+    background-color: #333; }
+  div.calculator .btns .wrapper div.number:active {
+    color: #f0f;
+    font-size: 1.5rem;
+    box-shadow: 0 0 .1rem #eee; }
+  div.calculator .btns .wrapper div.symbol:hover {
+    box-shadow: 0 0 2.5rem #fff; }
+  div.calculator .btns .wrapper div.symbol:active {
+    font-size: 2rem; }
+  div.calculator .btns .wrapper div.backspace {
+    transition: .1s; }
+  div.calculator .btns .wrapper div.backspace:active {
+    font-size: 2rem; }
+
+div.calculator .btns .wrapper:first-child {
+  flex-basis: 75%;
+  height: 3rem; }
+
+div.calculator .btns .wrapper:first-child div:hover {
+  cursor: default; }
+
+div.calculator .btns .wrapper:nth-child(2) {
+  height: 3rem; }
