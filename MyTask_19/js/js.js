@@ -29,10 +29,13 @@
   for (var n of numbers) {
     if (n.innerHTML === '.') {
       n.addEventListener('click',function(){
-        if (anewcalculation) {
+        if (anewcalculation) {/*如果是一次新的运算就直接加.*/
           calculator.result = this.innerHTML;
-        } else if (calculator.result.indexOf('.') === -1) {
-          calculator.result += '.';
+        } else if (haveSymbol(calculator.result)) {/*如果是中途且已经有操作符了就在操作符之间允许一次加.*/
+          var temstr = calculator.result.slice(findLastSymIndex(calculator.result));
+          if (temstr.indexOf('.') === -1) calculator.result += '.';
+        } else {/*如果中途且没有操作符就只允许一次加.*/
+          if (calculator.result.indexOf('.') === -1) calculator.result += '.';
         }
         showResult();
         anewcalculation = false;

@@ -1,6 +1,6 @@
 div.calculator .btns .wrapper {
   flex-basis: 25%;
-  height: calc((20rem - 3rem) / 4); }
+  height: calc((100% - 3rem) / 4); }
   div.calculator .btns .wrapper div {
     background-color: #1F2834;
     align-items: center;
