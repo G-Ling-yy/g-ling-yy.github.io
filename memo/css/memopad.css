@@ -1,0 +1,109 @@
+.main-view .main-view-header {
+  align-items: center;
+  background-color: #00bfff;
+  color: #fff;
+  display: flex;
+  height: 5rem;
+  justify-content: space-between;
+  padding: 0 2%;
+  transition: .3s; }
+
+.main-view .notes {
+  flex: 1;
+  padding: 0 5%; }
+
+.main-view .add-note {
+  bottom: 1rem;
+  background-color: #00bfff;
+  border-radius: 50%;
+  height: 3rem;
+  position: absolute;
+  right: 1rem;
+  transition: .3s;
+  width: 3rem; }
+  .main-view .add-note .fa {
+    height: 100%;
+    text-align: center;
+    width: 100%; }
+
+.main-view .add-note:hover {
+  box-shadow: 0 .5rem 1.5rem #999;
+  cursor: pointer; }
+  .main-view .add-note:hover .fa {
+    text-shadow: 0 0 .5rem #fff; }
+
+.main-view .content-view {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  left: 100%;
+  position: absolute;
+  top: 0;
+  transition: .3s;
+  width: 100%;
+  z-index: 2; }
+  .main-view .content-view .content-view-header {
+    align-items: center;
+    background-color: #00bfff;
+    color: #fff;
+    display: flex;
+    height: 5rem;
+    justify-content: space-between;
+    padding: 0 2%;
+    transition: .3s; }
+  .main-view .content-view .content-view-content {
+    background-color: #fff;
+    flex: 1;
+    height: calc(100% - 5rem);
+    padding: 1%; }
+    .main-view .content-view .content-view-content textarea {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid #eee;
+      border-radius: .2rem;
+      display: block;
+      font-size: 1rem;
+      height: 100%;
+      outline: 0;
+      padding: .6rem;
+      resize: none;
+      width: 100%; }
+
+.setting-view .setting-view-header {
+  align-items: center;
+  background-color: #00bfff;
+  color: #fff;
+  display: flex;
+  height: 5rem;
+  justify-content: space-between;
+  padding: 0 2%;
+  transition: .3s; }
+
+.memopad .fa {
+  color: #fff;
+  font-size: 2rem;
+  padding: .5rem; }
+
+@media screen and (max-width: 440px) {
+  .main-view .main-view-header {
+    height: 3rem; }
+    .main-view .main-view-header h1, .main-view .main-view-header .fa {
+      font-size: 1rem; }
+  .main-view .content-view .content-view-header {
+    height: 3rem; }
+    .main-view .content-view .content-view-header h1, .main-view .content-view .content-view-header .fa {
+      font-size: 1rem; }
+  .main-view .content-view .content-view-content {
+    height: calc(100% - 3rem); }
+  .setting-view .setting-view-header {
+    height: 3rem; }
+    .setting-view .setting-view-header h1, .setting-view .setting-view-header .fa {
+      font-size: 1rem; } }
+
+@keyframes fabg {
+  0% {
+    background-color: #00bfff;
+    color: #fff; }
+  100% {
+    background-color: #fff;
+    color: #00bfff; } }

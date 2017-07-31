@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>便笺app</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+  <link rel="stylesheet" type="text/css" href="css/memo.css">
+  <link rel="stylesheet" type="text/css" href="css/memopad.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <main>
+    <div class="memopad">
+      <div class="main-view">
+        <div class="main-view-header">
+          <i class="fa fa-edit"></i>
+          <h1>便笺</h1>
+          <i class="fa fa-gear"></i>
+        </div>
+        <div class="notes"></div>
+        <div class="add-note"><i class="fa fa-plus"></i></div>
+        <div class="content-view">
+          <div class="content-view-header">
+            <i class="fa fa-angle-left nav-btn-back"></i>
+            <h1>详情</h1>
+            <i class="fa fa-trash nav-btn-trash" style="visibility: hidden;"></i>
+          </div>
+          <div class="content-view-content">
+            <textarea></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="setting-view">
+        <div class="setting-view-header">
+          <i class="fa fa-thumbs-up"></i>
+          <h1>设置</h1>
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

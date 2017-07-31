@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 20px;
+}
+main {
+  background-color: #eee;
+  height: 100vh;
+  perspective: 40rem;
+  width: 100vw;
+}
+.memopad {
+  background-color: #fff;
+  box-shadow: 0 0 2rem #666;
+  height: inherit;
+  position: relative;
+  transform-style: preserve-3d;
+  width: inherit;
+}
+.main-view, .setting-view {
+  background-color: #fff;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.main-view {
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+}
+.setting-view {
+  transform: rotateY(180deg) translateZ(1px);
+}
+.rotatememo {
+  animation: rotatepad 1.5s linear forwards;
+}
+@keyframes rotatepad {
+  0% {transform: translateZ(0) rotateY(0);}
+  30% {transform: translateZ(-5rem) rotateY(0);}
+  70% {transform: translateZ(-5rem) rotateY(180deg);}
+  100% {transform: translateZ(0) rotateY(180deg);}
+}
