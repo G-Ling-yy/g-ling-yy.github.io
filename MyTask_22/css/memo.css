@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 20px;
+}
+main {
+  background-color: #eee;
+  height: 100vh;
+  perspective: 30rem;
+  width: 100vw;
+}
+.memopad {
+  background-color: #fff;
+  box-shadow: 0 0 2rem #666;
+  height: inherit;
+  position: relative;
+  transform-style: preserve-3d;
+  width: inherit;
+}
+.main-view, .setting-view {
+  background-color: #fff;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+.setting-view {
+  transform: rotateY(180deg);
+}
+.rotatememomain {
+  animation: rotatemain 1.5s linear forwards;
+}
+.rotatememosetting {
+  animation: rotatesetting 1.5s linear forwards;
+}
+.opacity-05 {
+  animation: opacity05 3s linear;
+}
+.droppull-down {
+  animation: droppull-down .7s linear forwards;
+}
+.droppull-up {
+  animation: droppull-up .7s linear forwards;
+}
+@keyframes rotatemain {
+  0% {transform: translateZ(0) rotateY(0);}
+  50% {transform: translateZ(-20rem) rotateY(-90deg);}
+  90% {transform: translateZ(0) rotateY(-195deg);}
+  100% {transform: translateZ(0) rotateY(-180deg);}
+}
+@keyframes rotatesetting {
+  0% {transform: translateZ(0) rotateY(-180deg);}
+  50% {transform: translateZ(-20rem) rotateY(-90deg);}
+  90% {transform: translateZ(0) rotateY(15deg);}
+  100% {transform: translateZ(0) rotateY(0);}
+}
+@keyframes opacity05 {
+  0% {opacity: 1}
+  30% {opacity: .5}
+  100% {opacity: 1}
+}
+@keyframes droppull-down {
+  0% {top:-100%;}
+  80% {top:7%;}
+  100% {top:0;}
+}
+@keyframes droppull-up {
+  0% {top:0;}
+  20% {top:7%;}
+  100% {top:-100%;}
+}

@@ -1,0 +1,177 @@
+.main-view .main-view-header {
+  align-items: center;
+  background-color: #d1ddef;
+  color: rgba(0, 0, 255, 0.5);
+  display: flex;
+  height: 5rem;
+  justify-content: space-between;
+  padding: 0 2%;
+  transition: .3s; }
+
+.main-view .scrollbar-cover {
+  background: #fff;
+  height: calc(100% - 5rem);
+  opacity: 1;
+  right: 0;
+  position: fixed;
+  top: 5rem; }
+
+.main-view .editbtns {
+  bottom: 0;
+  display: flex;
+  height: 0;
+  position: fixed;
+  transition: .3s;
+  width: 100%; }
+  .main-view .editbtns button {
+    background: linear-gradient(to bottom, #fff, #d1ddef);
+    color: rgba(0, 0, 255, 0.5);
+    flex: 1;
+    outline: 0; }
+  .main-view .editbtns button:active {
+    background: linear-gradient(to bottom, #d1ddef, #fff); }
+
+.main-view .notes {
+  flex: 1;
+  overflow-y: scroll;
+  padding: 0 5%; }
+  .main-view .notes .note {
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    height: 4rem;
+    overflow: hidden; }
+    .main-view .notes .note p {
+      color: #666;
+      font-size: 1.5rem;
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+
+.main-view .add-note {
+  bottom: 1rem;
+  background-color: #d1ddef;
+  border-radius: 50%;
+  height: 3rem;
+  position: absolute;
+  right: 1rem;
+  transition: .3s;
+  text-align: center;
+  width: 3rem; }
+
+.main-view .add-note:hover {
+  box-shadow: 0 .5rem 1.5rem #999;
+  cursor: pointer; }
+  .main-view .add-note:hover .fa {
+    text-shadow: 0 0 .5rem #fff; }
+
+.main-view .content-view {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: -100%;
+  transition: .3s;
+  width: 100%;
+  z-index: 2; }
+  .main-view .content-view .content-view-header {
+    align-items: center;
+    background-color: #d1ddef;
+    color: rgba(0, 0, 255, 0.5);
+    display: flex;
+    height: 5rem;
+    justify-content: space-between;
+    padding: 0 2%;
+    transition: .3s; }
+  .main-view .content-view .content-view-content {
+    background-color: #fff;
+    flex: 1;
+    height: calc(100% - 5rem);
+    padding: 1%; }
+    .main-view .content-view .content-view-content textarea {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid #eee;
+      border-radius: .2rem;
+      display: block;
+      font-size: 1rem;
+      height: 100%;
+      outline: 0;
+      padding: .6rem;
+      resize: none;
+      text-indent: 2rem;
+      width: 100%; }
+
+.setting-view .setting-view-header {
+  align-items: center;
+  background-color: #d1ddef;
+  color: rgba(0, 0, 255, 0.5);
+  display: flex;
+  height: 5rem;
+  min-height: 5rem;
+  justify-content: space-between;
+  padding: 0 2%;
+  transition: .3s; }
+
+.setting-view .setting-content {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+  min-height: 18rem;
+  padding: 1rem 5% 0; }
+  .setting-view .setting-content .setting-content-block {
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex: 1;
+    justify-content: center; }
+    .setting-view .setting-content .setting-content-block p {
+      color: rgba(0, 0, 255, 0.5);
+      font-size: 1.5rem;
+      margin-right: 30%; }
+    .setting-view .setting-content .setting-content-block div div {
+      align-items: center;
+      display: flex; }
+      .setting-view .setting-content .setting-content-block div div input {
+        -webkit-appearance: none;
+        background: #d1ddef;
+        height: .3rem;
+        margin: 0 .3rem;
+        outline: 0; }
+      .setting-view .setting-content .setting-content-block div div input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: #999;
+        border-radius: 50%;
+        height: 1rem;
+        width: 1rem; }
+
+.memopad .fa {
+  color: rgba(0, 0, 255, 0.5);
+  font-size: 2rem;
+  padding: .5rem; }
+
+@media screen and (max-width: 440px) {
+  .main-view .main-view-header {
+    height: 3rem; }
+    .main-view .main-view-header h1, .main-view .main-view-header .fa {
+      font-size: 1rem; }
+  .main-view .notes .note {
+    height: 2.7rem; }
+    .main-view .notes .note p {
+      font-size: .9rem; }
+  .main-view .content-view .content-view-header {
+    height: 3rem; }
+    .main-view .content-view .content-view-header h1, .main-view .content-view .content-view-header .fa {
+      font-size: 1rem; }
+  .main-view .content-view .content-view-content {
+    height: calc(100% - 3rem); }
+  .setting-view .setting-view-header {
+    height: 3rem;
+    min-height: 3rem; }
+    .setting-view .setting-view-header h1, .setting-view .setting-view-header .fa {
+      font-size: 1rem; }
+  .setting-view .setting-content .setting-content-block p {
+    font-size: 1rem;
+    margin-right: 1rem; } }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>便笺app</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+  <link rel="stylesheet" type="text/css" href="css/memo.css">
+  <link rel="stylesheet" type="text/css" href="css/memopad.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <main>
+    <div class="memopad">
+      <div class="main-view">
+        <div class="main-view-header">
+          <i class="fa fa-edit"></i>
+          <h1>便笺</h1>
+          <i class="fa fa-gear"></i>
+        </div>
+        <div class="notes">
+        </div>
+        <div class="scrollbar-cover"></div>
+        <div class="editbtns">
+          <button>全部选择</button><button>删除选中</button>
+        </div>
+        <div class="add-note"><i class="fa fa-plus"></i></div>
+        <div class="content-view">
+          <div class="content-view-header">
+            <i class="fa fa-angle-left nav-btn-back"></i>
+            <h1>详情</h1>
+            <i class="fa fa-trash nav-btn-trash" style="visibility: hidden;"></i>
+          </div>
+          <div class="content-view-content">
+            <textarea></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="setting-view">
+        <div class="setting-view-header">
+          <i class="fa fa-thumbs-up"></i>
+          <h1>设置</h1>
+          <i class="fa fa-bars"></i>
+        </div>
+        <div class="setting-content">
+          <div class="setting-content-block">
+            <p>主题色：</p>
+            <div>
+              <div><span>R:</span><input type="range" min="0" max="255" value="209"><span></span></div>
+              <div><span>G:</span><input type="range" min="0" max="255" value="221"><span></span></div>
+              <div><span>B:</span><input type="range" min="0" max="255" value="239"><span></span></div>
+              <div><span>A:</span><input type="range" min="0" max="1" value="1" step=".1"><span></span></div>
+            </div>
+          </div>
+          <div class="setting-content-block">
+            <p>标题色：</p>
+            <div>
+              <div><span>R:</span><input type="range" min="0" max="255" value="0"><span></span></div>
+              <div><span>G:</span><input type="range" min="0" max="255" value="0"><span></span></div>
+              <div><span>B:</span><input type="range" min="0" max="255" value="255"><span></span></div>
+              <div><span>A:</span><input type="range" min="0" max="1" value=".5" step=".1"><span></span></div>
+            </div>
+          </div>
+          <div class="setting-content-block">
+            <p>字体色：</p>
+            <div>
+              <div><span>R:</span><input type="range" min="0" max="255" value="102"><span></span></div>
+              <div><span>G:</span><input type="range" min="0" max="255" value="102"><span></span></div>
+              <div><span>B:</span><input type="range" min="0" max="255" value="102"><span></span></div>
+              <div><span>A:</span><input type="range" min="0" max="1" value="1" step=".1"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="js/memo.js"></script>
+</body>
+</html>
