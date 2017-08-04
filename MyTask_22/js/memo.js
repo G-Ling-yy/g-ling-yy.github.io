@@ -142,37 +142,45 @@
     edit(){
       var inputs = this.$notes.querySelectorAll('div.note input');
       var btns = this.$mainV.querySelectorAll('div.editbtns button');
+      if (inputs.length === 0) {return;}
       if (!this.$editStage) {
         this.$editStage = true;
         inputs.forEach((item,i) => {item.style.display = 'inline-block';});
         this.$sf.querySelector('div.add-note').hidden = true;
         document.querySelector('div.editbtns').style.height = '2rem'; 
-        btns[0].addEventListener('click',function(){
+        btns[0].removeEventListener('click',btns0);
+        setTimeout(btns[0].addEventListener('click',btns0));
+        btns[1].removeEventListener('click',btns1);
+        setTimeout(btns[1].addEventListener('click',btns1));
+        function btns0(){
           let TFarry = [];
           inputs.forEach((item,i)=>TFarry.push(item.checked));
           let allyes = TFarry.every((item) => item);
-          inputs.forEach((item,i) => {if (!item.checked) item.checked = true;if (allyes) {item.checked = false}});
-        });
-        btns[1].addEventListener('click',function(){
-          let TFarry = [];
-          inputs.forEach((item,i)=>TFarry.push(item.checked));
-          let allno = TFarry.every((item) => !item);
-          if (allno) {alert('请先选择项再删除!');}
+          inputs.forEach((item,i) => {if (!item.checked) item.checked = true;if (allyes) item.checked = false});
+        };
+        function btns1(){
+          let FTarry = [];
+          inputs.forEach((item,i)=>FTarry.push(item.checked));
+          let allno = FTarry.every((item) => !item);
+          if (allno) {return alert('请先选择项再删除!')}
           else if (confirm('确定删除所有选中项？')) {
-            inputs.forEach((item,i) => {if (item.checked) {memoapp.notes.splice(i,1)}});
+            for (let i = inputs.length - 1; i >= 0; i--) {
+              if (inputs[i].checked) {memoapp.notes.splice(i,1);}
+            }
             memoapp.$editStage = false;
-            memoapp.$sf.querySelector('div.add-note').hidden = false;
             document.querySelector('div.editbtns').style.height = '0'; 
+            memoapp.$sf.querySelector('div.add-note').hidden = false;
             inputs.forEach((item,i) => {item.checked = false});
             memoapp.save();
             memoapp.render();
           }
-        });
+        }
       } else {
         this.$editStage = false;
         inputs.forEach((item,i) => {item.style.display = 'none';});
-        this.$sf.querySelector('div.add-note').hidden = false;
         document.querySelector('div.editbtns').style.height = '0'; 
+        this.$sf.querySelector('div.add-note').hidden = false;
+        inputs.forEach((item,i) => {item.checked = false});
       }
     },
     //设置界面的range执行
@@ -226,7 +234,7 @@
       textarea.style.color = this.colors.ftColor;
       ps.forEach((item,i)=>item.style.color = tparry[i]);
       this.notes.forEach((item)=>item.color = memoapp.colors.ftColor);
-      this.save();console.log(this.colors)
+      this.save();
     }
   }
   document.addEventListener('DOMContentLoaded',function(){memoapp.init()});
