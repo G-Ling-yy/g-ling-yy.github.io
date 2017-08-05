@@ -38,6 +38,7 @@
           this.toMain();
           break;
         case t.matches('div.add-note') || t.matches('i.fa-plus'):
+          this.selectedIndex = null;
           this.toContent();
           break;
         case t.matches('i.fa-angle-left'):
@@ -153,12 +154,14 @@
         btns[1].removeEventListener('click',btns1);
         setTimeout(btns[1].addEventListener('click',btns1));
         function btns0(){
+          let inputs = memoapp.$notes.querySelectorAll('div.note input');
           let TFarry = [];
           inputs.forEach((item,i)=>TFarry.push(item.checked));
           let allyes = TFarry.every((item) => item);
           inputs.forEach((item,i) => {if (!item.checked) item.checked = true;if (allyes) item.checked = false});
         };
         function btns1(){
+          let inputs = memoapp.$notes.querySelectorAll('div.note input');
           let FTarry = [];
           inputs.forEach((item,i)=>FTarry.push(item.checked));
           let allno = FTarry.every((item) => !item);
