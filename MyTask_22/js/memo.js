@@ -126,7 +126,8 @@
         this.toContent();
       } else {
         var inputs = this.$notes.querySelectorAll('div.note input');
-        inputs[this.selectedIndex].checked = inputs[this.selectedIndex].checked?false:true;
+        if (e.target.matches('input')) return;
+        inputs[this.selectedIndex].checked = !inputs[this.selectedIndex].checked;
       }
     },
     //美化PC端的滚动条样式
