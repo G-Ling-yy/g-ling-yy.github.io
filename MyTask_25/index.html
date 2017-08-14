@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ajax模拟练习</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+  <script type="text/javascript" src='https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js'></script>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+    }
+    #blocks {
+      flex: .8;
+      overflow-y: scroll;
+      padding: 10px;
+    }
+    .block {
+      border: 1px solid;
+      padding: 10px;
+      margin: 0 0 20px;
+    }
+    p {
+      border-bottom: 1px solid #eee;
+    }
+    #blocks + div {
+      flex: .2;
+      min-width: 88px;
+    }
+    form {
+      padding: 30px 5px;
+    }
+    form div {
+      align-items: center;
+      display: flex;
+      margin: 10px 0;
+      text-align: center;
+    }
+    form div > label {
+      flex-basis: 30%;
+      padding: 0 5px;
+      text-align: right;
+    }
+    .btns {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      padding: 10px 10%;
+    }
+    .btns button {
+      display: block;
+      height: 50px;
+      margin: 0 0 30px;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="blocks"></div>
+  <div>
+    <form action="">
+      <div><label for="_id">id:</label><input type="text" name="_id"></div>
+      <div><label for="title">title:</label><input type="text" name="title"></div>
+      <div><label for="url">url:</label><input type="text" name="url"></div>
+      <div>
+        <label for="type">type:</label>
+        <select name="type" id="type">
+          <option value="news">新闻</option>
+          <option value="work">作品</option>
+          <option value="jobs">工作</option>
+          <option value="joke">笑话</option>
+          <option value="asks">提问</option>
+        </select>
+      </div>
+      <div><label for="text">text:</label><textarea name="text" id="text"></textarea></div>
+    </form>
+    <div class="btns">
+      <button>GET</button>
+      <button>POST</button>
+      <button>PUT</button>
+      <button>DELETE</button>
+      <button>show all</button>
+    </div>
+  </div>
+  <script type="text/javascript">
+    (function(){
+      function updateData() {
+        $.ajax({
+          url: 'https://fe13.now.sh/api/posts',
+          method: 'get',
+          success: function(res){
+            var data = res.data;
+            data.forEach(function(item){
+              document.querySelector('#blocks').innerHTML += `<div class="block"><p>id:${item._id}</p><p>title:${item.title}</p>
+              <p>url:${item.url}</p><p>type:${item.type}</p><p>text:${item.text}</p></div>`;
+            })
+          }
+        })
+      }
+      updateData();
+
+      var btns = document.querySelectorAll('button');
+      var form = document.forms[0];
+
+      btns[0].addEventListener('click',function(){
+        var id = form._id.value.replace(/\s/g,'');
+        if (id == '') {alert('请输入存在的指定id');return;}
+        $.ajax({
+          url:`https://fe13.now.sh/api/posts/${id}`,
+          method: 'get',
+          success: function(res){
+              alert(`id:${res._id}
+              titel:${res.title}
+              url:${res.url}
+              type:${res.type}
+              text:${res.text}`);
+            },
+          error: function(){
+            alert('id输入有误，查无此id数据');
+            form._id.value ='';
+          }
+        });
+      })
+
+      btns[1].addEventListener('click',function(){
+        if (form.title.value == '') {alert('post必须有标题，请输入标题');return}
+        var nowData = $('form').serialize().slice($('form').serialize().indexOf('&')+1);
+        $.ajax({
+          url: 'https://fe13.now.sh/api/posts',
+          method: 'post',
+          data: nowData,
+          success: function(){
+              location.reload();
+            },
+          error: function(){
+              alert($('form').serialize());
+            }
+        });
+      })
+
+      btns[2].addEventListener('click',function(){
+        var id = form._id.value.replace(/\s/g,'');
+        if (id == '') {alert('请输入存在的指定id');return;}
+        var nowData = $('form').serialize().slice($('form').serialize().indexOf('&')+1);
+        $.ajax({
+          url: `https://fe13.now.sh/api/posts/${id}`,
+          method: 'put',
+          data: nowData,
+          success: function(){
+              location.reload();
+            },
+          error: function(){
+              alert($('form').serialize());
+            }
+        })
+      })
+
+      btns[3].addEventListener('click',function(){
+        var id = form._id.value.replace(/\s/g,'');
+        if (id == '') {alert('请输入存在的指定id');return;}
+        if (confirm(`确定删除id为 ${id}的数据么？`)) {
+          $.ajax({
+            url: `https://fe13.now.sh/api/posts/${id}`,
+            method: 'delete',
+            success: function(){
+                location.reload();
+              },
+            error: function(){
+                alert('Error: 删除失败');
+              }
+          })
+        }
+      })
+
+      btns[4].addEventListener('click',function(){
+        if (this.innerHTML === 'show all') {
+          $.ajax({
+            url: 'https://fe13.now.sh/api/posts?pageSize=1000',
+            method: 'get',
+            success: function(res){
+              var data = res.data;
+              document.querySelector('#blocks').innerHTML = '';
+              data.forEach(function(item){
+                document.querySelector('#blocks').innerHTML += `<div class="block"><p>id:${item._id}</p><p>title:${item.title}</p>
+                <p>url:${item.url}</p><p>type:${item.type}</p><p>text:${item.text}</p></div>`;
+              })
+            }
+          });
+          this.innerHTML = 'show little';
+        }else {
+          document.querySelector('#blocks').innerHTML = '';
+          updateData();
+          this.innerHTML = 'show all';
+        }
+      })
+    })()
+  </script>
+</body>
+</html>
