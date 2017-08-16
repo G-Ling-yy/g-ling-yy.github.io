@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>jQuery改写便笺</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      width: 100vw;
+    }
+    iframe {
+      flex: 1;
+    }
+    iframe:first-child {
+      flex: .4;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="notes/index.html" frameborder="0"></iframe>
+  <iframe src="notes/js/app.js" frameborder="0"></iframe>
+</body>
+</html>
