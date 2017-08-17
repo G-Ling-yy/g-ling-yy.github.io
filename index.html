@@ -144,12 +144,12 @@
     <li id="task22"><a href="https://g-ling-yy.github.io/MyTask_22/">22</a></li>
     <li id="task23"><a href="https://g-ling-yy.github.io/MyTask_23/">23</a></li>
     <li id="task24"><a href="https://g-ling-yy.github.io/MyTask_24/">24</a></li>
-    <li id="task25"><a href="https://g-ling-yy.github.io/MyTask_20/">25</a></li>
-    <li id="task26"><a href="https://g-ling-yy.github.io/MyTask_21/">26</a></li>
-    <li id="task27"><a href="https://g-ling-yy.github.io/MyTask_22/">27</a></li>
-    <li id="task28"><a href="https://g-ling-yy.github.io/MyTask_23/">28</a></li>
-    <li id="task29"><a href="https://g-ling-yy.github.io/MyTask_24/">29</a></li>
-    <li id="task30"><a href="https://g-ling-yy.github.io/MyTask_24/">30</a></li>
+    <li id="task25"><a href="https://g-ling-yy.github.io/MyTask_25/">25</a></li>
+    <li id="task26"><a href="https://g-ling-yy.github.io/MyTask_26/">26</a></li>
+    <li id="task27"><a href="https://g-ling-yy.github.io/MyTask_27/">27</a></li>
+    <li id="task28"><a href="https://g-ling-yy.github.io/MyTask_28/">28</a></li>
+    <li id="task29"><a href="https://g-ling-yy.github.io/MyTask_29/">29</a></li>
+    <li id="task30"><a href="https://g-ling-yy.github.io/MyTask_30/">30</a></li>
   </ul>
   <script type="text/javascript">
     (function(){
@@ -173,9 +173,15 @@
         bt.classList.add('backtop');
         document.body.appendChild(bt);
       }
+      function addLi(n){
+        for(var i=1;i<=n;i++){
+          document.querySelector('ul').innerHTML += `<li id="task${30+i}"><a href="https://g-ling-yy.github.io/MyTask_${30+i}/">${30+i}</a></li>`;
+        }
+      }
       inputClick();
       inputEnter();
       backTop();
+      addLi(100);
     })();
   </script>
 </body>
