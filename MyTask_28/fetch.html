@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      font-size: 20px;
+    }
+    body {
+      padding: 1rem 0 0;
+    }
+    h1 {
+      text-align: center;
+    }
+    .userinfo {
+      margin: 1rem auto;
+      padding: 0 5%;
+      width: 90%;
+      min-width: 24.2rem;
+    }
+    .userinfo p {
+      border-bottom: 1px solid #eee;
+      color: #666;
+      line-height: 2rem;
+      text-indent: 2rem;
+    }
+    .userinfo img {
+      display: inline-block;
+      height: auto;
+      width: 40%;
+      min-width: 8.5rem;
+    }
+  </style>
+</head>
+<body style="background: pink">
+  <h1>Fetch~</h1>
+  <div class="userinfo"></div>
+  <script>
+    (function(){
+      fetch('https://api.github.com/users/g-ling-yy')
+      .then(res=>res.json())
+      .then(userdata=>{
+        document.querySelector('.userinfo').innerHTML = `
+        <p>我的ID： ${userdata.id}</p>
+        <p>我的用户名： ${userdata.login}</p>
+        <p>我的昵称： ${userdata.name}</p>
+        <div style="overflow:hidden;">
+        <img src="${userdata.avatar_url}" style="float:left">
+        <div style="float:right;width: 60%;">
+          <p>我在github的类型： ${userdata.type}</p>
+          <p>我的公共库个数： ${userdata.public_repos}</p>
+          <p>我的github地址： ${userdata.html_url}</p>
+          <p>我在github的邮箱： ${userdata.email}</p>
+        </div>
+        </div>
+        <p>我的注册时间： ${userdata.created_at}</p>
+        <p>我的上次更新： ${userdata.updated_at}</p>
+        `
+      });
+    })()
+  </script>
+</body>
+</html>

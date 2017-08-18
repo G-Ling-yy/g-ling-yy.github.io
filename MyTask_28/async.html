@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      font-size: 20px;
+    }
+    body {
+      padding: 1rem 0 0;
+    }
+    h1 {
+      text-align: center;
+    }
+    .userinfo {
+      margin: 1rem auto;
+      padding: 0 5%;
+      width: 90%;
+      min-width: 24.2rem;
+    }
+    .userinfo p {
+      border-bottom: 1px solid #eee;
+      color: #666;
+      line-height: 2rem;
+      text-indent: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Async~</h1>
+  <div class="userinfo"></div>
+  <script>
+    ( async function(){
+      let res = await fetch('https://api.github.com/users/g-ling-yy');
+      let data = await res.json();
+      let reps = await fetch(data.repos_url);
+      let repos = await reps.json();
+      document.querySelector('.userinfo').innerHTML = `
+        <p>我的库个数： ${repos.length}</p>
+        <p>我的第一个库id： ${repos[2].id}</p>
+        <p>我的第一个库昵称： ${repos[2].name}</p>
+        <p>我的第一个库域名： ${repos[2].full_name}</p>
+        <p>我的第一个库url： ${repos[2].html_url}</p>
+        <p>我的第一个库描述： ${repos[2].description}</p>
+        <p>我的第一个库创建时间： ${repos[2].created_at}</p>
+        <br>
+        <p>我的第二个库id： ${repos[1].id}</p>
+        <p>我的第二个库昵称： ${repos[1].name}</p>
+        <p>我的第二个库域名： ${repos[1].full_name}</p>
+        <p>我的第二个库url： ${repos[1].html_url}</p>
+        <p>我的第二个库描述： ${repos[1].description}</p>
+        <p>我的第二个库创建时间： ${repos[1].created_at}</p>
+        <br>
+        <p>我的第三个库id： ${repos[0].id}</p>
+        <p>我的第三个库昵称： ${repos[0].name}</p>
+        <p>我的第三个库域名： ${repos[0].full_name}</p>
+        <p>我的第三个库url： ${repos[0].html_url}</p>
+        <p>我的第三个库描述： ${repos[0].description}</p>
+        <p>我的第三个库创建时间： ${repos[0].created_at}</p>
+      `;
+    })()
+  </script>
+</body>
+</html>
