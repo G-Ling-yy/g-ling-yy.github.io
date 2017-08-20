@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+html {
+  font-size: 20px;
+}
+body {
+  background-color: #f0f8ff;
+}
+h1 {
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center;
+}
+#search-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #eee;
+  border-radius: .3rem;
+  color: #666;
+  display: block;
+  font-size: 1.2rem;
+  height: 2rem;
+  line-height: 2rem;
+  margin: .5rem auto 1rem;
+  outline: 0;
+  text-align: center;
+  width: 80%;
+  min-width: 25rem;
+}
+#search-input:focus {
+  background-color: #fff;
+  border: 1px solid #0f0;
+  color: #000;
+}
+main {
+  display: flex;
+  flex-flow: wrap;
+  margin: .5rem auto 0;
+  padding: .5rem 2.5%;
+  width: 90%;
+}
+.userinfo {
+  display: flex;
+  flex-basis: 40%;
+}
+.otherinfo {
+  flex-basis: 60%;
+  padding: .5rem 1rem;
+}
+.reposinfo {
+  flex-basis: 100%;
+  overflow: hidden;
+  padding: .5rem;
+  transition: .3s;
+}
+.userinfo img {
+  display: block;
+  height: 10rem;
+  width: 10rem;
+}
+.userinfo div {
+  flex: 1;
+  overflow: hidden;
+  padding: .5rem;
+}
+.userinfo div p, .otherinfo p{
+  border-bottom: 1px solid #eee;
+  word-break:break-all;
+  word-wrap: break-word;
+}
+.otherinfo p {
+  align-items: center;
+  display: flex;
+  height: 20%;
+}
+.reposinfo h2 {
+  margin: 0 0 1rem;
+}
+.reposinfo p {
+  align-items: center;
+  display: flex;
+  height: 2rem;
+  overflow: hidden;
+  transition: .3s;
+}
+p.height0 {
+  height: 0;
+}
+.reposinfo p a {
+  color: #0ff;
+  flex: 1;
+  padding: 0 1rem;
+}
+.reposinfo p a:hover {
+  color: #f0f;
+}
+.fa.fa-list:hover {
+  cursor: pointer;
+}
+@media (max-width: 960px) {
+  .userinfo img {
+    height: 7rem;
+    width: 7rem;
+  }
+}
