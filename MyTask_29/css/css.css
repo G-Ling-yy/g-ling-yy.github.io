@@ -92,12 +92,12 @@ p.height0 {
   height: 0;
 }
 .reposinfo p a {
-  color: #0ff;
+  color: #71A93A;
   flex: 1;
   padding: 0 1rem;
 }
 .reposinfo p a:hover {
-  color: #f0f;
+  color: #0f0;
 }
 .fa.fa-list:hover {
   cursor: pointer;
