@@ -60,6 +60,12 @@
   <script type="text/javascript">
     var myKey = 'location_mydata';
     var myData = JSON.parse(localStorage.getItem(myKey)) || [];
+    function render(){
+      myData.forEach(function(item){
+        document.querySelector('ul').innerHTML += `<li>${item}</li>`;
+      });
+    }
+    render();
     window.addEventListener('message',function(e){
       console.log('e: '+e+' e.data: '+e.data);
       document.querySelector('ul').innerHTML += `<li>${e.data}</li>`;
