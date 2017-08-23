@@ -62,7 +62,7 @@
     var myData = JSON.parse(localStorage.getItem(myKey)) || [];
     function render(){
       myData.forEach(function(item){
-        document.querySelector('ul').innerHTML += `<li>${item}</li>`;
+        document.querySelector('ul').innerHTML += `<li>${item.text}</li>`;
       });
     }
     render();
