@@ -54,27 +54,29 @@
 </head>
 <body>
   <main>
-    <ul>
+    <ul><li data-index="0">${item.text}</li>
     </ul>
   </main>
   <script type="text/javascript">
     var myKey = 'location_mydata';
     var myData = JSON.parse(localStorage.getItem(myKey)) || [];
     function render(){
-      myData.forEach(function(item){
-        document.querySelector('ul').innerHTML += `<li>${item.text}</li>`;
+      myData.forEach(function(item,i){
+        document.querySelector('ul').innerHTML += `<li data-index="${i}">${item.text}</li>`;
       });
     }
     render();
     window.addEventListener('message',function(e){
       console.log('e: '+e+' e.data: '+e.data);
-      document.querySelector('ul').innerHTML += `<li>${e.data}</li>`;
       myData.push({text:e.data});
+      document.querySelector('ul').innerHTML += `<li data-index="${myData.length-1}">${e.data}</li>`;
       localStorage.setItem(myKey,JSON.stringify(myData));
     });
     document.querySelector('ul').addEventListener('click',function(e){
-      if (e.target.nodeName === 'LI') {
-        this.removeChild(e.target);
+      var T = e.target;
+      if (T.nodeName === 'LI') {
+        this.removeChild(T);
+        myData.splice(T.dataset.index,1);
         localStorage.setItem(myKey,JSON.stringify(myData));
       }
     })
