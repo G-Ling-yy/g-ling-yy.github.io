@@ -42,7 +42,7 @@
       height: 1.5rem;
       margin: 0 .1rem 0 0;
       overflow: hidden;
-      padding: .2rem;
+      padding: 0 .2rem;
       text-overflow: ellipsis;
       white-space: nowrap;
       max-width: 10rem;
@@ -58,9 +58,13 @@
     </ul>
   </main>
   <script type="text/javascript">
+    var myKey = 'location_mydata';
+    var myData = JSON.parse(localStorage.getItem(myKey)) || [];
     window.addEventListener('message',function(e){
       console.log('e: '+e+' e.data: '+e.data);
       document.querySelector('ul').innerHTML += `<li>${e.data}</li>`;
+      myData.push({text:e.data});
+      localStorage.setItem(myKey,JSON.stringify(myData));
     });
     document.querySelector('ul').addEventListener('click',function(e){
       if (e.target.nodeName === 'LI') {
