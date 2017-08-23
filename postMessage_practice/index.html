@@ -75,6 +75,7 @@
     document.querySelector('ul').addEventListener('click',function(e){
       if (e.target.nodeName === 'LI') {
         this.removeChild(e.target);
+        localStorage.setItem(myKey,JSON.stringify(myData));
       }
     })
   </script>
