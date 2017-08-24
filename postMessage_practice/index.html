@@ -69,7 +69,11 @@
     window.addEventListener('message',function(e){
       console.log('e: '+e+' e.data: '+e.data);
       myData.push({text:e.data});
-      document.querySelector('ul').innerHTML += `<li data-index="${myData.length-1}">${e.data}</li>`;
+      if (myData.length > 0) {
+        document.querySelector('ul').innerHTML += `<li data-index="${myData.length-1}">${e.data}</li>`;
+      }else {
+        document.querySelector('ul').innerHTML += `<li data-index="${myData.length}">${e.data}</li>`;
+      }
       localStorage.setItem(myKey,JSON.stringify(myData));
     });
     document.querySelector('ul').addEventListener('click',function(e){
