@@ -77,9 +77,9 @@
       var T = e.target;
       if (T.nodeName === 'LI') {
         var index = [].indexOf.call(this.children, T);
-        myData.splice(index,1);console.log('mydata:'+myData+'index:'+index);
-        localStorage.setItem(myKey,JSON.stringify(myData));console.log(localStorage.getItem(myKey));
-        this.removeChild(T);console.log(myData);
+        myData.splice(index,1);
+        localStorage.setItem(myKey,JSON.stringify(myData));
+        this.removeChild(T);
       }
     })
   </script>
