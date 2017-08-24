@@ -69,6 +69,7 @@
     window.addEventListener('message',function(e){
       console.log('e: '+e+' e.data: '+e.data);
       myData.push({text:e.data});
+      document.querySelector('ul').innerHTML = '';
       render();
       localStorage.setItem(myKey,JSON.stringify(myData));
     });
