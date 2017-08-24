@@ -76,7 +76,7 @@
       var T = e.target;
       if (T.nodeName === 'LI') {
         this.removeChild(T);console.log(myData);
-        myData.splice(T.dataset.index,1);console.log(myData);
+        myData.splice(T.dataset.index,1);console.log('mydata:'+myData+'index:'+T.dataset.index);
         localStorage.setItem(myKey,JSON.stringify(myData));console.log(localStorage.getItem(myKey));
       }
     })
