@@ -76,10 +76,10 @@
     document.querySelector('ul').addEventListener('click',function(e){
       var T = e.target;
       if (T.nodeName === 'LI') {
-        this.removeChild(T);console.log(myData);
         var index = [].indexOf.call(this.children, T);
         myData.splice(index,1);console.log('mydata:'+myData+'index:'+index);
         localStorage.setItem(myKey,JSON.stringify(myData));console.log(localStorage.getItem(myKey));
+        this.removeChild(T);console.log(myData);
       }
     })
   </script>
