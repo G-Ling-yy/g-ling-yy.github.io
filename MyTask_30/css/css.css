@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+html {
+  font-size: 20px;
+}
+body {
+  background-color: #f0f8ff;
+  display: flex;
+  flex-flow: wrap;
+  height: 100vh;
+  overflow: hidden;
+}
+iframe {
+  flex: 1 100%;
+  height: 60vh;
+}
+#mytextarea {
+  color: #00f;
+  flex: 1 100%;
+  font-size: 2rem;
+  font-weight: bold;
+  height: 40vh;
+  padding: 5% 10%;
+}
