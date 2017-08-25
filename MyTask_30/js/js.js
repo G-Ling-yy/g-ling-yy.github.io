@@ -4,7 +4,7 @@
 
   myt.focus();
 
-  myt.addEventListener('keyup',function(e){
+  myt.addEventListener('keydown',function(e){
     if (this.value.length === 0) return;
     if (e.ctrlKey && e.keyCode === 13) {
       var data = this.value.trim();
