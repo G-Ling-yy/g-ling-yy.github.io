@@ -30,22 +30,32 @@
       display: flex;
       flex-flow: wrap;
       height: 100%;
-      overflow: hidden;
+      list-style: none;
+      overflow-y: scroll;
       padding: .5rem;
       width: 100%;
     }
     ul li {
-      background-color: #f0f; 
+      display: flex;
+      padding: 1.5rem .2rem;
+      width: 100%;
+    }
+    ul li > p {
+      background-color: #00f; 
       border: .1rem solid #0ff;
-      color: #00f;
-      display: block;
-      height: 1.5rem;
-      margin: 0 .1rem 0 0;
-      overflow: hidden;
+      border-radius: .3rem;
+      color: #f0f;
       padding: 0 .2rem;
       text-overflow: ellipsis;
       white-space: nowrap;
-      max-width: 10rem;
+      max-width: 25rem;
+    }
+    ul li.textright {
+      justify-content: flex-end;
+    }
+    ul li.textright > p {
+      background-color: #f0f;
+      color: #00f;
     }
     ul li:hover {
       cursor: pointer;
@@ -60,26 +70,42 @@
   <script type="text/javascript">
     var myKey = 'location_mydata';
     var myData = JSON.parse(localStorage.getItem(myKey)) || [];
+    
     function render(){
       myData.forEach(function(item,i){
-        document.querySelector('ul').innerHTML += `<li>${item.text}</li>`;
+        if (item.type === 'NPC') {
+          document.querySelector('ul').innerHTML += `<li><p>${item.text}</p></li>`;
+        }else {
+          document.querySelector('ul').innerHTML += `<li class="textright"><p>${item.text}</p></li>`;
+        }
       });
     }
     render();
-    window.addEventListener('message',function(e){
-      console.log('e: '+e+' e.data: '+e.data);
-      myData.push({text:e.data});
+
+    function replay(){
+      var replay = `我是编号为${Math.floor(Math.random()*1000)}的随机智能回应~`;
+      myData.push({text:replay, type:'NPC'});
       document.querySelector('ul').innerHTML = '';
       render();
       localStorage.setItem(myKey,JSON.stringify(myData));
+    };
+
+    window.addEventListener('message',function(e){
+      console.log('e: '+e+' e.data: '+e.data);
+      myData.push({text:e.data, type:'PC'});
+      document.querySelector('ul').innerHTML = '';
+      render();
+      localStorage.setItem(myKey,JSON.stringify(myData));
+      replay();
     });
+
     document.querySelector('ul').addEventListener('click',function(e){
       var T = e.target;
-      if (T.nodeName === 'LI') {
-        var index = [].indexOf.call(this.children, T);
+      if (T.nodeName === 'P') {
+        var index = [].indexOf.call(this.children, T.parentElement);
         myData.splice(index,1);
         localStorage.setItem(myKey,JSON.stringify(myData));
-        this.removeChild(T);
+        this.removeChild(T.parentElement);
       }
     })
   </script>
