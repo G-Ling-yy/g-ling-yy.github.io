@@ -68,17 +68,25 @@
   <script type="text/javascript">
     var myKey = 'location_mydata';
     var myData = JSON.parse(localStorage.getItem(myKey)) || [];
+    var myUl = document.querySelector('ul');
 
     function render(){
       myData.forEach(function(item,i){
         if (item.type === 'NPC') {
-          document.querySelector('ul').innerHTML += `<li><p>${item.text}</p></li>`;
+          myUl.innerHTML += `<li><p>${item.text}</p></li>`;
         }else {
-          document.querySelector('ul').innerHTML += `<li class="textright"><p>${item.text}</p></li>`;
+          myUl.innerHTML += `<li class="textright"><p>${item.text}</p></li>`;
         }
       });
+      following();
     }
     render();
+
+    function following(){
+      if (myUl.scrollHeight > myUl.clientHeight) {
+        myUl.scrollTop = myUl.scrollHeight - myUl.clientHeight;
+      }
+    }
 
     function replay(){
       var replay = `我是编号为${Math.floor(Math.random()*1000)}的随机智能回应~`;
@@ -91,13 +99,13 @@
     window.addEventListener('message',function(e){
       console.log('e: '+e+' e.data: '+e.data);
       myData.push({text:e.data, type:'PC'});
-      document.querySelector('ul').innerHTML = '';
+      myUl.innerHTML = '';
       render();
       localStorage.setItem(myKey,JSON.stringify(myData));
       replay();
     });
 
-    document.querySelector('ul').addEventListener('click',function(e){
+    myUl.addEventListener('click',function(e){
       var T = e.target;
       if (T.nodeName === 'P') {
         var index = [].indexOf.call(this.children, T.parentElement);
