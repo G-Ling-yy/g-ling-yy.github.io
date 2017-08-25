@@ -27,8 +27,6 @@
       width: 100%;
     }
     ul {
-      display: flex;
-      flex-flow: wrap;
       height: 100%;
       list-style: none;
       overflow-y: scroll;
@@ -70,7 +68,7 @@
   <script type="text/javascript">
     var myKey = 'location_mydata';
     var myData = JSON.parse(localStorage.getItem(myKey)) || [];
-    
+
     function render(){
       myData.forEach(function(item,i){
         if (item.type === 'NPC') {
