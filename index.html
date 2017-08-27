@@ -154,6 +154,7 @@
   <script type="text/javascript">
     (function(){
       var count = document.querySelector('label input');
+      count.focus();
       function inputClick(){
         count.addEventListener('click',function(){
           this.value = (Number(this.value) + 1);
