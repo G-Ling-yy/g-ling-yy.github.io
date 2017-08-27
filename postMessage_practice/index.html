@@ -111,9 +111,9 @@
       console.log('e: '+e+' e.data: '+e.data);
       myData.push({text:e.data, type:'PC'});
       myUl.innerHTML = '';
-      render(e.data);
+      render();
       localStorage.setItem(myKey,JSON.stringify(myData));
-      replay();
+      replay(e.data);
     });
 
     myUl.addEventListener('click',function(e){
