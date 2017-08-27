@@ -65,10 +65,15 @@
     <ul>
     </ul>
   </main>
+  <script type="text/javascript" src="replays.js"></script>
   <script type="text/javascript">
     var myKey = 'location_mydata';
     var myData = JSON.parse(localStorage.getItem(myKey)) || [];
     var myUl = document.querySelector('ul');
+    var replayarry = [];
+    for (item in replays) {
+        replayarry.push(item);
+      }
 
     function render(){
       myData.forEach(function(item,i){
@@ -88,8 +93,14 @@
       }
     }
 
-    function replay(){
-      var replay = `我是编号为${Math.floor(Math.random()*1000)}的随机智能回应~`;
+    function replay(data){
+      var  value = data.toLowerCase();
+      var replay = '';
+      if (replayarry.some(item=>{if(item===value)return true})) {
+        replay = `${replays[value][Math.floor(Math.random()*(replays[value].length))]}`;
+      }else {
+        replay = `${replays["__don'tKnow"][Math.floor(Math.random()*(replays["__don'tKnow"].length))]}`;
+      }
       myData.push({text:replay, type:'NPC'});
       document.querySelector('ul').innerHTML = '';
       render();
@@ -100,7 +111,7 @@
       console.log('e: '+e+' e.data: '+e.data);
       myData.push({text:e.data, type:'PC'});
       myUl.innerHTML = '';
-      render();
+      render(e.data);
       localStorage.setItem(myKey,JSON.stringify(myData));
       replay();
     });
