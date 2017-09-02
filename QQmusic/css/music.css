@@ -1,0 +1,226 @@
+header {
+  align-items: center;
+  background-color: #31c27c;
+  display: flex;
+  height: 44px;
+  justify-content: space-between;
+  width: 100%; }
+  header .logo {
+    height: 25px;
+    margin-left: 10px;
+    width: 90px; }
+  header a {
+    background-color: #149c5a;
+    border-radius: 99px;
+    color: #fff;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 10px;
+    text-align: center;
+    width: 79px; }
+
+nav {
+  height: 40px;
+  display: flex;
+  width: 100%; }
+  nav a {
+    color: rgba(0, 0, 0, 0.6);
+    display: block;
+    flex: 1;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center; }
+  nav .current {
+    color: #31c27c;
+    position: relative; }
+  nav .current::after {
+    background-color: #31c27c;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0; }
+
+section.section-recom {
+  background-color: #f4f4f4; }
+  section.section-recom .slider {
+    height: 288px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 14px; }
+    section.section-recom .slider .recom-banner {
+      background-color: #f4f4f4;
+      left: 0;
+      position: absolute;
+      transition: .5s;
+      top: 0;
+      width: inherit; }
+      section.section-recom .slider .recom-banner a {
+        display: flex;
+        justify-content: center;
+        width: inherit; }
+        section.section-recom .slider .recom-banner a img {
+          display: block; }
+  section.section-recom .div-radio {
+    padding: 0 10px 7px;
+    width: 100%; }
+    section.section-recom .div-radio h2 {
+      color: #000;
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0 0 11px; }
+    section.section-recom .div-radio .tworadios {
+      display: flex;
+      justify-content: space-between;
+      width: 100%; }
+      section.section-recom .div-radio .tworadios a {
+        display: block;
+        width: calc((100% - 8px) * .5); }
+        section.section-recom .div-radio .tworadios a > div {
+          position: relative; }
+        section.section-recom .div-radio .tworadios a img {
+          display: block;
+          width: 100%; }
+        section.section-recom .div-radio .tworadios a > div::after {
+          background: url(../images/list_sprite.png) no-repeat;
+          background-size: 24px 60px;
+          bottom: 5px;
+          content: '';
+          display: block;
+          height: 24px;
+          position: absolute;
+          right: 5px;
+          width: 24px; }
+        section.section-recom .div-radio .tworadios a p {
+          background-color: #fff;
+          color: #000;
+          font-size: 14px;
+          height: 46px;
+          line-height: 18px;
+          overflow: hidden;
+          padding: 5px 7px 5px;
+          text-overflow: ellipsis;
+          white-space: normal;
+          word-wrap: break-word; }
+  section.section-recom .hot-songslist {
+    margin: 13px 0 0;
+    padding: 0 10px;
+    width: 100%; }
+    section.section-recom .hot-songslist h2 {
+      color: #000;
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0 0 11px; }
+    section.section-recom .hot-songslist p {
+      height: 40px;
+      text-align: center; }
+      section.section-recom .hot-songslist p a {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 14px;
+        line-height: 40px; }
+  section.section-recom .recom-footer {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    margin: 0 0 12px;
+    padding: 15px 0; }
+    section.section-recom .recom-footer a {
+      color: #000;
+      display: block;
+      font-size: 14px; }
+    section.section-recom .recom-footer div {
+      background: url(../images/logo_footer.png) no-repeat;
+      background-size: cover;
+      display: block;
+      height: 24px;
+      margin: 16px auto 10px;
+      text-indent: -9999px;
+      width: 82px; }
+    section.section-recom .recom-footer .copyright {
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 10px;
+      text-align: center; }
+
+@media (max-width: 720px) {
+  section.section-recom .slider {
+    height: 40vw; }
+    section.section-recom .slider .recom-banner a img {
+      height: 40vw;
+      width: 100%; } }
+
+section.section-toplist {
+  background-color: #f4f4f4;
+  padding: 10px; }
+  section.section-toplist ul {
+    width: 100%; }
+    section.section-toplist ul li {
+      background: #fff;
+      display: flex;
+      height: 100px;
+      margin: 0 0 10px;
+      width: 100%; }
+      section.section-toplist ul li a {
+        display: block;
+        height: 100px;
+        position: relative;
+        width: 100px;
+        min-width: 100px; }
+        section.section-toplist ul li a img {
+          display: block;
+          height: 100%;
+          width: 100%; }
+        section.section-toplist ul li a p {
+          bottom: 7px;
+          color: #fff;
+          font-size: 9px;
+          line-height: 12px;
+          left: 5px;
+          opacity: .6;
+          overflow: hidden;
+          position: absolute; }
+          section.section-toplist ul li a p span {
+            background: url(../images/list_sprite.png) no-repeat;
+            background-position: 0 -50px;
+            background-size: 24px 60px;
+            color: transparent;
+            display: block;
+            float: left;
+            height: 10px;
+            width: 10px; }
+      section.section-toplist ul li div {
+        align-content: center;
+        display: flex;
+        flex: 1;
+        flex-flow: wrap;
+        overflow: hidden;
+        padding: 0 10px 0 15px;
+        position: relative; }
+        section.section-toplist ul li div * {
+          width: 100%; }
+        section.section-toplist ul li div h3 {
+          color: #000;
+          font-size: 16px;
+          font-weight: normal;
+          margin-bottom: 5px; }
+        section.section-toplist ul li div p {
+          color: rgba(0, 0, 0, 0.5);
+          font-size: 14px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+          section.section-toplist ul li div p span {
+            color: #000;
+            margin: 0 5px 0 8px; }
+        section.section-toplist ul li div i {
+          border: solid #b2b2b2;
+          border-width: 0 1px 1px 0;
+          display: block;
+          height: 7px;
+          position: absolute;
+          right: 10px;
+          top: 47px;
+          transform: rotate(-45deg);
+          width: 7px; }

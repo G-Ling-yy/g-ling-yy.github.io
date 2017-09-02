@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+main {
+  overflow: hidden;
+  width: 100%;
+}
+main .sections {
+  display: flex; 
+  transition: .3s;
+  width: 300vw;
+}
+main .sections section {
+  width: 100vw;
+}

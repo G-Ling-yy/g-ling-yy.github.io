@@ -1,0 +1,27 @@
+nav {
+  height: 40px;
+  display: flex;
+  width: 100%;
+  a {
+    color: rgba(0,0,0,.6);
+    display: block;
+    flex: 1;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .current {
+    color: $skin-color;
+    position: relative;
+  }
+  .current::after {
+    background-color: $skin-color;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left:0;
+    position: absolute;
+    right:0;
+  }
+}

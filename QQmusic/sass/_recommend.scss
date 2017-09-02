@@ -1,0 +1,140 @@
+section.section-recom {
+  background-color: $baseboard;
+  .slider {
+    height: 288px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 14px;
+    .recom-banner {
+      background-color: $baseboard;
+      left: 0;
+      position: absolute;
+      transition: .5s;
+      top: 0;
+      width: inherit;
+      a {
+        display: flex;
+        justify-content: center;
+        width: inherit;
+        img {
+          display: block;
+        }
+      }
+    }
+  }
+  .div-radio {
+    padding: 0 10px 7px;
+    width: 100%;
+    h2 {
+      color: #000;
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0 0 11px;
+    }
+    .tworadios {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      a {
+        display: block;
+        width: calc((100% - 8px) * .5);
+        > div {
+          position: relative;
+        }
+        img {
+          display: block;
+          width: 100%;
+        }
+        > div::after {
+          background: url(../images/list_sprite.png) no-repeat;
+          background-size: 24px 60px;
+          bottom: 5px;
+          content: '';
+          display: block;
+          height: 24px;
+          position: absolute;
+          right: 5px;
+          width: 24px;
+        }
+        p {
+          background-color: #fff;
+          color: #000;
+          font-size: 14px;
+          height: 46px;
+          line-height: 18px;
+          overflow: hidden;
+          padding: 5px 7px 5px;
+          text-overflow: ellipsis;
+          white-space: normal;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .hot-songslist {
+    margin: 13px 0 0;
+    padding: 0 10px;
+    width: 100%;
+    h2 {
+      color: #000;
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0 0 11px;
+    }
+    .songslist-ul{
+
+
+    }
+    p {
+      height: 40px;
+      text-align: center;
+      a {
+        color: rgba(0,0,0,.6);
+        font-size: 14px;
+        line-height: 40px;
+      }
+    }
+  }
+  .recom-footer {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    margin: 0 0 12px;
+    padding: 15px 0;
+    a {
+      color: #000;
+      display: block;
+      font-size: 14px;
+    }
+    div {
+      background: url(../images/logo_footer.png) no-repeat;
+      background-size: cover;
+      display: block;
+      height: 24px;
+      margin: 16px auto 10px;
+      text-indent: -9999px;
+      width: 82px;
+    }
+    .copyright {
+      color: rgba(0,0,0,.5);
+      font-size: 10px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  section.section-recom {
+    .slider {
+      height: 40vw;
+      .recom-banner {
+        a {
+          img {
+            height: 40vw;
+            width: 100%;
+          }
+        }
+      }
+    }
+  } 
+}

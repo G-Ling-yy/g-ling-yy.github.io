@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>QQ音乐 - 中国最新最全免费正版高品质音乐平台！</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type=”image/x-icon”/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/css.css">
+  <link rel="stylesheet" type="text/css" href="css/music.css">
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" class="logo">
+    <a href="javascript:;" class="btn_download">下载APP</a>
+  </header>
+  <nav>
+    <a href="javascript:;" data-nav="recom" class="current">推荐</a>
+    <a href="javascript:;" data-nav="toplist">排行榜</a>
+    <a href="javascript:;" data-nav="search">搜索</a>
+  </nav>
+  <main>
+    <div class="sections" style="transform: translateX(-100vw)">
+      <section class="section-recom">
+        <div class="slider">
+        </div>
+        <div class="div-radio">
+          <h2>电台</h2>
+        </div>
+        <div class="hot-songslist">
+          <h2>热门歌单</h2>
+          <ul class="songslist-ul"></ul>
+          <p><a href="javascript:;">去客户端发现更多好音乐 ></a></p>
+        </div>
+        <div class="recom-footer">
+          <a data-tjname="go_pc" href="http://y.qq.com/?ADTAG=myqq&amp;nomobile=1#type=index">查看电脑版网页</a>
+          <div class="footer_logo">QQ音乐</div>
+          <p class="copyright">Copyright © 1998 - <span id="js_cpright_year">2017</span> Tencent. All Rights Reserved.</p>
+        </div>
+      </section>
+      <section class="section-toplist">
+        <ul>
+        </ul>
+      </section>
+      <section class="section-search"></section>
+    </div>
+  </main>
+  <script type="text/javascript" src='https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js'></script>
+  <script type="text/javascript" src='json/slider.json'></script>
+  <script type="text/javascript" src='json/toplist.json'></script>
+  <script type="text/javascript" src='js/slider.js'></script>
+  <script type="text/javascript" src='js/toplist.js'></script>
+  <script type="text/javascript" src='js/js.js'></script>
+</body>
+</html>

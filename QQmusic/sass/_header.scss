@@ -1,0 +1,24 @@
+header {
+  align-items: center;
+  background-color: $skin-color;
+  display:flex;
+  height: 44px;
+  justify-content: space-between;
+  width:100%;
+  .logo {
+    height: 25px;
+    margin-left: 10px;
+    width: 90px;
+  }
+  a {
+    background-color: $download-btn-color;
+    border-radius: 99px;
+    color: #fff;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 10px;
+    text-align: center;
+    width: 79px;
+  }
+}
