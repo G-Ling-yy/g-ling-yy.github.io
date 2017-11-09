@@ -1,4 +1,4 @@
-section.section-recom {
+section#section-recom {
   background-color: $baseboard;
   .slider {
     height: 288px;
@@ -18,6 +18,8 @@ section.section-recom {
         width: inherit;
         img {
           display: block;
+          height: 288px;
+          width: 720px;
         }
       }
     }
@@ -38,14 +40,25 @@ section.section-recom {
       a {
         display: block;
         width: calc((100% - 8px) * .5);
-        > div {
+        div {
+          overflow: hidden;
           position: relative;
-        }
-        img {
-          display: block;
           width: 100%;
+          img {
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
         }
-        > div::after {
+        div::before {
+          content: '';
+          display: block;
+          margin-top: 100%;
+        }
+        div::after {
           background: url(../images/list_sprite.png) no-repeat;
           background-size: 24px 60px;
           bottom: 5px;
@@ -124,7 +137,7 @@ section.section-recom {
 }
 
 @media (max-width: 720px) {
-  section.section-recom {
+  section#section-recom {
     .slider {
       height: 40vw;
       .recom-banner {

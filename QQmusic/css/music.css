@@ -44,47 +44,59 @@ nav {
     position: absolute;
     right: 0; }
 
-section.section-recom {
+section#section-recom {
   background-color: #f4f4f4; }
-  section.section-recom .slider {
+  section#section-recom .slider {
     height: 288px;
     position: relative;
     width: 100%;
     margin-bottom: 14px; }
-    section.section-recom .slider .recom-banner {
+    section#section-recom .slider .recom-banner {
       background-color: #f4f4f4;
       left: 0;
       position: absolute;
       transition: .5s;
       top: 0;
       width: inherit; }
-      section.section-recom .slider .recom-banner a {
+      section#section-recom .slider .recom-banner a {
         display: flex;
         justify-content: center;
         width: inherit; }
-        section.section-recom .slider .recom-banner a img {
-          display: block; }
-  section.section-recom .div-radio {
+        section#section-recom .slider .recom-banner a img {
+          display: block;
+          height: 288px;
+          width: 720px; }
+  section#section-recom .div-radio {
     padding: 0 10px 7px;
     width: 100%; }
-    section.section-recom .div-radio h2 {
+    section#section-recom .div-radio h2 {
       color: #000;
       font-size: 16px;
       font-weight: normal;
       margin: 0 0 11px; }
-    section.section-recom .div-radio .tworadios {
+    section#section-recom .div-radio .tworadios {
       display: flex;
       justify-content: space-between;
       width: 100%; }
-      section.section-recom .div-radio .tworadios a {
+      section#section-recom .div-radio .tworadios a {
         display: block;
         width: calc((100% - 8px) * .5); }
-        section.section-recom .div-radio .tworadios a > div {
-          position: relative; }
-        section.section-recom .div-radio .tworadios a img {
-          display: block;
+        section#section-recom .div-radio .tworadios a div {
+          overflow: hidden;
+          position: relative;
           width: 100%; }
-        section.section-recom .div-radio .tworadios a > div::after {
+          section#section-recom .div-radio .tworadios a div img {
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%; }
+        section#section-recom .div-radio .tworadios a div::before {
+          content: '';
+          display: block;
+          margin-top: 100%; }
+        section#section-recom .div-radio .tworadios a div::after {
           background: url(../images/list_sprite.png) no-repeat;
           background-size: 24px 60px;
           bottom: 5px;
@@ -94,7 +106,7 @@ section.section-recom {
           position: absolute;
           right: 5px;
           width: 24px; }
-        section.section-recom .div-radio .tworadios a p {
+        section#section-recom .div-radio .tworadios a p {
           background-color: #fff;
           color: #000;
           font-size: 14px;
@@ -105,33 +117,33 @@ section.section-recom {
           text-overflow: ellipsis;
           white-space: normal;
           word-wrap: break-word; }
-  section.section-recom .hot-songslist {
+  section#section-recom .hot-songslist {
     margin: 13px 0 0;
     padding: 0 10px;
     width: 100%; }
-    section.section-recom .hot-songslist h2 {
+    section#section-recom .hot-songslist h2 {
       color: #000;
       font-size: 16px;
       font-weight: normal;
       margin: 0 0 11px; }
-    section.section-recom .hot-songslist p {
+    section#section-recom .hot-songslist p {
       height: 40px;
       text-align: center; }
-      section.section-recom .hot-songslist p a {
+      section#section-recom .hot-songslist p a {
         color: rgba(0, 0, 0, 0.6);
         font-size: 14px;
         line-height: 40px; }
-  section.section-recom .recom-footer {
+  section#section-recom .recom-footer {
     align-items: center;
     display: flex;
     flex-flow: column;
     margin: 0 0 12px;
     padding: 15px 0; }
-    section.section-recom .recom-footer a {
+    section#section-recom .recom-footer a {
       color: #000;
       display: block;
       font-size: 14px; }
-    section.section-recom .recom-footer div {
+    section#section-recom .recom-footer div {
       background: url(../images/logo_footer.png) no-repeat;
       background-size: cover;
       display: block;
@@ -139,40 +151,40 @@ section.section-recom {
       margin: 16px auto 10px;
       text-indent: -9999px;
       width: 82px; }
-    section.section-recom .recom-footer .copyright {
+    section#section-recom .recom-footer .copyright {
       color: rgba(0, 0, 0, 0.5);
       font-size: 10px;
       text-align: center; }
 
 @media (max-width: 720px) {
-  section.section-recom .slider {
+  section#section-recom .slider {
     height: 40vw; }
-    section.section-recom .slider .recom-banner a img {
+    section#section-recom .slider .recom-banner a img {
       height: 40vw;
       width: 100%; } }
 
-section.section-toplist {
+section#section-toplist {
   background-color: #f4f4f4;
   padding: 10px; }
-  section.section-toplist ul {
+  section#section-toplist ul {
     width: 100%; }
-    section.section-toplist ul li {
+    section#section-toplist ul li {
       background: #fff;
       display: flex;
       height: 100px;
       margin: 0 0 10px;
       width: 100%; }
-      section.section-toplist ul li a {
+      section#section-toplist ul li a {
         display: block;
         height: 100px;
         position: relative;
         width: 100px;
         min-width: 100px; }
-        section.section-toplist ul li a img {
+        section#section-toplist ul li a img {
           display: block;
           height: 100%;
           width: 100%; }
-        section.section-toplist ul li a p {
+        section#section-toplist ul li a p {
           bottom: 7px;
           color: #fff;
           font-size: 9px;
@@ -181,7 +193,7 @@ section.section-toplist {
           opacity: .6;
           overflow: hidden;
           position: absolute; }
-          section.section-toplist ul li a p span {
+          section#section-toplist ul li a p span {
             background: url(../images/list_sprite.png) no-repeat;
             background-position: 0 -50px;
             background-size: 24px 60px;
@@ -190,7 +202,7 @@ section.section-toplist {
             float: left;
             height: 10px;
             width: 10px; }
-      section.section-toplist ul li div {
+      section#section-toplist ul li div {
         align-content: center;
         display: flex;
         flex: 1;
@@ -198,23 +210,23 @@ section.section-toplist {
         overflow: hidden;
         padding: 0 10px 0 15px;
         position: relative; }
-        section.section-toplist ul li div * {
+        section#section-toplist ul li div * {
           width: 100%; }
-        section.section-toplist ul li div h3 {
+        section#section-toplist ul li div h3 {
           color: #000;
           font-size: 16px;
           font-weight: normal;
           margin-bottom: 5px; }
-        section.section-toplist ul li div p {
+        section#section-toplist ul li div p {
           color: rgba(0, 0, 0, 0.5);
           font-size: 14px;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap; }
-          section.section-toplist ul li div p span {
+          section#section-toplist ul li div p span {
             color: #000;
             margin: 0 5px 0 8px; }
-        section.section-toplist ul li div i {
+        section#section-toplist ul li div i {
           border: solid #b2b2b2;
           border-width: 0 1px 1px 0;
           display: block;
@@ -224,3 +236,421 @@ section.section-toplist {
           top: 47px;
           transform: rotate(-45deg);
           width: 7px; }
+  section#section-toplist .topic-more {
+    height: 40px;
+    line-height: 40px;
+    text-align: center; }
+    section#section-toplist .topic-more a {
+      color: rgba(0, 0, 0, 0.6);
+      display: inline-block;
+      font-size: 14px;
+      padding: 0 10px; }
+
+section#section-search .search-bar {
+  background-color: #f4f4f4;
+  display: flex;
+  padding: 10px;
+  width: 100%; }
+  section#section-search .search-bar .input-wrap {
+    background-color: #fff;
+    border-radius: 3px;
+    flex: 1;
+    padding: 8px 12px 8px 35px;
+    position: relative; }
+    section#section-search .search-bar .input-wrap #search-input {
+      -webkit-appearance: none;
+      border: none;
+      color: rgba(0, 0, 0, 0.3);
+      display: block;
+      font-size: 14px;
+      height: 20px;
+      line-height: 20px;
+      outline: none;
+      width: 100%; }
+    section#section-search .search-bar .input-wrap #search-input::placeholder {
+      color: rgba(0, 0, 0, 0.3); }
+    section#section-search .search-bar .input-wrap .icon-search {
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJlSURBVFhH7ZfRShRRHMb3Jkqzm7wJSrqIIDBxX6C0a62H6C7oqq4ixYreQMmMHkXbjLQeIYgyQuqiyIuotKDt923fyLCszv/MzF5EDnzs2T3/7zffOXNm5myjcXDUOAOtVquJ7qOn6AP6ZamtQ33NGk/ZG8VJJtEaagf1XJ7agwEdRI9zIT7RnkdT6Iz7VaO2flPf51z9I9oDtQQDNIxeGv6Nz9voaBFcNa79bu8LsYp8+/Z75FmYN3w/nwqUB204lFiDqYzd+txlek37RFkQ3pNIjDZaKsXBeMkATfloKUjOBGMMifUbXUzmYVp3oFvJ5j0M8GbNXEtiYtJzRtOru6lwAUfhsIZQdveNR30NTPccaD5sChbCXTD7btDSUCAdmqGpsClYCHPa7CdBSyeQXgEKNBI2BQthnjX7Y9DSCfTTpkNhU7AQ7jGzd4KWvgc67EDbKYH6eclOO9BmSqBsUU+HTcFCwJcdaCVo6Vyy7LZfCJuChbAfONCdoKUTKHsw6iE2FDYWFIqFthxoLImLSZsr3fqzScZ9isUyczWZiXEC6UWoF2LaaHqcDcY4+mHmheRAMmBe8oje8nmqFOQvZwS9N2uxLEcgbUuzDdpGmZnyzLxzGG3yqm1lARxH2VZEUz6DChc6NXoia83I087pRukZyozAjqCHvv6Cf0GL6Ao655MrgNr6TX1bDqF1qO/Xcv7qobymJoA+6xpxfvTd7VVqdxcw7au1h3IwbUfn0DJ6hb6ibbSJVtzX8w9B30JVWQf/QqibVQZYm7drpg5C7TmzuZnSI6JZ2yWoAnKo61UY/5f3Dy7dC4CdAEhQAAAAAElFTkSuQmCC);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 18px;
+      left: 10px;
+      position: absolute;
+      text-indent: -9999px;
+      top: 9px;
+      width: 18px; }
+    section#section-search .search-bar .input-wrap svg {
+      display: none;
+      height: 18px;
+      position: absolute;
+      right: 12px;
+      top: 9px;
+      width: 18px;
+      transform: rotate(45deg); }
+  section#section-search .search-bar #cancel-btn {
+    color: #555;
+    display: none;
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 10px; }
+
+section#section-search #hot-key {
+  background: #fff;
+  padding: 15px 15px 10px 15px; }
+  section#section-search #hot-key h3 {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14.04px;
+    line-height: 21.06px;
+    margin-bottom: 8px; }
+  section#section-search #hot-key .result-tags {
+    font-size: 0; }
+    section#section-search #hot-key .result-tags a {
+      border: 1px solid rgba(0, 0, 0, 0.6);
+      border-radius: 99px;
+      color: #000;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 30px;
+      margin: 0 14px 10px 0;
+      padding: 0 10px; }
+    section#section-search #hot-key .result-tags a.tag-hot {
+      border-color: #fc4524;
+      color: #fc4524; }
+
+section#section-search .history-records {
+  color: #555;
+  width: 100%; }
+  section#section-search .history-records ul {
+    width: 100%; }
+    section#section-search .history-records ul li {
+      border-top: 1px solid #ededed;
+      padding: 0 15px; }
+      section#section-search .history-records ul li a {
+        display: block;
+        height: 44px;
+        line-height: 44px;
+        position: relative; }
+        section#section-search .history-records ul li a img, section#section-search .history-records ul li a i {
+          height: 20px;
+          position: absolute;
+          top: 12px;
+          width: 20px; }
+        section#section-search .history-records ul li a img {
+          left: 0; }
+        section#section-search .history-records ul li a p {
+          color: #000;
+          font-size: 14px;
+          height: 44px;
+          line-height: 44px;
+          left: 40px;
+          overflow: hidden;
+          position: absolute;
+          right: 50px;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        section#section-search .history-records ul li a i {
+          color: #555;
+          font-size: 20px;
+          right: 0; }
+  section#section-search .history-records .clear-records {
+    height: 44px;
+    line-height: 44px;
+    text-align: center; }
+    section#section-search .history-records .clear-records a {
+      color: #47c88a;
+      font-size: 12px; }
+
+section#section-search #focus-wrapper {
+  display: none;
+  width: 100%; }
+  section#section-search #focus-wrapper #search_result ul.search_content {
+    width: 100%; }
+    section#section-search #focus-wrapper #search_result ul.search_content li {
+      background-color: #fff;
+      font-weight: normal;
+      height: 55px;
+      padding: 10px 0 0 56px;
+      position: relative;
+      width: 100%; }
+      section#section-search #focus-wrapper #search_result ul.search_content li .music-icon {
+        background: url(../images/search_sprite.png) no-repeat;
+        background-size: 22px 30px;
+        height: 20px;
+        left: 18px;
+        position: absolute;
+        top: 18px;
+        width: 22px; }
+      section#section-search #focus-wrapper #search_result ul.search_content li h4, section#section-search #focus-wrapper #search_result ul.search_content li p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      section#section-search #focus-wrapper #search_result ul.search_content li h4 {
+        color: #000;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 18px; }
+      section#section-search #focus-wrapper #search_result ul.search_content li p {
+        color: #808080;
+        font-size: 12px;
+        margin: 2px 0 0; }
+        section#section-search #focus-wrapper #search_result ul.search_content li p span {
+          margin: 0 10px 0 0; }
+    section#section-search #focus-wrapper #search_result ul.search_content li:first-child img {
+      border-radius: 50%;
+      height: 40px;
+      left: 8px;
+      position: absolute;
+      top: 8px;
+      width: 40px; }
+    section#section-search #focus-wrapper #search_result ul.search_content li::after {
+      background: #e5e5e5;
+      content: "";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0; }
+  section#section-search #focus-wrapper #search_result .loading-block {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0; }
+    section#section-search #focus-wrapper #search_result .loading-block i {
+      animation: loading 1s linear infinite;
+      background: url(../images/icon_loading.png) no-repeat;
+      background-size: 100%;
+      display: block;
+      height: 25px;
+      margin-right: 15px;
+      width: 25px; }
+    section#section-search #focus-wrapper #search_result .loading-block p {
+      color: #999; }
+  section#section-search #focus-wrapper #search_result .load-complete {
+    color: #808080;
+    display: none;
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center; }
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg); }
+  8.32% {
+    transform: rotate(0deg); }
+  8.33% {
+    transform: rotate(30deg); }
+  16.65% {
+    transform: rotate(30deg); }
+  16.66% {
+    transform: rotate(60deg); }
+  24.99% {
+    transform: rotate(60deg); }
+  25% {
+    transform: rotate(90deg); }
+  33.32% {
+    transform: rotate(90deg); }
+  33.33% {
+    transform: rotate(120deg); }
+  41.65% {
+    transform: rotate(120deg); }
+  41.66% {
+    transform: rotate(150deg); }
+  49.99% {
+    transform: rotate(150deg); }
+  50% {
+    transform: rotate(180deg); }
+  58.32% {
+    transform: rotate(180deg); }
+  58.33% {
+    transform: rotate(210deg); }
+  66.65% {
+    transform: rotate(210deg); }
+  66.66% {
+    transform: rotate(240deg); }
+  74.99% {
+    transform: rotate(240deg); }
+  75% {
+    transform: rotate(270deg); }
+  83.32% {
+    transform: rotate(270deg); }
+  83.33% {
+    transform: rotate(300deg); }
+  91.65% {
+    transform: rotate(300deg); }
+  91.66% {
+    transform: rotate(330deg); }
+  99.99% {
+    transform: rotate(330deg); } }
+
+div#song-play {
+  background: #31c27c;
+  display: none;
+  height: 100vh;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  transform: rotate(90deg);
+  transform-origin: 0 100%;
+  transition: .3s;
+  width: 100vw; }
+  div#song-play .song-bg {
+    background-image: url(https://y.gtimg.cn/music/photo_new/T002R150x150M000002qS1EK1wvAfT.jpg?max_age=2592000);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    filter: blur(15px);
+    height: 100%;
+    margin: 0 0 -100vh;
+    transform: scale(1.15);
+    width: 100%; }
+    div#song-play .song-bg div {
+      background-color: #000;
+      height: 100%;
+      opacity: .6;
+      width: 100%; }
+  div#song-play .song-info {
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 15px 80px 15px 15px;
+    position: relative; }
+    div#song-play .song-info img {
+      display: block;
+      height: 80px;
+      margin: 0 15px 0 0;
+      width: 80px; }
+    div#song-play .song-info .song-info-flex {
+      display: flex;
+      flex: 1;
+      flex-flow: column;
+      justify-content: center; }
+      div#song-play .song-info .song-info-flex h1, div#song-play .song-info .song-info-flex p {
+        color: #fff;
+        font-weight: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      div#song-play .song-info .song-info-flex h1 {
+        font-size: 18px;
+        height: 30px; }
+      div#song-play .song-info .song-info-flex p {
+        font-size: 14px;
+        height: 21px; }
+    div#song-play .song-info .play-icon {
+      color: rgba(255, 255, 255, 0.6);
+      display: block;
+      font-size: 45px;
+      height: 45px;
+      margin: -22px 0 0;
+      opacity: .6;
+      position: absolute;
+      right: 25px;
+      top: 50%;
+      width: 45px; }
+  div#song-play .song-flex {
+    display: flex;
+    flex-flow: column;
+    height: calc(100vh - 110px);
+    position: relative; }
+    div#song-play .song-flex .song-lyrics {
+      align-items: center;
+      display: flex;
+      flex: 1; }
+      div#song-play .song-flex .song-lyrics .song-lyrics-box {
+        height: 252px;
+        overflow: hidden;
+        position: relative;
+        width: 100%; }
+        div#song-play .song-flex .song-lyrics .song-lyrics-box .song-lyrics-text {
+          min-height: 150px;
+          left: 10px;
+          overflow: hidden;
+          position: absolute;
+          right: 10px;
+          transition: .3s; }
+          div#song-play .song-flex .song-lyrics .song-lyrics-box .song-lyrics-text p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+            height: 42px;
+            line-height: 42px;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap; }
+          div#song-play .song-flex .song-lyrics .song-lyrics-box .song-lyrics-text p.current-item {
+            color: #31c27c; }
+        div#song-play .song-flex .song-lyrics .song-lyrics-box .lyc-loading {
+          color: rgba(255, 255, 255, 0.6);
+          line-height: 320px;
+          text-align: center; }
+    div#song-play .song-flex .song-control {
+      height: 154px;
+      position: relative; }
+      div#song-play .song-flex .song-control i.fa-list {
+        color: rgba(255, 255, 255, 0.6);
+        display: block;
+        font-size: 27px;
+        height: 27px;
+        position: absolute;
+        right: 27px;
+        top: 13px;
+        width: 30px; }
+      div#song-play .song-flex .song-control .progress {
+        align-items: center;
+        bottom: 74px;
+        display: flex;
+        position: absolute;
+        height: 40px;
+        width: 100%; }
+        div#song-play .song-flex .song-control .progress span {
+          color: #808080;
+          font-size: 12px;
+          line-height: 40px;
+          text-align: center;
+          width: 55px; }
+        div#song-play .song-flex .song-control .progress .progress-bar {
+          background-color: rgba(255, 255, 255, 0.2);
+          flex: 1;
+          height: 2px;
+          overflow: hidden; }
+          div#song-play .song-flex .song-control .progress .progress-bar .greenbar {
+            background-color: #31c27c;
+            height: 2px;
+            transform: translateX(-100%); }
+      div#song-play .song-flex .song-control .down-thissong {
+        background-color: #31c27c;
+        border-radius: 45px;
+        bottom: 20px;
+        color: #fff;
+        display: block;
+        font-size: 20px;
+        height: 45px;
+        left: 50px;
+        line-height: 45px;
+        padding: 0 55px;
+        position: absolute;
+        overflow: hidden;
+        text-align: center;
+        white-space: nowrap;
+        width: calc(100vw - 100px); }
+      div#song-play .song-flex .song-control .down-thissong::after {
+        background: url(../images/logo.png) no-repeat;
+        background-size: 119px;
+        content: '';
+        display: block;
+        height: 33px;
+        left: 6px;
+        position: absolute;
+        top: 6px;
+        width: 33px; }
+
+@media screen and (max-height: 568px) and (min-height: 480px) {
+  div#song-play .song-info img {
+    height: 60px;
+    width: 60px; }
+  div#song-play .song-flex {
+    height: calc(100vh - 90px); } }
+
+.song-show {
+  transform: rotate(0) !important; }

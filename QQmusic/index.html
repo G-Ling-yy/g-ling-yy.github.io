@@ -12,7 +12,7 @@
 <body>
   <header>
     <img src="images/logo.png" class="logo">
-    <a href="javascript:;" class="btn_download">下载APP</a>
+    <a href="javascript:;" class="btn-download">下载APP</a>
   </header>
   <nav>
     <a href="javascript:;" data-nav="recom" class="current">推荐</a>
@@ -20,12 +20,25 @@
     <a href="javascript:;" data-nav="search">搜索</a>
   </nav>
   <main>
-    <div class="sections" style="transform: translateX(-100vw)">
-      <section class="section-recom">
+    <div class="sections">
+      <section id="section-recom" class="section-loaded">
         <div class="slider">
         </div>
         <div class="div-radio">
           <h2>电台</h2>
+          <div class="tworadios">
+            <a href="javascript:;">
+              <div>
+                <img class="lazyload" data-src="">
+              </div>
+              <p></p>
+            </a><a href="javascript:;">
+              <div>
+                <img class="lazyload" data-src="">
+              </div>
+              <p></p>
+            </a>
+          </div>
         </div>
         <div class="hot-songslist">
           <h2>热门歌单</h2>
@@ -38,18 +51,102 @@
           <p class="copyright">Copyright © 1998 - <span id="js_cpright_year">2017</span> Tencent. All Rights Reserved.</p>
         </div>
       </section>
-      <section class="section-toplist">
+
+      <section id="section-toplist" class="hidden-right">
         <ul>
         </ul>
+        <p class="topic-more">
+          <a href="javascript:;">去客户端发现更多好音乐 </a>
+        </p>
       </section>
-      <section class="section-search"></section>
+
+      <section id="section-search" class="hidden-right">
+        <div class="search-bar">
+          <div class="input-wrap">
+            <input type="text" id="search-input" placeholder="搜索歌曲、歌单、专辑">
+            <span class="icon-search">搜索</span>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+              <circle cx="9" cy="9" r="9" style="fill:#b1b1b1"/>
+              <polygon points="9,4.5 9,13.5" style="stroke:#fff;stroke-width:1.8"></polygon>
+              <polygon points="4.5,9 13.5,9" style="stroke:#fff;stroke-width:1.8"></polygon>
+              <circle cx="9" cy="13.5" r=".9" style="fill:#fff"/>
+              <circle cx="9" cy="4.5" r=".9" style="fill:#fff"/>
+              <circle cx="4.5" cy="9" r=".9" style="fill:#fff"/>
+              <circle cx="13.5" cy="9" r=".9" style="fill:#fff"/>
+            </svg>
+          </div>
+          <div id="cancel-btn">取消</div>
+        </div>
+        <div id="hot-key" >
+          <h3>热门搜索</h3>
+          <div class="result-tags">
+          </div>
+        </div>
+        <div class="history-records" style="display: none;">
+          <ul></ul>
+          <p class="clear-records">
+            <a href="javascript:;">清除搜索记录</a>
+          </p>
+        </div>
+        <div id="focus-wrapper">
+          <div id="record-keys"></div>
+          <div id="search_result">
+            <ul class="search_content">
+            </ul>
+            <div class="loading-block" style="display: none;">
+              <i></i>
+              <p>loading · · ·</p>
+            </div>
+            <p class="load-complete">已加载全部</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="song-play">
+      <div class="song-bg">
+        <div></div>
+      </div>
+      <div class="song-info">
+          <img src="https://y.gtimg.cn/music/photo_new/T002R150x150M000002qS1EK1wvAfT.jpg?max_age=2592000">
+          <div class="song-info-flex">
+            <h1>云朵</h1>
+            <p>喜欢你却不能告诉你</p>
+          </div>
+          <i class="fa fa-pause-circle-o play-icon"></i>
+      </div>
+      <div class="song-flex">
+        <div class="song-lyrics">
+          <div class="song-lyrics-box">
+            <div class="song-lyrics-text">
+            </div>
+            <div class="lyc-loading">歌词加载中 请稍候~</div>
+          </div>
+        </div>
+        <div class="song-control">
+          <i class="fa fa-list"></i>
+          <div class="progress">
+            <span class="js-time-calc"></span>
+            <div class="progress-bar">
+              <div class="greenbar"></div> 
+            </div>
+            <span class="js-time-total"></span>
+          </div>
+          <a href="javascript:;" class="down-thissong">下载这首歌</a>
+        </div>
+      </div>
     </div>
   </main>
+  <audio id="h5audio-play" data-event="false" autoplay></audio>
   <script type="text/javascript" src='https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js'></script>
-  <script type="text/javascript" src='json/slider.json'></script>
-  <script type="text/javascript" src='json/toplist.json'></script>
+  <script type="text/javascript" src='js/constant.js'></script>
   <script type="text/javascript" src='js/slider.js'></script>
   <script type="text/javascript" src='js/toplist.js'></script>
+  <script type="text/javascript" src='js/recom.js'></script>
+  <script type="text/javascript" src='js/search.js'></script>
+  <script type="text/javascript" src='js/play.js'></script>
+  <script type="text/javascript" src='js/nav.js'></script>
+  <script type="text/javascript" src='js/lazyload.js'></script>
   <script type="text/javascript" src='js/js.js'></script>
 </body>
 </html>

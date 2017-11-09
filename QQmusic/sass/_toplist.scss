@@ -1,4 +1,4 @@
-section.section-toplist {
+section#section-toplist {
   background-color: $baseboard;
   padding: 10px;
   ul {
@@ -81,6 +81,17 @@ section.section-toplist {
           width: 7px;
         }
       }
+    }
+  }
+  .topic-more {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    a {
+      color: rgba(0,0,0,.6);
+      display: inline-block;
+      font-size: 14px;
+      padding: 0 10px;
     }
   }
 }

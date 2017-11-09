@@ -10,10 +10,27 @@ main {
   width: 100%;
 }
 main .sections {
-  display: flex; 
-  transition: .3s;
-  width: 300vw;
+  min-height: calc(100vh - 84px);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 main .sections section {
-  width: 100vw;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: .3s;
+  width: 100%;
+}
+main .sections section.section-loaded {
+  transform: translateX(0);
+}
+main .sections section.hidden-left {
+  transform: translateX(-100%);
+}
+main .sections section.hidden-right {
+  transform: translateX(100%);
+}
+.noscroll {
+  overflow: hidden;
 }

@@ -1,0 +1,204 @@
+div#song-play {
+  background: $skin-color;
+  display: none;
+  height: 100vh;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  transform: rotate(90deg);
+  transform-origin: 0 100%;
+  transition: .3s;
+  width: 100vw;
+  .song-bg {
+    background-image: url(https://y.gtimg.cn/music/photo_new/T002R150x150M000002qS1EK1wvAfT.jpg?max_age=2592000);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    filter: blur(15px);
+    height: 100%;
+    margin: 0 0 -100vh;
+    transform: scale(1.15);
+    width: 100%;
+    div {
+      background-color: #000;
+      height: 100%;
+      opacity: .6;
+      width: 100%;
+    }
+  }
+  .song-info {
+    background: rgba(0,0,0,.1);
+    display: flex;
+    padding: 15px 80px 15px 15px;
+    position: relative;
+    img {
+      display: block;
+      height: 80px;
+      margin: 0 15px 0 0;
+      width: 80px;
+    }
+    .song-info-flex {
+      display: flex;
+      flex: 1;
+      flex-flow: column;
+      justify-content: center;
+      h1, p {
+        color: #fff;
+        font-weight: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      h1 {
+        font-size: 18px;
+        height: 30px;
+      }
+      p {
+        font-size: 14px;
+        height: 21px;
+      }
+    }
+    .play-icon {
+      color: rgba(255,255,255,.6);
+      display: block;
+      font-size: 45px;
+      height: 45px;
+      margin: -22px 0 0;
+      opacity: .6;
+      position: absolute;
+      right: 25px;
+      top: 50%;
+      width: 45px; 
+    }
+  }
+  .song-flex {
+    display: flex;
+    flex-flow: column;
+    height: calc(100vh - 110px);
+    position: relative;
+    .song-lyrics {
+      align-items: center; 
+      display: flex;
+      flex: 1;
+      .song-lyrics-box {
+        height: 252px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        .song-lyrics-text {
+          min-height: 150px;
+          left: 10px;
+          overflow: hidden;
+          position: absolute;
+          right: 10px;
+          transition: .3s;
+          p {
+            color: rgba(255,255,255,.6);
+            font-size: 16px;
+            height: 42px;
+            line-height: 42px;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          p.current-item {
+            color: $skin-color;
+          }
+        }
+        .lyc-loading {
+          color: rgba(255,255,255,.6);
+          line-height: 320px;
+          text-align: center;
+        }
+      }
+    }
+    .song-control {
+      height: 154px;
+      position: relative;
+      i.fa-list {
+        color: rgba(255,255,255,.6);
+        display: block;
+        font-size: 27px;
+        height: 27px;
+        position: absolute;
+        right: 27px;
+        top: 13px;
+        width: 30px;
+      }
+      .progress {
+        align-items: center;
+        bottom: 74px;
+        display: flex;
+        position: absolute;
+        height: 40px;
+        width: 100%;
+        span {
+          color: #808080;
+          font-size: 12px;
+          line-height: 40px;
+          text-align: center;
+          width: 55px;
+        }
+        .progress-bar {
+          background-color: rgba(255,255,255,.2);
+          flex: 1;
+          height: 2px;
+          overflow: hidden;
+          .greenbar {
+            background-color: $skin-color;
+            height: 2px;
+            transform: translateX(-100%);
+          }
+        }
+      }
+      .down-thissong {
+        background-color: $skin-color;
+        border-radius: 45px;
+        bottom: 20px;
+        color: #fff;
+        display: block;
+        font-size: 20px;
+        height: 45px;
+        left: 50px;
+        line-height: 45px;
+        padding: 0 55px;
+        position: absolute;
+        overflow: hidden;
+        text-align: center;
+        white-space: nowrap;
+        width: calc(100vw - 100px);
+      }
+      .down-thissong::after {
+        background: url(../images/logo.png) no-repeat;
+        background-size: 119px;
+        content: '';
+        display: block;
+        height: 33px;
+        left: 6px;
+        position: absolute;
+        top: 6px;
+        width: 33px;
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 568px) and (min-height: 480px) {
+  div#song-play {
+    .song-info {
+      img {
+        height: 60px;
+        width: 60px;
+      }
+    }
+    .song-flex {
+      height: calc(100vh - 90px);
+    }
+  }
+}
+
+.song-show {
+  transform: rotate(0) !important;
+}
