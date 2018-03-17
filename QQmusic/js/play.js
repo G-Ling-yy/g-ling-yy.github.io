@@ -13,6 +13,10 @@ function playSong(songid, albummid, songname, singer) {
   const $songimg = $player.querySelector('.song-info img')
   const $songbg = $player.querySelector('.song-bg')
   
+  if (!$h5audio.duration) {
+    renderDots()
+    $lycloading.innerHTML = `歌曲链接貌似出问题了，请返回重试~`
+  }
   if ($h5audio.dataset.event === 'false') addEvent()
   $h5audio.addEventListener('canplay', renderAll)  
 
