@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>blank board</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      font-size: 20px;
+    }
+    body {
+      padding: 0 5%;
+    }
+    a {
+      color: #0f0;
+      font-size: 2rem;
+    }
+    #sss {
+      background: linear-gradient(to bottom, #fff,#ff0,#0ff,#fff);
+      height: 1000px;
+      padding: 5rem 0 0 5rem;
+      position: relative;
+    }
+    .container_3d {
+      height: 10rem;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: .7s;
+      width: 6rem;
+    }
+    .container_3d div {
+      border: 1px solid #000;
+      height: inherit;
+      position: absolute;
+      width: inherit;
+    }
+    .backword_3d {
+      background: #00f;
+      padding: 5%;
+    }
+    .wordA_3d {
+      align-items: center;
+      background: #fff;
+      backface-visibility: hidden;
+      display: flex;
+      font-size: 3rem;
+      justify-content: center;
+      transform: rotateY(180deg);
+    }
+    .stage {
+      height: 10rem;
+      perspective: 1000px;
+      width: 6rem;
+    }
+    .stage:hover .container_3d {
+      cursor: pointer;
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div id="sss">
+    <div class="stage">
+      <div class="container_3d">
+        <div class="backword_3d">3D, I'm back!</div>
+        <div class="wordA_3d">A</div>
+      </div>
+    </div>
+    <input type="text" text="" class="ttt" style="margin-top: 5rem">
+  </div>
+  
+  <script type="module">
+    import love from './blank.js'
+    console.log(`love is ${love}`)
+
+    const sss = document.querySelector('#sss')
+    const ttt = document.querySelector('.ttt')
+    const stage = document.querySelector('.stage')
+    
+    ttt.addEventListener('blur', function () {
+      const t_val = this.value
+      if (t_val !== '') t_val.match(/\D/g) ? console.log('只能输入纯数字！') : console.log(t_val)
+    })
+
+    class TryIt {
+      constructor (el) {
+        this.$el = el
+        this.$con = el.querySelector('.container_3d')
+        this.$word = this.$con.querySelector('.backword_3d')
+      }
+      show () {
+        console.log(`我是通过ES6的一个class实例化的到的，下面就是我get的数据`)
+        console.log(this.$word.innerText)
+      }
+    }
+
+    let ppp = new TryIt(stage)
+    setTimeout(() => {ppp.show()}, 2000)
+    
+  </script>
+
+</body>
+</html>
+
