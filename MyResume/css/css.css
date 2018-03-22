@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 20px;
+}
+body {
+  overflow-x: hidden;
+}
+main {
+  min-height: 100vh;
+  position: relative;
+  transition: 1.7s;
+  transform: rotateY(0);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+  transform-style: preserve-3d;
+  width: 100%;
+}
+main section {
+  backface-visibility: hidden;
+  min-height: 100vh;opacity: .9;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  width: inherit;
+}
+section.pd_sec {
+  background: #0f0
+}
+section.pi_sec {
+  background: #00f
+}

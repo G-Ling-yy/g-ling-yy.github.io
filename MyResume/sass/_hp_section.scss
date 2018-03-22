@@ -1,0 +1,30 @@
+section.hp_sec {
+  background: #eee;
+  #cube {
+    align-items: center;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+    perspective: 40rem;
+    width: 100%;
+    .cube_container {
+    //  animation: shaking 5s linear infinite alternate;
+      box-shadow: 0 4rem 5rem -2rem #000;
+      height: 20vh;
+      position: relative;
+      transform-style: preserve-3d;
+      width: 20vh;
+      .cube_face {
+        border-radius: 5%;
+        height: inherit;
+        position: absolute;
+        width: inherit;
+      }
+    }
+  }
+}
+@keyframes shaking {
+  0% {transform: translateX(-100%);}
+  100% {transform: translateX(100%);}
+}
