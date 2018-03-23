@@ -6,7 +6,6 @@ class Gradient {
     this.$el.style.transition = `${this.time / 700}s`
   }
   start () {
-    
     const eldom = this.$el
     setInterval(() => change(this.pp), this.time)
     function change (p) {

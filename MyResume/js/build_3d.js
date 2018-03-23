@@ -44,7 +44,3 @@ class Build_3D {
     })
   }
 }
-
-let build_3d = new Build_3D(document.querySelector('main'))
-build_3d.build()
-build_3d.change()

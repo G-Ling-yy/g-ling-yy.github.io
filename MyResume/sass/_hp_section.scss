@@ -2,29 +2,127 @@ section.hp_sec {
   background: #eee;
   #cube {
     align-items: center;
-    background: #fff;
     display: flex;
     justify-content: center;
-    height: 40vh;
+    height: 50vh;
     perspective: 40rem;
     width: 100%;
     .cube_container {
-    //  animation: shaking 5s linear infinite alternate;
-      box-shadow: 0 4rem 5rem -2rem #000;
+      animation: shaking 19s linear infinite;
       height: 20vh;
       position: relative;
       transform-style: preserve-3d;
       width: 20vh;
       .cube_face {
-        border-radius: 5%;
+        border-radius: 2%;
         height: inherit;
         position: absolute;
         width: inherit;
       }
+      .cube_face:nth-child(1) {
+        transform: rotateZ(45deg) rotateY(-90deg) translateZ(-10vh);
+      }
+      .cube_face:nth-child(2) {
+        transform: rotateZ(45deg) translateZ(-10vh);
+      }
+      .cube_face:nth-child(3) {
+        transform: rotateZ(45deg) rotateX(90deg) translateZ(10vh);
+      }
+      .cube_face:nth-child(4) {
+        transform: rotateZ(45deg) rotateX(90deg) translateZ(-10vh);
+      }
+      .cube_face:nth-child(5) {
+        transform: rotateZ(45deg) rotateY(-90deg) translateZ(10vh);
+      }
+      .cube_face:nth-child(6) {
+        transform: rotateZ(45deg) translateZ(10vh);
+      }
+    }
+    .cube_container:hover {
+      animation-play-state: paused;
+      cursor: pointer;
+    }
+  }
+  #luck {
+    align-items: center;
+    display: flex;
+    height: 20vh;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: absolute;
+    top: 5rem;
+    min-width: 100vh;
+    width: 100%;
+    p {
+      font-family:"KaiTi",serif;
+      font-size: 3rem;
+      font-weight: bold;
+      transition: 1.7s;
+      width: 3rem;
+    }
+    p:hover {
+      cursor: pointer;
+      text-shadow: 0 0 .2rem #000;
+    }
+    p:first-child:hover + p{
+      color: #0ff;
+      text-shadow: 0 0 .2rem #0ff;
+    }
+  }
+  #goodluck {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    p {
+      font-size: 1.9rem;
+      height: 3rem;
     }
   }
 }
 @keyframes shaking {
-  0% {transform: translateX(-100%);}
-  100% {transform: translateX(100%);}
+  0% {transform: translateX(-100%) rotateY(0);}
+  50% {transform: translateX(100%) rotateY(360deg);}
+  100% {transform: translateX(-100%) rotateY(720deg);}
+}
+@media screen and (max-width: 768px) {
+  section.hp_sec {
+    #cube {
+      height: 20vh;
+      .cube_container {
+        height: 10vh;
+        width: 10vh;
+        .cube_face:nth-child(1) {
+          transform: rotateZ(45deg) rotateY(-90deg) translateZ(-5vh);
+        }
+        .cube_face:nth-child(2) {
+          transform: rotateZ(45deg) translateZ(-5vh);
+        }
+        .cube_face:nth-child(3) {
+          transform: rotateZ(45deg) rotateX(90deg) translateZ(5vh);
+        }
+        .cube_face:nth-child(4) {
+          transform: rotateZ(45deg) rotateX(90deg) translateZ(-5vh);
+        }
+        .cube_face:nth-child(5) {
+          transform: rotateZ(45deg) rotateY(-90deg) translateZ(5vh);
+        }
+        .cube_face:nth-child(6) {
+          transform: rotateZ(45deg) translateZ(5vh);
+        }
+      }
+    }
+    #luck {
+      top: 1rem;
+      min-width: 50vh;
+      p {
+        font-size: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+    #goodluck {
+      p {
+        font-size: .9rem;
+      }
+    }
+  }
 }

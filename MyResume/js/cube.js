@@ -1,9 +1,9 @@
 class Cube {
-  constructor (el) {
+  constructor (el, swidth) {
     this.$el = el
+    this.swidth = swidth
     this.$faces = []
   }
-
   createDoms () {
     this.$container = document.createElement('div')
     this.$container.className = `cube_container`
@@ -15,7 +15,6 @@ class Cube {
       this.$faces.push(newface)
     }
   }
-
   colorCube () {
     if (!arguments.length) return;
     let args = Array.from(arguments)
@@ -23,11 +22,7 @@ class Cube {
     this.$faces.forEach((ele, i) => {
       ele.style.backgroundColor = args[i]
     })
-    let lastface = new Gradient(this.$faces[5], 1, 1700)
+    let lastface = new Gradient(this.$faces[5], 1, 2700)
     lastface.start()
   }
 }
-
-let cube = new Cube(document.querySelector('#cube'))
-cube.createDoms()
-cube.colorCube('#f00', '#0f0', '#00f', '#fff', '#000')
