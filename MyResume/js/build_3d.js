@@ -2,9 +2,9 @@ class Build_3D {
   constructor (el) {
     this.$el = el
     this.secs = this.$el.querySelectorAll('section')
-    location.hash = `#hp_sec`
-    localStorage.setItem('usinghash', JSON.stringify({hash:'hp_sec', angle:0}))
-    this.oldhash = JSON.parse(localStorage.getItem('usinghash')).hash
+    location.hash = `pi_sec`
+    !!localStorage.getItem('usinghash') ? location.hash = JSON.parse(localStorage.getItem('usinghash')).hash : ''
+    localStorage.setItem('usinghash', JSON.stringify({hash:'pi_sec', angle:-120}))
     onresize = () => this.build()
   }
   build () {
@@ -16,30 +16,37 @@ class Build_3D {
   }
   change () {
     window.addEventListener('hashchange', () => {
-      let newhash = location.hash.slice(1)
-      if (this.oldhash === newhash) return
       let obj = JSON.parse(localStorage.getItem('usinghash'))
+      let newhash = location.hash.slice(1)
+      if (obj.hash === newhash) return
       switch (newhash) {
         case 'hp_sec' :
-          this.oldhash === 'pd_sec' ? this.$el.style.transform = `rotateY(${obj.angle - 120}deg)` : this.$el.style.transform = `rotateY(${obj.angle + 120}deg)`
-          this.oldhash === 'pd_sec' ? obj.angle = obj.angle - 120 : obj.angle = obj.angle + 120
-          this.oldhash = newhash
+          this.secs[0].style.display = 'block'
+          obj.hash === 'pd_sec' ? this.$el.style.transform = `rotateY(${obj.angle - 120}deg)` : this.$el.style.transform = `rotateY(${obj.angle + 120}deg)`
+          obj.hash === 'pd_sec' ? obj.angle = obj.angle - 120 : obj.angle = obj.angle + 120
+          obj.hash === 'pd_sec' ? setTimeout(() => this.secs[1].style.display = 'none', 1700) : setTimeout(() => this.secs[2].style.display = 'none', 1700)
+          obj.hash = newhash
           localStorage.setItem('usinghash', JSON.stringify(obj))
           break
-        case 'pd_sec' :
-          this.oldhash === 'pi_sec' ? this.$el.style.transform = `rotateY(${obj.angle - 120}deg)` : this.$el.style.transform = `rotateY(${obj.angle + 120}deg)`
-          this.oldhash === 'pi_sec' ? obj.angle = obj.angle - 120 : obj.angle = obj.angle + 120
-          this.oldhash = newhash
+        case 'pd_sec' : 
+          this.secs[1].style.display = 'block'
+          setTimeout(() => this.secs[0].style.display = 'none', 1700)
+          obj.hash === 'pi_sec' ? this.$el.style.transform = `rotateY(${obj.angle - 120}deg)` : this.$el.style.transform = `rotateY(${obj.angle + 120}deg)`
+          obj.hash === 'pi_sec' ? obj.angle = obj.angle - 120 : obj.angle = obj.angle + 120
+          obj.hash === 'pi_sec' ? setTimeout(() => this.secs[2].style.display = 'none', 1700) : setTimeout(() => this.secs[0].style.display = 'none', 1700)
+          obj.hash = newhash
           localStorage.setItem('usinghash', JSON.stringify(obj))
           break
         case 'pi_sec' :
-          this.oldhash === 'hp_sec' ? this.$el.style.transform = `rotateY(${obj.angle - 120}deg)` : this.$el.style.transform = `rotateY(${obj.angle + 120}deg)`
-          this.oldhash === 'hp_sec' ? obj.angle = obj.angle - 120 : obj.angle = obj.angle + 120
-          this.oldhash = newhash
+          this.secs[2].style.display = 'block'
+          obj.hash === 'hp_sec' ? this.$el.style.transform = `rotateY(${obj.angle - 120}deg)` : this.$el.style.transform = `rotateY(${obj.angle + 120}deg)`
+          obj.hash === 'hp_sec' ? obj.angle = obj.angle - 120 : obj.angle = obj.angle + 120
+          obj.hash === 'hp_sec' ? setTimeout(() => this.secs[0].style.display = 'none', 1700) : setTimeout(() => this.secs[1].style.display = 'none', 1700)
+          obj.hash = newhash
           localStorage.setItem('usinghash', JSON.stringify(obj))
           break
         default :
-          return location.hash = this.oldhash
+          return location.hash = obj.hash
       }
     })
   }

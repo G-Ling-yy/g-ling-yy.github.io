@@ -1,0 +1,63 @@
+section.pi_sec {
+  padding: 10% 10% 0;
+  #myinfo {
+    margin: 0 0 5rem;
+    min-width: 25rem;
+    h1 {
+      margin: 0 0 1rem;
+    }
+    p {
+      border-bottom: 1px solid #eee;
+      height: 3rem;
+      line-height: 3rem;
+      text-indent: 2rem;
+    }
+    p span, p a {
+      font-family: "KaiTi",serif;
+      text-shadow: 0 0 1px #000;
+    }
+    p a {
+      color: #000;
+      transition: .7s;
+    }
+    p a:hover {
+      color: #00f;
+      cursor: pointer;
+      font-size: 1.5rem;
+      text-shadow: 0 0 2px #00f;
+    }
+  }
+  #myinfo:hover {
+    box-shadow: 0 0 10px #999;
+    transform: scale(1.01);
+  }
+  #more {
+    margin: 0 0 5rem;
+    p {
+      height: 4rem;
+      line-height: 4rem;
+      margin: 0 0 2rem;
+      text-align: center;
+      a {
+        color: #f5cd13;
+        text-shadow: 0 0 2px #f5cd13;
+      }
+      a:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  #more:hover {
+    box-shadow: 0 0 50px #f5cd13;
+    transform: scale(.99);
+  }
+}
+@media screen and (max-width: 768px) {
+  section.pi_sec {
+    #myinfo {
+      p:last-child a {
+        display: block;
+      }
+    }
+  }
+}
