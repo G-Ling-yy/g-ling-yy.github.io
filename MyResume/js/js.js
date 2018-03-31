@@ -1,9 +1,9 @@
 const Myobj = {
   init_pi () {
     //我的信息对象
-    const me = {name : '高大全', sex : '男', age : 24, school : '苏州市职业大学',major : '软件技术', aim : '前端实习工作', QQ : 934830721, tel : 18860913014, pj: '智商低，反应慢，运气还特么差'}
+    const me_obj = {name: '高大全', sex: '男', age: 24, school: '苏州市职业大学',major: '软件技术', aim: '前端实习工作', QQ: 934830721, tel: 18860913014, pj: '智商低，反应慢，运气还特么差'}
     //信息对象渲染指定DOM
-    let info = new MyInfo(document.querySelector('#myinfo'), me)
+    let info = new MyInfo(document.querySelector('#myinfo'), me_obj)
     info.showme()
     //为指定aDOM添加事件
     const a_hp = document.querySelector('#rsrx') 
@@ -33,7 +33,25 @@ const Myobj = {
       ps[0].addEventListener('click', () => {location.hash = `pd_sec`})
       ps[1].addEventListener('click', () => {location.hash = `pi_sec`})
     }
+  },
+  init_pd () {
+    const task = [0, 29, 28, 25, 22, 19, 15, 14, 12, 8]
+    const demos_array = [{name: `QQmusic(仿)`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `Github User Finder`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `Fetch`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `Ajax`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `note`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `calculator`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `array`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `string`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `sass`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `3D`, function: ``, skill: ``, url: ``, codeurl: ``}]
+    //渲染项目内容
+    render(document.querySelector('#demos'), demos_array)
+    function render (dom, arr) {
+      arr.forEach(ele => {
+        dom.innerHTML += `<div class="demo">
+          <h1>${ele.name}</h1>
+          <p>功能概要：<span>${ele.function}</span></p>
+          <p>技术要点：<span>${ele.skill}</span></p>
+          <p>实例链接：<a href="${ele.url}" target="_blank.">${ele.url}</a></p>
+          <p>Github源码：<a href="${ele.codeurl}" target="_blank"></a></p>
+        </div>`
+      })
+    }
   }
 }
 Myobj.init_pi()
+Myobj.init_pd()
 Myobj.init_hp()
