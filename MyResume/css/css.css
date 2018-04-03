@@ -14,7 +14,7 @@ main {
   min-height: 100vh;
   position: relative;
   transition: 1.7s;
-//  transform: rotateY(-120deg);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+  transform: rotateY(-120deg);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
   transform-style: preserve-3d;
   width: 100%;
 }

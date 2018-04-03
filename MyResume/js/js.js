@@ -19,9 +19,9 @@ const Myobj = {
     //为指定P元素添加事件函数执行
     psevent()
     //实例化一个3D对象，使全局变成三棱柱形状
-    // let build_3d = new Build_3D(document.querySelector('main'))
-    // build_3d.build()
-    // build_3d.change()
+    let build_3d = new Build_3D(document.querySelector('main'))
+    build_3d.build()
+    build_3d.change()
     //实例化一个cube对象，在body里添加dom
     let cube = new Cube(document.querySelector('#cube'))
     cube.createDoms()
@@ -35,10 +35,19 @@ const Myobj = {
     }
   },
   init_pd () {
-    const task = [0, 29, 28, 25, 22, 19, 15, 14, 12, 8]
-    const demos_array = [{name: `QQmusic(仿)`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `Github User Finder`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `Fetch`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `Ajax`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `note`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `calculator`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `array`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `string`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `sass`, function: ``, skill: ``, url: ``, codeurl: ``}, {name: `3D`, function: ``, skill: ``, url: ``, codeurl: ``}]
+    const $demos = document.querySelector('#demos')
+    const demos_array = [
+    {name: `QQmusic(仿)`, function: `推荐, 轮播, 排行榜, 歌曲搜索, 歌曲播放, 歌词同步`, skill: `sass, setTimeout(), setInterval(), .map(), .bind(), lazyload()懒加载, throttle节流, fetch(), switch···case, localStorage, matches, audio, RegExp`, url: `https://g-ling-yy.github.io/QQmusic/`, codeurl: `https://github.com/G-Ling-yy/g-ling-yy.github.io/tree/master/QQmusic`}, 
+    {name: `Github User Finder`, function: `根据名字查找Github用户基本信息`, skill: `debounce, await async promise, `, url: `https://g-ling-yy.github.io/MyTask_29/`, codeurl: `https://github.com/G-Ling-yy/g-ling-yy.github.io/tree/master/MyTask_29`}, 
+    {name: `Ajax`, function: `通过ajax对数据进行增删改除等操作`, skill: `ajax get, ajax post, ajax put, ajax delete`, url: `https://g-ling-yy.github.io/MyTask_25/`, codeurl: `https://github.com/G-Ling-yy/g-ling-yy.github.io/tree/master/MyTask_25`}, 
+    {name: `note`, function: `简易便签，记录数据并保存在本地localStorage, 更改外观主题`, skill: `sass, handleEvent, localStorage, switch···case, @media`, url: `https://g-ling-yy.github.io/MyTask_22/`, codeurl: `https://github.com/G-Ling-yy/g-ling-yy.github.io/tree/master/MyTask_22`}, 
+    {name: `calculator`, function: `简易功能的计算器`, skill: `flex, sass, for···of, eval()`, url: `https://g-ling-yy.github.io/MyTask_19/`, codeurl: `https://github.com/G-Ling-yy/g-ling-yy.github.io/tree/master/MyTask_19`}, 
+    {name: `array`, function: `展示数组基本方法`, skill: `animation, classList, Dom node, Math, push(), reduce(), split(), filter(), find()`, url: `https://g-ling-yy.github.io/MyTask_15/`, codeurl: `https://github.com/G-Ling-yy/g-ling-yy.github.io/tree/master/MyTask_15`}, 
+    {name: `string`, function: `展示字符串基本方法`, skill: `transition, Date(), replace(), repeat(), indexOf(), match()`, url: `https://g-ling-yy.github.io/MyTask_14/`, codeurl: `https://github.com/G-Ling-yy/g-ling-yy.github.io/tree/master/MyTask_14`}, 
+    {name: `sass`, function: `跑马灯图片展示`, skill: `sass, perspective, preserve-3d, animation`, url: `https://g-ling-yy.github.io/MyTask_12/`, codeurl: `https://github.com/G-Ling-yy/g-ling-yy.github.io/tree/master/MyTask_12`}, 
+    {name: `3D`, function: `一些3D小效果`, skill: `perspective, preserve-3d, flex, transform`, url: `https://g-ling-yy.github.io/MyTask_8/`, codeurl: `https://github.com/G-Ling-yy/g-ling-yy.github.io/tree/master/MyTask_8`}]
     //渲染项目内容
-    render(document.querySelector('#demos'), demos_array)
+    render($demos, demos_array)
     function render (dom, arr) {
       arr.forEach(ele => {
         dom.innerHTML += `<div class="demo">
@@ -50,6 +59,22 @@ const Myobj = {
         </div>`
       })
     }
+    //为指定P元素添加点击事件
+    document.querySelector('section.pd_sec').addEventListener('click', function (e) {
+      const target = e.target
+      if (target.matches('.demo p span')) {
+        const eleP = target.parentNode
+        if (!eleP.style.overflow || eleP.style.overflow === 'hidden') {
+          eleP.style.overflow = 'initial'
+          eleP.style.whiteSpace = 'normal'
+        } else {
+          eleP.style.overflow = 'hidden'
+          eleP.style.whiteSpace = 'nowrap'
+        }
+      } else if (target.matches('a.toleft') || target.matches('a.toright')) {
+        target.matches('a.toleft') ? location.hash = 'pi_sec' : location.hash = 'hp_sec'
+      }
+    })
   }
 }
 Myobj.init_pi()

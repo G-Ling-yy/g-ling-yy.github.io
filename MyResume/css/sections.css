@@ -1,4 +1,5 @@
 section.pi_sec {
+  display: block;
   padding: 10% 10% 0; }
   section.pi_sec #myinfo {
     margin: 0 0 5rem;
@@ -146,7 +147,6 @@ section.hp_sec {
 
 section.pd_sec {
   background: #d8b362;
-  display: block;
   padding: 3%; }
   section.pd_sec #demos {
     background: #eff;
@@ -176,10 +176,6 @@ section.pd_sec {
         white-space: nowrap; }
         section.pd_sec #demos .demo p span, section.pd_sec #demos .demo p a {
           font-family: "KaiTi",serif; }
-      section.pd_sec #demos .demo p:active {
-        height: auto;
-        overflow: initial;
-        white-space: normal; }
       section.pd_sec #demos .demo p:nth-of-type(2) span {
         color: #f55022; }
       section.pd_sec #demos .demo p:nth-of-type(3) a {
@@ -204,7 +200,8 @@ section.pd_sec {
       section.pd_sec #demos .demo p:nth-of-type(4) a:hover {
         background-color: #eff; }
     section.pd_sec #demos .demo:hover {
-      height: 11.74rem; }
+      height: 11.74rem;
+      overflow-y: scroll; }
   section.pd_sec #demos::after, section.pd_sec #demos::before {
     background: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(200, 200, 200, 0.8);
@@ -221,6 +218,24 @@ section.pd_sec {
   section.pd_sec #demos::before {
     right: -2.8rem;
     transform: rotate(45deg); }
+  section.pd_sec a.toleft, section.pd_sec a.toright {
+    background-color: #eff;
+    border-radius: 50%;
+    bottom: 9%;
+    display: block;
+    font-size: 2rem;
+    height: 3rem;
+    line-height: 3rem;
+    position: absolute;
+    text-align: center;
+    transition: .7s;
+    width: 3rem; }
+  section.pd_sec a.toleft {
+    left: 9%; }
+  section.pd_sec a.toright {
+    right: 9%; }
+  section.pd_sec a.toleft:hover, section.pd_sec a.toright:hover {
+    background-color: #d8b362; }
 
 @media screen and (max-width: 768px) {
   section.pd_sec {
@@ -233,4 +248,7 @@ section.pd_sec {
       section.pd_sec #demos .demo p {
         font-size: .7rem; }
       section.pd_sec #demos .demo p:nth-of-type(4) a {
-        background-color: #eff; } }
+        background-color: #eff; }
+    section.pd_sec a.toleft, section.pd_sec a.toright {
+      bottom: 3%;
+      font-size: 1.5rem; } }

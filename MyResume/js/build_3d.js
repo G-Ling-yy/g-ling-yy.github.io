@@ -4,7 +4,7 @@ class Build_3D {
     this.secs = this.$el.querySelectorAll('section')
     location.hash = `pi_sec`
     !!localStorage.getItem('usinghash') ? location.hash = JSON.parse(localStorage.getItem('usinghash')).hash : ''
-    localStorage.setItem('usinghash', JSON.stringify({hash:'pi_sec', angle:-120}))
+    localStorage.setItem('usinghash', JSON.stringify({hash: 'pi_sec', angle: -120}))
     onresize = () => this.build()
   }
   build () {
