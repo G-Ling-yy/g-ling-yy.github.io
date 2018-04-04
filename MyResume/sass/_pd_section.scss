@@ -95,6 +95,7 @@ section.pd_sec {
     background-color: #eff;
     border-radius: 50%;
     bottom: 9%;
+    color: #000;
     display: block;
     font-size: 2rem;
     height: 3rem;
@@ -105,10 +106,10 @@ section.pd_sec {
     width: 3rem;
   }
   a.toleft {
-    left: 9%;
+    left: 10.5%;
   }
   a.toright {
-    right: 9%;
+    right: 10.5%;
   }
   a.toleft:hover, a.toright:hover {
     background-color: #d8b362;
@@ -118,6 +119,7 @@ section.pd_sec {
   section.pd_sec {
     padding: 9%;
     #demos {
+      padding: 9% 9% 19%;
       .demo {
         height: 3.6rem;
         width: 11rem;
@@ -135,8 +137,17 @@ section.pd_sec {
       }
     }
     a.toleft, a.toright {
-      bottom: 3%;
+      bottom: 5%;
       font-size: 1.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      width: 1.5rem;
+    }
+    a.toleft {
+      left: 15.5%;
+    }
+    a.toright {
+      right: 15.5%;
     }
   }
 }

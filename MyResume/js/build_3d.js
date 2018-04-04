@@ -21,6 +21,11 @@ class Build_3D {
       if (obj.hash === newhash) return
       switch (newhash) {
         case 'hp_sec' :
+          if (!document.querySelector('#cube .cube_container')) {console.log('no cube , building')
+            let cube = new Cube(document.querySelector('#cube'))
+            cube.createDoms()
+            cube.colorCube('#f00', '#0f0', '#00f', '#fff', '#000')
+          }
           this.secs[0].style.display = 'block'
           obj.hash === 'pd_sec' ? this.$el.style.transform = `rotateY(${obj.angle - 120}deg)` : this.$el.style.transform = `rotateY(${obj.angle + 120}deg)`
           obj.hash === 'pd_sec' ? obj.angle = obj.angle - 120 : obj.angle = obj.angle + 120
@@ -48,6 +53,7 @@ class Build_3D {
         default :
           return location.hash = obj.hash
       }
+      setTimeout(() => {!!document.documentElement.scrollTop ? document.documentElement.scrollTop = 0 : document.body.scrollTop = 0}, 850)
     })
   }
 }

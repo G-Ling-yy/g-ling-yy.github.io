@@ -8,24 +8,21 @@ const Myobj = {
     //为指定aDOM添加事件
     const a_hp = document.querySelector('#rsrx') 
     const a_pd = document.querySelector('#more p a')
+    //实例化一个3D对象，使全局变成三棱柱形状
+    let build_3d = new Build_3D(document.querySelector('main'))
+    build_3d.build()
+    build_3d.change()
     aevent()
     function aevent () {
       a_hp.addEventListener('click', () => location.hash = `hp_sec`)
       a_pd.addEventListener('click', () => location.hash = `pd_sec`)
     }
+
   },
   init_hp () {
     const ps = document.querySelectorAll('#luck p')
     //为指定P元素添加事件函数执行
     psevent()
-    //实例化一个3D对象，使全局变成三棱柱形状
-    let build_3d = new Build_3D(document.querySelector('main'))
-    build_3d.build()
-    build_3d.change()
-    //实例化一个cube对象，在body里添加dom
-    let cube = new Cube(document.querySelector('#cube'))
-    cube.createDoms()
-    cube.colorCube('#f00', '#0f0', '#00f', '#fff', '#000')
     //通过实例化对象使得hp_sec页面文字颜色渐变
     let words = new Gradient(document.querySelector('#goodluck'), 2, 7000)
     words.start()
@@ -75,8 +72,11 @@ const Myobj = {
         target.matches('a.toleft') ? location.hash = 'pi_sec' : location.hash = 'hp_sec'
       }
     })
+  },
+  init () {
+    this.init_pi()
+    this.init_hp()
+    this.init_pd()
   }
 }
-Myobj.init_pi()
-Myobj.init_pd()
-Myobj.init_hp()
+Myobj.init()

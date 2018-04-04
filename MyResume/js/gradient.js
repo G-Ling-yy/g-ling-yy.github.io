@@ -13,7 +13,7 @@ class Gradient {
       for (let i = 0; i < 3; i++) {
         ary.push(Math.ceil(Math.random() * 255))
       }
-      ary.push(Math.ceil(Math.random() * 10) / 10)
+      ary.push(Math.ceil(Math.random() * 5 + 5) / 10)
       p === 1 ? eldom.style.backgroundColor = `rgba(${ary[0]}, ${ary[1]}, ${ary[2]}, ${ary[3]})` : eldom.style.color = `rgba(${ary[0]}, ${ary[1]}, ${ary[2]}, ${ary[3]})`
     }
   }

@@ -2,13 +2,11 @@ section.pi_sec {
   display: block;
   padding: 10% 10% 0; }
   section.pi_sec #myinfo {
-    margin: 0 0 5rem;
-    min-width: 25rem; }
+    margin: 0 0 5rem; }
     section.pi_sec #myinfo h1 {
       margin: 0 0 1rem; }
     section.pi_sec #myinfo p {
       border-bottom: 1px solid #eee;
-      height: 3rem;
       line-height: 3rem;
       text-indent: 2rem; }
     section.pi_sec #myinfo p span, section.pi_sec #myinfo p a {
@@ -120,7 +118,8 @@ section.hp_sec {
 
 @media screen and (max-width: 768px) {
   section.hp_sec #cube {
-    height: 20vh; }
+    height: 20vh;
+    margin: 0 0 3rem; }
     section.hp_sec #cube .cube_container {
       height: 10vh;
       width: 10vh; }
@@ -222,6 +221,7 @@ section.pd_sec {
     background-color: #eff;
     border-radius: 50%;
     bottom: 9%;
+    color: #000;
     display: block;
     font-size: 2rem;
     height: 3rem;
@@ -231,24 +231,33 @@ section.pd_sec {
     transition: .7s;
     width: 3rem; }
   section.pd_sec a.toleft {
-    left: 9%; }
+    left: 10.5%; }
   section.pd_sec a.toright {
-    right: 9%; }
+    right: 10.5%; }
   section.pd_sec a.toleft:hover, section.pd_sec a.toright:hover {
     background-color: #d8b362; }
 
 @media screen and (max-width: 768px) {
   section.pd_sec {
     padding: 9%; }
-    section.pd_sec #demos .demo {
-      height: 3.6rem;
-      width: 11rem; }
-      section.pd_sec #demos .demo h1 {
-        font-size: 1rem; }
-      section.pd_sec #demos .demo p {
-        font-size: .7rem; }
-      section.pd_sec #demos .demo p:nth-of-type(4) a {
-        background-color: #eff; }
+    section.pd_sec #demos {
+      padding: 9% 9% 19%; }
+      section.pd_sec #demos .demo {
+        height: 3.6rem;
+        width: 11rem; }
+        section.pd_sec #demos .demo h1 {
+          font-size: 1rem; }
+        section.pd_sec #demos .demo p {
+          font-size: .7rem; }
+        section.pd_sec #demos .demo p:nth-of-type(4) a {
+          background-color: #eff; }
     section.pd_sec a.toleft, section.pd_sec a.toright {
-      bottom: 3%;
-      font-size: 1.5rem; } }
+      bottom: 5%;
+      font-size: 1.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      width: 1.5rem; }
+    section.pd_sec a.toleft {
+      left: 15.5%; }
+    section.pd_sec a.toright {
+      right: 15.5%; } }
