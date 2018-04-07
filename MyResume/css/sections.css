@@ -20,11 +20,16 @@ section.pi_sec {
       cursor: pointer;
       font-size: 1.5rem;
       text-shadow: 0 0 2px #00f; }
+    section.pi_sec #myinfo p:last-child a {
+      text-decoration: underline; }
+    section.pi_sec #myinfo p:last-child a:hover {
+      font-size: 1.2rem; }
   section.pi_sec #myinfo:hover {
     box-shadow: 0 0 10px #999;
     transform: scale(1.01); }
   section.pi_sec #more {
-    margin: 0 0 5rem; }
+    margin: 0 0 5rem;
+    transition: .3s; }
     section.pi_sec #more p {
       height: 4rem;
       line-height: 4rem;
@@ -33,10 +38,9 @@ section.pi_sec {
       section.pi_sec #more p a {
         color: #f5cd13;
         text-shadow: 0 0 2px #f5cd13; }
-      section.pi_sec #more p a:hover {
-        cursor: pointer; }
   section.pi_sec #more:hover {
     box-shadow: 0 0 50px #f5cd13;
+    cursor: pointer;
     transform: scale(0.99); }
 
 @media screen and (max-width: 768px) {

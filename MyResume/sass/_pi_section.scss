@@ -25,6 +25,12 @@ section.pi_sec {
       font-size: 1.5rem;
       text-shadow: 0 0 2px #00f;
     }
+    p:last-child a {
+      text-decoration: underline;
+    }
+    p:last-child a:hover {
+      font-size: 1.2rem;
+    }
   }
   #myinfo:hover {
     box-shadow: 0 0 10px #999;
@@ -32,6 +38,7 @@ section.pi_sec {
   }
   #more {
     margin: 0 0 5rem;
+    transition: .3s;
     p {
       height: 4rem;
       line-height: 4rem;
@@ -41,13 +48,11 @@ section.pi_sec {
         color: #f5cd13;
         text-shadow: 0 0 2px #f5cd13;
       }
-      a:hover {
-        cursor: pointer;
-      }
     }
   }
   #more:hover {
     box-shadow: 0 0 50px #f5cd13;
+    cursor: pointer;
     transform: scale(.99);
   }
 }

@@ -7,7 +7,7 @@ const Myobj = {
     info.showme()
     //为指定aDOM添加事件
     const a_hp = document.querySelector('#rsrx') 
-    const a_pd = document.querySelector('#more p a')
+    const a_pd = document.querySelector('#more')
     //实例化一个3D对象，使全局变成三棱柱形状
     let build_3d = new Build_3D(document.querySelector('main'))
     build_3d.build()
