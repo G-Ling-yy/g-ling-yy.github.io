@@ -11,18 +11,23 @@ body {
   overflow-x: hidden;
 }
 main {
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   transition: 1.7s;
-  transform: rotateY(-120deg);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+  transform: rotateY(0);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
   transform-style: preserve-3d;
   width: 100%;
 }
 main section {
   backface-visibility: hidden;
-  display: none;
-  min-height: 100vh;
-  overflow-x: hidden;
+  height: 100%;
+  overflow: hidden;
   position: absolute;
-  width: inherit;
+  width: 100%;
+}
+main section .sec_container {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: calc(100% + 17px);
 }

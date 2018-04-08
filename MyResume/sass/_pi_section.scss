@@ -1,66 +1,70 @@
 section.pi_sec {
-  display: block;
-  padding: 10% 10% 0;
-  #myinfo {
-    margin: 0 0 5rem;
-    h1 {
-      margin: 0 0 1rem;
-    }
-    p {
-      border-bottom: 1px solid #eee;
-      line-height: 3rem;
-      text-indent: 2rem;
-    }
-    p span, p a {
-      font-family: "KaiTi",serif;
-      text-shadow: 0 0 1px #000;
-    }
-    p a {
-      color: #000;
-      transition: .7s;
-    }
-    p a:hover {
-      color: #00f;
-      cursor: pointer;
-      font-size: 1.5rem;
-      text-shadow: 0 0 2px #00f;
-    }
-    p:last-child a {
-      text-decoration: underline;
-    }
-    p:last-child a:hover {
-      font-size: 1.2rem;
-    }
-  }
-  #myinfo:hover {
-    box-shadow: 0 0 10px #999;
-    transform: scale(1.01);
-  }
-  #more {
-    margin: 0 0 5rem;
-    transition: .3s;
-    p {
-      height: 4rem;
-      line-height: 4rem;
-      margin: 0 0 2rem;
-      text-align: center;
-      a {
-        color: #f5cd13;
-        text-shadow: 0 0 2px #f5cd13;
+  .sec_container {
+    padding: 5% 5% 0;
+    #myinfo {
+      margin: 0 0 5rem;
+      padding: 5% 5% 1%;
+      transition: .3s;
+      h1 {
+        margin: 0 0 1rem;
+      }
+      p {
+        border-bottom: 1px solid #eee;
+        line-height: 3rem;
+        text-indent: 2rem;
+      }
+      p span, p a {
+        font-family: "KaiTi",serif;
+        text-shadow: 0 0 1px #000;
+      }
+      p a {
+        color: #000;
+        transition: .3s;
+      }
+      p a:hover {
+        color: #00f;
+        font-size: 1.3rem;
+        text-shadow: 0 0 2px #00f;
+      }
+      p:last-child a {
+        text-decoration: underline;
+      }
+      p:last-child a:hover {
+        cursor: pointer;
+        font-size: 1.1rem;
       }
     }
-  }
-  #more:hover {
-    box-shadow: 0 0 50px #f5cd13;
-    cursor: pointer;
-    transform: scale(.99);
+    #myinfo:hover {
+      background: rgba(0, 255, 255, .07);
+      box-shadow: 0 0 10px #999;
+    }
+    #more {
+      margin: 0 0 5rem;
+      transition: .3s;
+      p {
+        height: 4rem;
+        line-height: 4rem;
+        margin: 0 0 2rem;
+        text-align: center;
+        a {
+          color: #f5cd13;
+          text-shadow: 0 0 2px #f5cd13;
+        }
+      }
+    }
+    #more:hover {
+      box-shadow: 0 0 50px #f5cd13;
+      cursor: pointer;
+    }
   }
 }
 @media screen and (max-width: 768px) {
   section.pi_sec {
-    #myinfo {
-      p:last-child a {
-        display: block;
+    .sec_container {
+      #myinfo {
+        p:last-child a {
+          display: block;
+        }
       }
     }
   }

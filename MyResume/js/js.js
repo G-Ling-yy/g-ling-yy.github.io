@@ -8,11 +8,11 @@ const Myobj = {
     //为指定aDOM添加事件
     const a_hp = document.querySelector('#rsrx') 
     const a_pd = document.querySelector('#more')
+    aevent()
     //实例化一个3D对象，使全局变成三棱柱形状
     let build_3d = new Build_3D(document.querySelector('main'))
     build_3d.build()
     build_3d.change()
-    aevent()
     function aevent () {
       a_hp.addEventListener('click', () => location.hash = `hp_sec`)
       a_pd.addEventListener('click', () => location.hash = `pd_sec`)
