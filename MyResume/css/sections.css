@@ -50,7 +50,8 @@ section.pi_sec .sec_container {
 section.hp_sec {
   transform-origin: 100%; }
   section.hp_sec .sec_container {
-    background: #eee; }
+    background: #eee;
+    position: relative; }
     section.hp_sec .sec_container #cube {
       align-items: center;
       display: flex;
@@ -106,6 +107,8 @@ section.hp_sec {
       section.hp_sec .sec_container #luck p:first-child:hover + p {
         color: #0ff;
         text-shadow: 0 0 .2rem #0ff; }
+    section.hp_sec .sec_container #luck:hover {
+      cursor: wait; }
     section.hp_sec .sec_container #goodluck {
       align-items: center;
       display: flex;

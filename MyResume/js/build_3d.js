@@ -6,6 +6,11 @@ class Build_3D {
         case 'hp_sec' :
           this.$el.style.transform = `rotateY(120deg)`
           this.recording('hp_sec', 120)
+          if (!document.querySelector('#cube .cube_container')) {
+            let cube = new Cube(document.querySelector('#cube'))
+            cube.createDoms()
+            cube.colorCube('#f00', '#0f0', '#00f', '#fff', '#000')
+          }
           break
         case 'pd_sec' :
           this.$el.style.transform = `rotateY(-120deg)`

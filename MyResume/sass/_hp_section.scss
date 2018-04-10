@@ -2,6 +2,7 @@ section.hp_sec {
   transform-origin: 100%;
   .sec_container {
     background: #eee;
+    position: relative;
     #cube {
       align-items: center;
       display: flex;
@@ -70,6 +71,9 @@ section.hp_sec {
         color: #0ff;
         text-shadow: 0 0 .2rem #0ff;
       }
+    }
+    #luck:hover {
+      cursor: wait;
     }
     #goodluck {
       align-items: center;
