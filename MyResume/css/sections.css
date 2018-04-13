@@ -1,3 +1,4 @@
+@charset "UTF-8";
 section.pi_sec .sec_container {
   padding: 5% 5% 0; }
   section.pi_sec .sec_container #myinfo {
@@ -5,21 +6,30 @@ section.pi_sec .sec_container {
     padding: 5% 5% 1%;
     transition: .3s; }
     section.pi_sec .sec_container #myinfo h1 {
-      margin: 0 0 1rem; }
+      margin: 0 0 1rem;
+      position: relative; }
+    section.pi_sec .sec_container #myinfo h1::before {
+      animation: h1c 7s linear infinite alternate;
+      content: '个人简介：';
+      color: #fff;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0; }
     section.pi_sec .sec_container #myinfo p {
       border-bottom: 1px solid #eee;
       line-height: 3rem;
       text-indent: 2rem; }
     section.pi_sec .sec_container #myinfo p span, section.pi_sec .sec_container #myinfo p a {
+      animation: shadowblink 7s linear infinite;
       font-family: "KaiTi",serif;
       text-shadow: 0 0 1px #000; }
     section.pi_sec .sec_container #myinfo p a {
       color: #000;
-      transition: .3s; }
+      transition: .2s; }
     section.pi_sec .sec_container #myinfo p a:hover {
-      color: #00f;
-      font-size: 1.3rem;
-      text-shadow: 0 0 2px #00f; }
+      color: #f5cd13;
+      font-size: 1.3rem; }
     section.pi_sec .sec_container #myinfo p:last-child a {
       text-decoration: underline; }
     section.pi_sec .sec_container #myinfo p:last-child a:hover {
@@ -31,6 +41,18 @@ section.pi_sec .sec_container {
   section.pi_sec .sec_container #more {
     margin: 0 0 5rem;
     transition: .3s; }
+    section.pi_sec .sec_container #more h1 {
+      color: #f5cd13;
+      margin: 0 0 1rem;
+      position: relative; }
+    section.pi_sec .sec_container #more h1::before {
+      animation: h1c 7s linear infinite alternate;
+      content: 'More:';
+      color: #000;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0; }
     section.pi_sec .sec_container #more p {
       height: 4rem;
       line-height: 4rem;
@@ -42,6 +64,20 @@ section.pi_sec .sec_container {
   section.pi_sec .sec_container #more:hover {
     box-shadow: 0 0 50px #f5cd13;
     cursor: pointer; }
+
+@keyframes shadowblink {
+  0% {
+    text-shadow: 0 0 0 #000; }
+  50% {
+    text-shadow: 0 0 1.5px #000; }
+  100% {
+    text-shadow: 0 0 0 #000; } }
+
+@keyframes h1c {
+  from {
+    height: 0; }
+  to {
+    height: 100%; } }
 
 @media screen and (max-width: 768px) {
   section.pi_sec .sec_container #myinfo p:last-child a {
