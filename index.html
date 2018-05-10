@@ -120,15 +120,15 @@
 <body>
   <label>跳转到第<input type="number" value="0">份作业</label>
   <ul>
-    <li><a href="https://g-ling-yy.github.io/MyTask_1/">1</a></li>
-    <li><a href="https://g-ling-yy.github.io/">2</a></li>
-    <li><a href="https://g-ling-yy.github.io/MyTask_3/">3</a></li>
-    <li><a href="https://g-ling-yy.github.io/MyTask_4/">4</a></li>
-    <li><a href="https://g-ling-yy.github.io/MyTask_5/">5</a></li>
-    <li><a href="https://g-ling-yy.github.io/MyTask_6/">6</a></li>
-    <li><a href="https://g-ling-yy.github.io/MyTask_7/">7</a></li>
-    <li><a href="https://g-ling-yy.github.io/MyTask_8/">8</a></li>
-    <li><a href="https://g-ling-yy.github.io/MyTask_9/">9</a></li>
+    <li id="task1"><a href="https://g-ling-yy.github.io/MyTask_1/">1</a></li>
+    <li id="task2"><a href="https://g-ling-yy.github.io/">2</a></li>
+    <li id="task3"><a href="https://g-ling-yy.github.io/MyTask_3/">3</a></li>
+    <li id="task4"><a href="https://g-ling-yy.github.io/MyTask_4/">4</a></li>
+    <li id="task5"><a href="https://g-ling-yy.github.io/MyTask_5/">5</a></li>
+    <li id="task6"><a href="https://g-ling-yy.github.io/MyTask_6/">6</a></li>
+    <li id="task7"><a href="https://g-ling-yy.github.io/MyTask_7/">7</a></li>
+    <li id="task8"><a href="https://g-ling-yy.github.io/MyTask_8/">8</a></li>
+    <li id="task9"><a href="https://g-ling-yy.github.io/MyTask_9/">9</a></li>
     <li id="task10"><a href="https://g-ling-yy.github.io/MyTask_10/">10</a></li>
     <li id="task11"><a href="https://g-ling-yy.github.io/MyTask_11/">11</a></li>
     <li id="task12"><a href="https://g-ling-yy.github.io/MyTask_12/">12</a></li>
@@ -155,15 +155,11 @@
     (function(){
       var count = document.querySelector('label input');
       count.focus();
-      function inputClick(){
-        count.addEventListener('click',function(){
-          this.value = (Number(this.value) + 1);
-        })
-      }
       function inputEnter(){
-        count.addEventListener('keypress',function(){
-          if (event.keyCode === 13) {
-            document.body.scrollTop = (Number(this.value) - 1) * 330;
+        count.addEventListener('keypress',function(e){
+          if (e.keyCode === 13) {
+            let v = Number(this.value)
+            location.hash = `task${v}`
           }
         })
       }
@@ -179,10 +175,9 @@
           document.querySelector('ul').innerHTML += `<li id="task${30+i}"><a href="https://g-ling-yy.github.io/MyTask_${30+i}/">${30+i}</a></li>`;
         }
       }
-      inputClick();
       inputEnter();
       backTop();
-      addLi(100);
+      addLi(10);
     })();
   </script>
 </body>
