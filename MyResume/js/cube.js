@@ -1,4 +1,5 @@
-class Cube {
+import {Gradient} from './gradient.js'
+export class Cube {
   constructor (el, swidth) {
     this.$el = el
     this.swidth = swidth

@@ -1,4 +1,4 @@
-class MyInfo {
+export class MyInfo {
   constructor (el, obj) {
     this.$el = el
     this.obj = obj

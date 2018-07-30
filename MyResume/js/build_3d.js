@@ -1,4 +1,5 @@
-class Build_3D {
+import {Cube} from './cube.js'
+export class Build_3D {
   constructor (el) {
     this.$el = el
     this.secs = this.$el.querySelectorAll('section')

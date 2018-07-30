@@ -8,32 +8,34 @@ section.pi_sec {
       h1 {
         margin: 0 0 1rem;
         position: relative;
+        z-index: -1;
       }
       h1::before {
         animation: h1c 7s linear infinite alternate;
         content: '个人简介：';
-        color: #fff;
+        color: #0ff;
         left: 0;
         overflow: hidden;
         position: absolute;
         top: 0;
       }
       p {
+        animation: shadowblink 7s linear infinite;
         border-bottom: 1px solid #eee;
         line-height: 3rem;
         text-indent: 2rem;
+        text-shadow: 0 0 1px #000;
       }
       p span, p a {
-        animation: shadowblink 7s linear infinite;
         font-family: "KaiTi",serif;
-        text-shadow: 0 0 1px #000;
+        text-shadow: none;
       }
       p a {
         color: #000;
         transition: .2s;
       }
       p a:hover {
-        color: #f5cd13;
+        color: #0ff;
         font-size: 1.3rem;
       }
       p:last-child a {
@@ -55,6 +57,7 @@ section.pi_sec {
         color: #f5cd13;
         margin: 0 0 1rem;
         position: relative;
+        z-index: -1;
       }
       h1::before {
         animation: h1c 7s linear infinite alternate;

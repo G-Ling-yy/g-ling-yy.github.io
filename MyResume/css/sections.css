@@ -7,28 +7,30 @@ section.pi_sec .sec_container {
     transition: .3s; }
     section.pi_sec .sec_container #myinfo h1 {
       margin: 0 0 1rem;
-      position: relative; }
+      position: relative;
+      z-index: -1; }
     section.pi_sec .sec_container #myinfo h1::before {
       animation: h1c 7s linear infinite alternate;
       content: '个人简介：';
-      color: #fff;
+      color: #0ff;
       left: 0;
       overflow: hidden;
       position: absolute;
       top: 0; }
     section.pi_sec .sec_container #myinfo p {
+      animation: shadowblink 7s linear infinite;
       border-bottom: 1px solid #eee;
       line-height: 3rem;
-      text-indent: 2rem; }
-    section.pi_sec .sec_container #myinfo p span, section.pi_sec .sec_container #myinfo p a {
-      animation: shadowblink 7s linear infinite;
-      font-family: "KaiTi",serif;
+      text-indent: 2rem;
       text-shadow: 0 0 1px #000; }
+    section.pi_sec .sec_container #myinfo p span, section.pi_sec .sec_container #myinfo p a {
+      font-family: "KaiTi",serif;
+      text-shadow: none; }
     section.pi_sec .sec_container #myinfo p a {
       color: #000;
       transition: .2s; }
     section.pi_sec .sec_container #myinfo p a:hover {
-      color: #f5cd13;
+      color: #0ff;
       font-size: 1.3rem; }
     section.pi_sec .sec_container #myinfo p:last-child a {
       text-decoration: underline; }
@@ -44,7 +46,8 @@ section.pi_sec .sec_container {
     section.pi_sec .sec_container #more h1 {
       color: #f5cd13;
       margin: 0 0 1rem;
-      position: relative; }
+      position: relative;
+      z-index: -1; }
     section.pi_sec .sec_container #more h1::before {
       animation: h1c 7s linear infinite alternate;
       content: 'More:';

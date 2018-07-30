@@ -1,6 +1,149 @@
-import {Gradient} from './gradient.js'
-import {MyInfo} from './myinfo.js'
-import {Build_3D} from './build_3d.js'
+class Gradient {
+  constructor (el, pp, time) {
+    this.$el = el
+    this.pp = pp
+    this.time = time
+    this.$el.style.transition = `${this.time / 700}s`
+  }
+  start () {
+    const eldom = this.$el
+    setInterval(() => change(this.pp), this.time)
+    function change (p) {
+      let ary = []
+      for (let i = 0; i < 3; i++) {
+        ary.push(Math.ceil(Math.random() * 255))
+      }
+      ary.push(Math.ceil(Math.random() * 5 + 5) / 10)
+      p === 1 ? eldom.style.backgroundColor = `rgba(${ary[0]}, ${ary[1]}, ${ary[2]}, ${ary[3]})` : eldom.style.color = `rgba(${ary[0]}, ${ary[1]}, ${ary[2]}, ${ary[3]})`
+    }
+  }
+}
+
+class Cube {
+  constructor (el, swidth) {
+    this.$el = el
+    this.swidth = swidth
+    this.$faces = []
+  }
+  createDoms () {
+    this.$container = document.createElement('div')
+    this.$container.className = `cube_container`
+    this.$el.appendChild(this.$container)
+    for (let i = 0; i < 6; i++) {
+      let newface = document.createElement('div')
+      newface.className = `cube_face`
+      this.$container.appendChild(newface)
+      this.$faces.push(newface)
+    }
+  }
+  colorCube () {
+    if (!arguments.length) return;
+    let args = Array.from(arguments)
+    if (args.length > 5) args = args.slice(0,5)
+    this.$faces.forEach((ele, i) => {
+      ele.style.backgroundColor = args[i]
+    })
+    let lastface = new Gradient(this.$faces[5], 1, 2700)
+    lastface.start()
+  }
+}
+
+class Build_3D {
+  constructor (el) {
+    this.$el = el
+    this.secs = this.$el.querySelectorAll('section')
+      switch (location.hash.slice(1)) {
+        case 'hp_sec' :
+          this.$el.style.transform = `rotateY(120deg)`
+          this.recording('hp_sec', 120)
+          if (!document.querySelector('#cube .cube_container')) {
+            let cube = new Cube(document.querySelector('#cube'))
+            cube.createDoms()
+            cube.colorCube('#f00', '#0f0', '#00f', '#fff', '#000')
+          }
+          break
+        case 'pd_sec' :
+          this.$el.style.transform = `rotateY(-120deg)`
+          this.recording('pd_sec', -120)
+          break
+        case 'pi_sec' :
+          this.$el.style.transform = `rotateY(0)`
+          this.recording('pi_sec', 0)
+          break
+        default : 
+          if (localStorage.getItem('usinghash'))  {
+            this.$el.style.transform = `rotateY(${JSON.parse(localStorage.getItem('usinghash')).angle}deg)`
+            location.hash = JSON.parse(localStorage.getItem('usinghash')).hash
+          } else {
+            this.$el.style.transform = `rotateY(0)`
+            location.hash = `pi_sec`
+            this.recording('pi_sec', 0)
+          }
+      }
+    onresize = () => this.build()
+  }
+  build () {
+    let w = innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    let num = w * .01444
+    this.secs[0].style.transform = `translateX(-100%) rotateY(-120deg)`
+    this.secs[1].style.transform = `translateX(100%) rotateY(120deg)`
+    this.$el.style.transformOrigin = `50% 50% -${num}rem`
+  }
+  change () {
+    window.addEventListener('hashchange', () => {
+      if (!localStorage.getItem('usinghash')) location.reload()
+      let obj = JSON.parse(localStorage.getItem('usinghash'))
+      let newhash = location.hash.slice(1)
+      if (obj.hash === newhash) return
+      switch (newhash) {
+        case 'hp_sec' :
+          if (!document.querySelector('#cube .cube_container')) {
+            let cube = new Cube(document.querySelector('#cube'))
+            cube.createDoms()
+            cube.colorCube('#f00', '#0f0', '#00f', '#fff', '#000')
+          }
+          obj.hash === 'pd_sec' ? this.$el.style.transform = `rotateY(${obj.angle - 120}deg)` : this.$el.style.transform = `rotateY(${obj.angle + 120}deg)`
+          obj.hash === 'pd_sec' ? obj.angle -= 120 : obj.angle += 120
+          this.recording(newhash, obj.angle)
+          break
+        case 'pd_sec' : 
+          obj.hash === 'pi_sec' ? this.$el.style.transform = `rotateY(${obj.angle - 120}deg)` : this.$el.style.transform = `rotateY(${obj.angle + 120}deg)`
+          obj.hash === 'pi_sec' ? obj.angle = obj.angle - 120 : obj.angle = obj.angle + 120
+          this.recording(newhash, obj.angle)
+          break
+        case 'pi_sec' :
+          obj.hash === 'hp_sec' ? this.$el.style.transform = `rotateY(${obj.angle - 120}deg)` : this.$el.style.transform = `rotateY(${obj.angle + 120}deg)`
+          obj.hash === 'hp_sec' ? obj.angle = obj.angle - 120 : obj.angle = obj.angle + 120
+          this.recording(newhash, obj.angle)
+          break
+        default :
+          return location.hash = obj.hash
+      }
+    })
+  }
+  recording (str, agl) {
+    localStorage.setItem('usinghash', JSON.stringify({hash: str, angle: agl}))
+  }
+}
+
+class MyInfo {
+  constructor (el, obj) {
+    this.$el = el
+    this.obj = obj
+  }
+  showme () {
+    let txt = `<h1>个人简介：</h1>
+      <p>姓名：<span>${this.obj.name}</span></p>
+      <p>年龄：<span>${this.obj.age}</span></p>
+      <p>性别：<span>${this.obj.sex}</span></p>
+      <p>2016年7月毕业于 <span>${this.obj.school}</span></p>
+      <p>所习专业：<span>${this.obj.major}</span></p>
+      <p>QQ：<a href="tencent://message/?uin=${this.obj.QQ}">${this.obj.QQ}</a></p>
+      <p>TEL：<a href="tel:18860913014">${this.obj.tel}</a></p>
+      <p>自我评价: <a id="rsrx">${this.obj.pj}</a></p>`
+    this.$el.innerHTML = txt
+  }
+}
 
 const Myobj = {
   init_pi () {

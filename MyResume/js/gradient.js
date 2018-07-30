@@ -1,4 +1,4 @@
-class Gradient {
+export class Gradient {
   constructor (el, pp, time) {
     this.$el = el
     this.pp = pp
