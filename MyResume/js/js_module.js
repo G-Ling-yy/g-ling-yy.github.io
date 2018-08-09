@@ -5,7 +5,7 @@ import {Build_3D} from './build_3d.js'
 const Myobj = {
   init_pi () {
     //我的信息对象
-    const me_obj = {name: '高大全', sex: '男', age: 24, school: '苏州市职业大学',major: '软件技术', aim: '前端实习工作', QQ: 934830721, tel: 18860913014, pj: '智商低，反应慢，运气还特么差'}
+    const me_obj = {name: '高大全', sex: '男', age: 24, school: '苏州市职业大学',major: '软件技术', aim: '前端实习工作', QQ: 934830721, tel: 18860913014, pj: '本人性格开朗、稳重、有活力、待人热情、真诚。有较强的团队协作精神，较好的社交能力，善于处理各种人际关系。能尽快适应各种环境并融入其中。能把企业财富当作自身财富，在努力为企业服务的过程中实现自身价值。'}
     //信息对象渲染指定DOM
     let info = new MyInfo(document.querySelector('#myinfo'), me_obj)
     info.showme()
