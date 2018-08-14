@@ -16,7 +16,10 @@
       font-size: 20px;
     }
     body {
+      align-items: center;
+      display: flex;
       min-height: 100vh;
+      justify-content: center;
     }
     #container {
       align-items: flex-end;
@@ -167,6 +170,11 @@
     @keyframes facer {
       0% {opacity: 1}
       100% {opacity: .7}
+    }
+    @media screen and (max-width: 640px) {
+      #container {
+        transform: scale(.5);
+      }
     }
   </style>
 </head>
