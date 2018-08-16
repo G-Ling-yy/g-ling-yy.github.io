@@ -1,0 +1,216 @@
+body {
+  position: relative;
+}
+#container_print {
+  font-family: KaiTi,serif;
+  display: none;
+  min-height: 100vh;
+  min-width: 44rem;
+}
+#aside_left {
+  background-color: #eee;
+  flex: .35;
+  padding-bottom: 5rem;
+}
+#aside_left #pi_headwrapper {
+  align-items: center;
+  display: flex;
+  height: 10rem;
+  justify-content: center;
+  margin-bottom: 7rem;
+  width: 100%;
+}
+#aside_left #pi_headwrapper #pi_head {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 .1rem .2rem #666; 
+  height: 7rem;
+  width: 7rem;
+}
+#aside_left #pi_link {
+  height: 5rem;
+  overflow: hidden;
+  position: absolute;
+  top: 10rem;
+  width: 100%;
+  min-width: 44rem;
+  z-index: 1;
+}
+#pi_link #pi_left {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  float: left;
+  height: 100%;
+  position: relative;
+  width: 60%;
+}
+#pi_left #pi_name {
+  flex: 1 1 58.3%; 
+  font-size: 2rem;
+  text-align: center;
+}
+#pi_left #pi_want {
+  flex: 1 1 41.7%;
+  text-align: right;
+  white-space: nowrap;
+}
+#pi_link #pi_right {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  float: right;
+  height: 100%;
+  justify-content: space-around;
+  position: relative;
+  width: 30%;
+}
+#pi_link #pi_right a {
+  color: #4D9BB2;
+  text-decoration: none;
+}
+#pi_link #pi_left::after, #pi_link #pi_right::after {
+  border-radius: 1rem;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transform: skewX(20deg) translateX(1rem);
+  width: 115%;
+  z-index: -1;
+}
+#pi_link #pi_left::after {
+  background: linear-gradient(to right, #E16B7B, #4D9BB2);
+  left: -2.7rem;
+}
+#pi_link #pi_right::after {
+  background-color: #eee;
+  left: -1rem;
+} 
+#aside_right {
+  background-color: #fff;
+  flex: .55;
+  padding-bottom: 5rem;
+  position: relative;
+}
+.color_red {
+  color: #E16B7B;
+}
+.color_blue {
+  color: #4D9BB2;
+}
+.block {
+  padding: 5%;
+  width: 100%;
+}
+.block h1 {
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+}
+.block h1 i {
+  margin-right: .8rem;
+}
+.block p {
+  text-indent: 2rem;
+}
+#aside_left .block {
+  padding-left: 10%;
+}
+#aside_left #pi_info {
+  padding: 1rem 0 .5rem 20%;
+}
+#pi_info li, #pi_skills li {
+  margin: 0 0 .5rem 0;
+}
+#aside_left #pi_skills, #aside_left #pi_hobbies {
+  list-style: none;
+  padding: 1rem 0 .5rem 10%;
+}
+#pi_skills li {
+  align-items: center;
+  display: flex;
+  height: 1.5rem;
+}
+#pi_skills li p {
+  color: #999;
+  flex: .15 1 15%;
+  text-indent: 0;
+}
+#pi_skills li div {
+  background: #999;
+  border-radius: 1rem;
+  flex: .85;
+  height: 40%;
+}
+#pi_skills li div::after {
+  background: #E16B7B;
+  border-radius: 1rem;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 80%;
+}
+#pi_skills li:nth-child(4) div::after, #pi_skills li:nth-child(5) div::after {
+  width: 50%;
+}
+#pi_skills li:nth-child(6) div::after {
+  width: 30%;
+}
+#pi_hobbies {
+  display: flex;
+  font-size: 2rem;
+}
+#pi_hobbies li {
+  flex: 1;
+}
+#aside_right::after {
+  border-left: 1px dotted #4D9BB2;
+  content: '';
+  height: calc(100% - 22rem);
+  left: calc(5% + .5rem);
+  position: absolute;
+  top: 19rem;
+  width: .5rem;
+}
+#aside_right div.block:first-child {
+  height: 10rem;
+  margin-bottom: 7rem;
+}
+#pi_items a, #pi_education h4 {
+  color: #4D9BB2;
+  display: inline-block;
+  margin-bottom: 1rem;
+  position: relative;
+  text-indent: 2rem;
+  text-decoration: none;
+}
+#pi_items a::before, #pi_education h4::before {
+  background-color: #4D9BB2;
+  border-radius: 50%;
+  content: '';
+  height: .8rem;
+  left: .1rem;
+  position: absolute;
+  top: .2rem;
+  width: .8rem;
+}
+#pi_items p {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+footer {
+  background: linear-gradient(to right, #4D9BB2, #E16B7B);
+  bottom: 1rem;
+  height: 1rem;
+  position: absolute;
+  width: 100%;
+}
+@media print {
+  main {
+    display: none;
+  }
+  #container_print {
+    display: flex;
+  }
+}
