@@ -1,0 +1,208 @@
+<style lang="less">
+page {
+	.container {
+		height: 100vh;
+		overflow: hidden;
+		width: 100vw;
+
+		movable-area {
+			height: 300vh;
+			left: -100vw;
+			position: relative;
+			top: -100vh;
+			width: 300vw;
+
+			movable-view {
+				animation-fill-mode: forwards;
+				border-radius: 20rpx;
+				height: 100vh;
+				left: 100vw;
+				overflow: hidden;
+				position: absolute;
+				top: 100vh;
+				width: 100vw;
+
+				.card {
+					height: 100%;
+					width: 100%;
+
+					.text {
+						color: #FD558B;
+						font-size: 36rpx;
+						position: absolute;
+						max-width: 40vw;
+					}
+
+					.first-page-text {
+						color: #fff;
+						left: 0;
+						position: absolute;
+						top: 25vh;
+						width: 100%;
+
+						.line {
+							align-items: center;
+							display: flex;
+							font-size: 50rpx;
+							justify-content: space-around;
+							text-shadow: 1rpx 1rpx 7rpx #333;
+							margin-bottom: 7vh;
+						}
+
+						.line:first-child {
+							font-size: 150rpx;
+						}
+					}
+				}
+
+				&.toleft {
+					animation: gotoLeft 1s 1;
+				}
+
+				&.toright {
+					animation: gotoRight 1s 1;
+				}
+			}
+		}
+
+		@keyframes gotoLeft {
+			0% {opacity: 1;
+			}
+			99% {opacity: 0;
+				transform: translateX(-200%) rotate(-70deg);
+			}
+			100% {
+				opacity: 1;
+				left: 100vw;
+				transform: translateX(0) rotate(0);
+				top: 100vh;
+			}
+		}
+
+		@keyframes gotoRight {
+			0% {opacity: 1;
+			}
+			99% {opacity: 0;
+				transform: translateX(200%) rotate(70deg);
+			}
+			100% {
+				opacity: 1;
+				left: 100vw;
+				transform: translateX(0) rotate(0);
+				top: 100vh;
+			}
+		}
+	}
+}
+</style>
+<template>
+	<view class="container">
+		<movable-area>
+				<movable-view wx:if="{{!isInAnimation}}" class="{{goLeft ? 'toleft' : ''}} {{goRight ? 'toright' : ''}}" direction="all" out-of-bounds="{{true}}" x="{{x}}" y="{{y}}" bindchange="onChange" catchtouchend="onCancel">
+					<view class="card" style="background: url('../images/funny_cat_{{index + 1}}.png') no-repeat 0 0 / cover;">
+						<!-- <view wx:if="{{index != 0}}" class="text" style="right: {{5 + index}}vw;top: {{5 + index}}vh">{{currentItem}}</view>
+						<view wx:if="{{index == 0}}" class="first-page-text">
+							<view class="line">
+								<view>S.</view>
+								<view>M.</view>
+							</view>
+							<view class="line">
+								<view>Soul</view>
+								<view>Mate</view>
+							</view>
+							<view class="line">
+								<view>(Sun)</view>
+								<view>(Ming)</view>
+							</view>
+						</view> -->
+					</view>
+				</movable-view>
+		</movable-area>
+	</view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class Index extends wepy.page {
+	config = {
+		navigationBarTitleText: '十七页书'
+	}
+	components = {}
+
+	data = {
+		book17Texts: ["S.M. Soul Mate","四年了，喜欢你也四年了","思来想去，决定还是大胆的地表白一次","大一的时候只是被你某个瞬间的背影所着迷","而后，我用了三年时间，去询问自己，到底是不是荷尔蒙的作怪","抑或是喜欢着自己的一个臆想","后来才确认我是真的喜欢你，你这个人","喜欢你撸猫时满眼的善良","喜欢慵懒的背后隐藏着的那双想要玩遍世界的腿和品尽美食的嘴","喜欢你的那句“我是个好女孩”","这四年时间，看着你身上发生了许许多多事情","也目睹了你的高兴开心与尴尬抱怨","特别是那句“男生都是演员”","虽然不知道在你身边发生了什么，但还是希望你依旧相信世界的美好","希望你的好运如“蜜蜂手链”般失而复得","希望你的未来如“天鹅项链”般恒久璀璨","未来路上，希望有你"],
+		currentItem: {},
+		index: 0,
+		x: 0,
+		y: 0,
+		previous: false,
+		next: false,
+		goLeft: false,
+		goRight: false,
+		isInAnimation: false
+	}
+
+	computed = {}
+
+	methods = {
+		onChange(e) {
+			if (e.detail.x < -70) {
+				if (this.next) return;
+				this.next = true
+			}else if (e.detail.x > 70) {
+				if (this.previous) return;
+				this.previous = true
+			}else {
+				if (!this.next && !this.previous) return;
+				this.next = false
+				this.previous = false
+			}
+		},
+
+		onCancel(e) {
+			if (this.next && this.index != 16) {
+				this.animationTo('left')
+			}else if (this.previous && this.index != 0) {
+				this.animationTo('right')
+			}else {
+				this.x = this.x == 0 ? 0.0000000000001 : 0
+				this.y = this.y == 0 ? 0.0000000000001 : 0
+			}
+		}
+	}
+
+	onLoad() {
+		this.currentItem = this.book17Texts[this.index]
+	}
+
+	animationTo(direction) {
+		if (direction == 'left') {
+			this.goLeft = true
+		}else {
+			this.goRight = true
+		}
+		this.showAfterPage()
+	}
+
+	showAfterPage() {
+		setTimeout(() => {
+			this.isInAnimation = true
+			this.$apply()
+			if (this.next) {
+				this.currentItem = this.book17Texts[this.index += 1]
+			}else if(this.previous) {
+				this.currentItem = this.book17Texts[this.index -= 1]
+			}
+			this.rerender()
+		}, 999)
+	}
+
+	rerender() {
+		this.x = 0
+		this.y = 0
+		this.previous = this.next = this.goLeft = this.goRight = this.isInAnimation = false
+		this.$apply()
+	}
+}
+</script>
