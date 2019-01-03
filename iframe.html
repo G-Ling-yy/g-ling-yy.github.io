@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Vue</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<title>Document</title>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			height: 100vh;
+			overflow: hidden;
+			min-width: 350px;
+			width: 100vw;
+		}
+
+		.mainWrapper {background: #ff0;
+			height: 100%;
+			overflow-x: hidden;
+			width: calc(100% + 17px);
+		}
+
+		.main {
+			background: linear-gradient(#fff,#000);
+			height: 1000vh;
+		}
+
+		.wrapper {
+			height: 100px;
+			overflow-x: hidden;
+			position: relative;
+			width: 100%;
+		}
+
+
+		.a, .b, .c {
+			background: #0f0;
+			border-radius: 80px;
+			height: 80px;
+			left: 100%;
+			position: absolute;
+			transform: translateX(0);
+			width: 80px;
+		}
+
+		.a {
+			animation: move 2s linear infinite forwards;
+		}
+
+		.b {
+			animation: move 2s linear 1s infinite forwards;
+		}
+
+
+		@keyframes move {
+			0% {left: 100%;transform: translateX(0)}
+			100% {left: -100%;transform: translateX(-100%)}
+		}
+
+
+	</style>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/jsrender/1.0.0-rc.70/jsrender.min.js"></script>
+</head>
+
+<body>
+
+	<div class="mainWrapper">
+		<div class="main">
+			<div class="wrapper">
+				<div class="a"></div>
+			</div>
+			<div class="wrapper">
+				<div class="b"></div>
+			</div>
+			<div class="wrapper">
+				<div class="c"></div>
+			</div>
+		</div>
+	</div>
+	 
+	<script type="text/javascript">
+
+	</script>
+</body>
+
+</html>
