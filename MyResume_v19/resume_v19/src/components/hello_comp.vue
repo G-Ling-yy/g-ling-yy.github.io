@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import {mutation} from '@/assets/js/store.js'
+
 export default {
 	data() {
 		return {
@@ -19,8 +21,8 @@ export default {
 		}
 	},
 
-	computed: {
-
+	mounted() {
+		setTimeout(() => mutation.setCanRunAnimation(true), 2500)
 	}
 }
 </script>

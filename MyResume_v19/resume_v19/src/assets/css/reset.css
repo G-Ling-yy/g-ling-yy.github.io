@@ -5,9 +5,6 @@
 	text-decoration: none;
 }
 
-.page-container {
-	background: url() no-repeat 0 0 / 100% 100%;
-	padding-top: 50px;
-	min-height: 100vh;
-	overflow: hidden;
+html {
+	font-size: 20px;
 }

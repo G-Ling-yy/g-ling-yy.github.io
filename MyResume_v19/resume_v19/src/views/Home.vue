@@ -49,13 +49,14 @@
 	}
 
 	.content {
+		z-index: 1;
 	}
 }
 </style>
 
 <template>
-	<div :class="['home', !isShow && 'pre-show', isRunning && 'running', isPCRunning && 'PCrunning']">
-		<div class="hellow" @click="sss">
+	<div :class="['home', !isShowed && 'pre-show', isRunning && 'running', isPCRunning && 'PCrunning']">
+		<div class="hellow">
 			<component :is="hellowComponent"></component>
 		</div>
 		<div class="content">
@@ -77,7 +78,6 @@ export default {
 
 	data() {
 		return {
-			isShow: false,
 			isRunning: false,
 			isPCRunning: false
 		}
@@ -89,6 +89,10 @@ export default {
 	},
 
 	computed: {
+		isShowed() {
+			return store.isShowed
+		},
+
 		hellowComponent() {
 			let hc = ''
 			isPC ? hc = PCHelloComp : hc = HelloComp
@@ -117,12 +121,6 @@ export default {
 			if (newV) {
 				isPC ? this.isPCRunning = true : this.isRunning = true
 			}
-		}
-	},
-
-	methods: {
-		sss() {
-			console.log('点我了', this.canRunAnimation)
 		}
 	}
 }
