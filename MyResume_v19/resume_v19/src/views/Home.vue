@@ -9,21 +9,21 @@
 		transform: rotateY(180deg);
 
 		&.running {
-			animation: running 3s linear 1 forwards;
+			animation: _running 3s linear 1 forwards;
 		}
 
 		&.PCrunning {
-			animation: PCrunning 1.6s linear 1 forwards;
+			animation: _PCrunning 1.7s linear 1 forwards;
 		}
 
-		@keyframes running {
+		@keyframes _running {
 			0% {transform: translateZ(0) rotateY(180deg);}
 			30% {transform: translateZ(-100px) rotateY(180deg);}
 			70% {transform: translateZ(-100px) rotateY(0);}
 			100% {transform: translateZ(0) rotateY(0);}
 		}
 
-		@keyframes PCrunning {
+		@keyframes _PCrunning {
 			0% {transform: translateZ(0) rotateX(0) rotateY(180deg);}
 			30% {transform: translateZ(-1500px) rotateX(0) rotateY(180deg);}
 			40% {transform: translateZ(-1500px) rotateX(120deg) rotateY(120deg);}
@@ -36,6 +36,7 @@
 	.hellow, .content {
 		background-color: #fff;
 		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
 		height: 100%;
 		left: 0;
 		overflow: hidden;

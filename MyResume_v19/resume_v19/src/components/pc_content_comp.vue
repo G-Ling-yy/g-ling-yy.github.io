@@ -17,7 +17,7 @@
 			padding: 5%;
 			width: 100%;
 
-			&:first-child {
+			&.self-assessment {
 				height: 10rem;
 				margin-bottom: 7rem;
 			}
@@ -81,9 +81,15 @@
 					display: flex;
 					float: left;
 					height: 100%;
+					left: -60%;
 					justify-content: flex-end;
 					position: relative;
+					transition: 1.7s;
 					width: 60%;
+
+					&.changing {
+						left: 0;
+					}
 
 					#pi_name {
 						font-size: 2rem;
@@ -105,7 +111,13 @@
 					height: 100%;
 					justify-content: space-around;
 					position: relative;
+					right: -30%;
+					transition: 1.7s;
 					width: 30%;
+
+					&.changing {
+						right: 0;
+					}
 
 					a {
 						color: #4D9BB2;
@@ -137,7 +149,15 @@
 			}
 
 			#pi_info {
-				padding: 1rem 0 .5rem 20%;
+				max-height: 0;
+				overflow: hidden;
+				padding: 0 0 0 20%;
+				transition: 1.7s;
+
+				&.changing {
+					max-height: 1000px;
+					padding: 1rem 0 .5rem 20%;
+				}
 			}
 
 			#pi_info li, #pi_skills li {
@@ -173,7 +193,7 @@
 							display: block;
 							height: 100%;
 							transition: 1.7s;
-							width: 50%;
+							width: 0;
 						}
 					}
 				}
@@ -225,9 +245,17 @@
 				}
 			}
 
-			#pi_items p {
-				margin-bottom: 1rem;
-				padding-left: 2rem;
+			#pi_items_wrapper {
+				overflow: hidden;
+				max-height: calc(2.75vw + 32px);
+				transition: 1.7s;
+
+				#pi_items {
+					p {
+						margin-bottom: 1rem;
+						padding-left: 2rem;
+					}
+				}
 			}
 		}
 	}
@@ -242,41 +270,36 @@
 					<a id="pi_head" href="javascript:;" @click="reload"></a>
 				</div>
 				<div id="pi_link">
-					<div id="pi_left">
+					<div id="pi_left" :class="[ isShowSkillBar && 'changing']">
 						<p id="pi_name">{{baseInfo.name}}</p>
 						<p id="pi_want">求职意向: 前端开发</p>
 					</div>
-					<div id="pi_right">
-						<a href="tel:18860913014" id="pi_phone">
+					<div id="pi_right" :class="[ isShowSkillBar && 'changing']">
+						<a :href="`tel:${baseInfo.phoneNumber}`" id="pi_phone">
 							<i class="fa fa-mobile" aria-hidden="true"></i>
 							{{baseInfo.phoneNumber}}
 						</a>
-						<a href="tencent://message/?uin=934830721" id="pi_QQ">
+						<a :href="`tencent://message/?uin=${baseInfo.QQ}`" id="pi_QQ">
 							<i class="fa fa-qq" aria-hidden="true"></i>
-							934830721
+							{{baseInfo.QQ}}
 						</a>
 					</div>
 				</div>
 				<div class="block">
 					<h1 class="color_red"><i class="fa fa-newspaper-o"></i> 基本信息</h1>
-					<ul id="pi_info">
-						<li>年 龄： 24 岁</li>
-						<li>性 别： 男</li>
-						<li>籍 贯： 江苏徐州</li>
-						<li>学 历： 大专</li>
-						<li>身 高： 173cm</li>
-						<li>体 重： 64kg</li>
+					<ul id="pi_info" :class="[ isShowSkillBar && 'changing']">
+						<li v-for="(item, index) in baseInfo.infoArray" :key="index">{{item}}</li>
 					</ul>
 				</div>
 				<div class="block">
 					<h1 class="color_red"><i class="fa fa-paw"></i>个人技能</h1>
 					<ul id="pi_skills">
-						<li><p>HTML5</p><div class="process"><div></div></div></li>
-						<li><p>CSS3</p><div class="process"><div></div></div></li>
-						<li><p>JS</p><div class="process"><div></div></div></li>
-						<li><p>SASS</p><div class="process"><div></div></div></li>
-						<li><p>JQuery</p><div class="process"><div></div></div></li>
-						<li><p>VUE</p><div class="process"><div></div></div></li>
+						<li v-for="(skill, index) in skillInfoArray" :key="index">
+							<p>{{skill.name}}</p>
+							<div class="process">
+								<div :style="{width: `${isShowSkillBar ? skill.percent : 0}%`}"></div>
+							</div>
+						</li>
 					</ul>
 				</div>
 				<div class="block">
@@ -289,28 +312,18 @@
 				</div>
 			</aside>
 			<aside id="aside_right">
-				<div class="block">
+				<div class="block self-assessment">
 					<h1 class="color_blue"><i class="fa fa-user" aria-hidden="true"></i>自我评价</h1>
-					<p>本人性格开朗、稳重、有活力、待人热情、真诚。有较强的团队协作精神，较好的社交能力，善于处理各种人际关系。能尽快适应各种环境并融入其中。(100%还原设计稿，精确到像素级别~)</p>
+					<p>{{selfAssessment}}</p>
 				</div>
-				<div id="pi_items" class="block">
-					<h1 class="color_blue"><i class="fa fa-database"></i> 项目经历</h1>
-					<a href="https://g-ling-yy.github.io/MyTask_29/" target="_blank">Github User Finder</a>
-					<p>输入指定github用户ID，停止输入后自动查询用户信息并展示<br>debounce防止用户输入过程中多次无效查询操作</p>
-					<a href="https://g-ling-yy.github.io/MyTask_25/" target="_blank">Ajax</a>
-					<p>通过对数据的简单交互展示ajax的基本用法和操作</p>
-					<a href="https://g-ling-yy.github.io/MyTask_22/" target="_blank">简易记事本</a>
-					<p>可以做增删改除等操作<br>通过localStorage保存数据在本地</p>
-					<a href="https://g-ling-yy.github.io/MyTask_19/" target="_blank">简易计算器</a>
-					<p>可以做加减乘除等基本操作，纯原生JS</p>
-					<a href="https://g-ling-yy.github.io/MyTask_8/" target="_blank">3D demos</a>
-					<p>css3 动画特效和3D特效展示</p>
-					<a href="https://g-ling-yy.github.io/Pikachu/" target="_blank">皮卡丘</a>
-					<p>纯css绘卡通形象皮卡丘</p>
-					<a href="https://g-ling-yy.github.io/MyTask_4/" target="_blank">知乎PC端登录页面（仿）</a>
-					<p>模仿知乎PC端的登录页面内容</p>
-					<a href="https://g-ling-yy.github.io/QQmusic/" target="_blank">QQ音乐（仿）</a>
-					<p>模仿qq音乐网页内容，数据与QQ音乐同步更新（因为音乐链接是从网上找的所以当链接失效的时候我的QQ音乐就也不能正常播放音乐了）</p>
+				<div id="pi_items_wrapper" :style="{'max-height': `${isShowSkillBar ? '1000px' : 'calc(2.75vw + 32px)'}`}">
+					<div id="pi_items" class="block">
+						<h1 class="color_blue"><i class="fa fa-database"></i> 项目经历</h1>
+						<div v-for="(project, index) in projectArray" :key="index">
+							<a :href="project.link" target="_blank">{{project.name}}</a>
+							<p v-html="project.intro"></p>
+						</div>
+					</div>
 				</div>
 				<div id="pi_education" class="block">
 					<h1 class="color_blue"><i class="fa fa-book"></i> 教育背景</h1>
@@ -328,13 +341,25 @@ import {userInfo} from '@/assets/js/store.js'
 export default {
 	data() {
 		return {
-
+			isShowSkillBar: false
 		}
 	},
 
 	computed: {
 		baseInfo() {
 			return userInfo.baseInfo
+		},
+
+		skillInfoArray() {
+			return userInfo.skillInfoArray
+		},
+
+		selfAssessment() {
+			return userInfo.selfAssessment
+		},
+
+		projectArray() {
+			return userInfo.projectArray
 		}
 	},
 
@@ -344,6 +369,11 @@ export default {
 			localStorage.setItem('hellowIsShowed', false)
 			setTimeout(() => location.reload())
 		}
+	},
+
+	mounted() {
+		const seconds = JSON.parse(localStorage.getItem('hellowIsShowed')) ? 300 : 4400
+		setTimeout(() => this.isShowSkillBar = true, seconds)
 	}
 }
 </script>

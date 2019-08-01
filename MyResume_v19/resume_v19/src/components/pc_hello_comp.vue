@@ -114,7 +114,7 @@
 			<div class="lip"></div>
 		</div>
 		<div class="process">
-			<div></div>
+			<div ref="processBar"></div>
 		</div>
 	</div>
 </template>
@@ -130,7 +130,7 @@ export default {
 	},
 
 	mounted() {
-		setTimeout(() => mutation.setCanRunAnimation(true), 2500)
+		this.$refs.processBar.addEventListener('animationend', () => mutation.setCanRunAnimation(true))
 	}
 }
 </script>
