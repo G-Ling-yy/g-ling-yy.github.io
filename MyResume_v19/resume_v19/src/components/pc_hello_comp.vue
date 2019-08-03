@@ -1,77 +1,55 @@
 <style lang="scss">
 .pc-hello-comp-container {
-	background: linear-gradient(to right, #fff, #f3d9dc, #fff);
+	background-color: #f9fbf8;
 	height: 100%;
 	position: relative;
 	width: 100%;
 	min-width: 800px;
 
-	.jia, .zai {
-		border-bottom: .4rem solid #2c3e50;
-		border-radius: .2rem;
+	.face-wrapper {
+		background: url(../assets/img/pc_pic.jpg) 0 0/100% 100% no-repeat;
+		height: 42rem;
 		left: 50%;
 		position: absolute;
-		top: calc(50vh - 14rem);
-		width: 15rem;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 55.3726rem;
 
-		div {
-			animation: anim_look 2.5s 1 forwards;
-			bottom: -.9rem;
-			color: #000;
-			font-size: 2rem;
-			font-weight: bold;
-			left: 0;
+		.left-eye, .right-eye {
+			background-color: #151714;
+			border-radius: 50%;
+			height: 1.2rem;
 			position: absolute;
-			text-shadow: 0 0 .2rem #000;
-			transform: translateX(0);
+			width: 1.2rem;
+		}
 
-			@keyframes anim_look {
-				0% {left: 0;transform: translateX(0);}
-				100% {left: 100%;transform: translateX(-100%);}
+		.left-eye {
+			animation: anim_left_eye 2.5s 1 forwards;
+		}
+
+		.right-eye {
+			animation: anim_right_eye 2.5s 1 forwards;
+		}
+
+		@keyframes anim_left_eye {
+			0% {
+				left: 26%;
+				top: 34.5%;
+			}
+			100% {
+				left: 42%;
+				top: 33.3%;
 			}
 		}
-	}
 
-	.jia {
-		transform: translateX(-20rem);
-	}
-
-	.zai {
-		transform: translateX(5rem);
-	}
-
-	.zhong {
-		font-size: 5rem;
-		font-weight: bold;
-		left: 50%;
-		position: absolute;
-		top: 45%;
-		transform: translate(-50%, -50%) scaleY(1.75);
-		z-index: 1;
-	}
-
-	.mouth {
-		height: 4rem;
-		left: 50%;
-		overflow: hidden;
-		position: absolute;
-		top: 60%;
-		transform: translateX(-50%);
-		width: 30rem;
-
-		.lip {
-			animation: anim_smile 2.5s 1 forwards;
-			border-bottom: .5rem solid #ef6275;
-			border-radius: 50%;
-			bottom: 0;
-			height: 0;
-			left: -1rem;
-			position: absolute;
-			width: 32rem;
-
-			@keyframes anim_smile {
-				0% {height: 0;}
-				100% {height: 10rem;}
+		@keyframes anim_right_eye {
+			0% {
+				right: 41%;
+				top: 31%;
+			}
+			100% {
+				right: 27%;
+				top: 31.8%;
 			}
 		}
 	}
@@ -103,15 +81,9 @@
 
 <template>
 	<div class="pc-hello-comp-container">
-		<div class="jia">
-			<div>加</div>
-		</div>
-		<div class="zai">
-			<div>载</div>
-		</div>
-		<div class="zhong">中</div>
-		<div class="mouth">
-			<div class="lip"></div>
+		<div class="face-wrapper">
+			<div class="left-eye"></div>
+			<div class="right-eye"></div>
 		</div>
 		<div class="process">
 			<div ref="processBar"></div>
