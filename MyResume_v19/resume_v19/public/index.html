@@ -16,6 +16,10 @@
 		<!-- built files will be auto injected -->
 		<script>
 			var isPC = !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|UCBrowser/i.test(navigator.userAgent)
+
+			if (isPC) {
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 96 + 'px'
+			}
 		</script>
 	</body>
 </html>
