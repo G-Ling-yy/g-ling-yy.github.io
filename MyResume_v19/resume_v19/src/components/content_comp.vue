@@ -15,6 +15,7 @@
 		background-color: #eff;
 		box-shadow: 0 0 10px #666;
 		font-family: KaiTi, serif;
+		font-size: 1.4rem;
 		opacity: 0;
 		padding: 90px 15px 40px;
 		position: relative;
@@ -47,12 +48,12 @@
 			position: absolute;
 			top: 40px;
 			transition: .7s;
-			width: 7.5rem;
+			width: 10rem;
 		}
 
 		&::before {
-			right: -25px;
-			top: 20px;
+			right: -35px;
+			top: 15px;
 			transform: rotate(45deg);
 			transition: .7s 1s;
 		}
@@ -180,7 +181,7 @@
 				</div>
 				<div class="line"></div>
 			</div>
-			<div class="line" style="text-align: center;">额···就这样吧~(⊙﹏⊙)</div>
+			<div class="line" style="text-align: center;">额···就这样吧~<span @touchstart="reload">(⊙﹏⊙)</span></div>
 		</div>
 	</div>
 </template>
@@ -229,6 +230,11 @@ export default {
 					$p.appendChild(hr)
 				}
 			})
+		},
+
+		reload( ) {
+			localStorage.setItem('hellowIsShowed', false)
+			setTimeout(() => location.reload())
 		}
 	},
 

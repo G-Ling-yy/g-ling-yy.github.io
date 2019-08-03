@@ -8,6 +8,7 @@
 
 	#container_print {
 		font-family: KaiTi,serif;
+		font-size: 1.1rem;
 		display: flex;
 		min-height: 101vh;
 		position: relative;
@@ -31,7 +32,7 @@
 			}
 
 			h1 {
-				font-size: 1.4rem;
+				font-size: 1.7rem;
 				margin: 0 0 1rem;
 
 				i {
@@ -40,7 +41,7 @@
 			}
 
 			p {
-				text-indent: 2rem;
+				text-indent: 2em;
 			}
 		}
 
@@ -92,7 +93,7 @@
 					}
 
 					#pi_name {
-						font-size: 2rem;
+						font-size: 2.5rem;
 						left: 33%;
 						position: absolute;
 					}
@@ -201,7 +202,7 @@
 
 			#pi_hobbies {
 				display: flex;
-				font-size: 2rem;
+				font-size: 3rem;
 
 				li {
 					flex: 1;
