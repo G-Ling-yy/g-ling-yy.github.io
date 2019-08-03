@@ -1,26 +1,247 @@
 <style lang="scss">
 .content-comp-container {
-	height: 100%;background: #0f0;
+	background-color: #d8b362;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 30px;
 	width: 100%;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	.paper {
+		background-color: #eff;
+		box-shadow: 0 0 10px #666;
+		font-family: KaiTi, serif;
+		opacity: 0;
+		padding: 90px 15px 40px;
+		position: relative;
+		text-align: left;
+		transition: .7s;
+
+		&.show, &.show::before, &.show::after {
+			opacity: 1;
+		}
+
+		&.show {
+			div.line {
+				h2 {
+					transform: translateX(0);
+				}
+
+				p {
+					transform: translateX(0);
+				}
+			}
+		}
+
+		&::before, &::after {
+			background: rgba(255, 255, 255, 0.6);
+			border: 1px solid rgba(200, 200, 200, 0.8);
+			box-shadow: 0 0 2px rgba(200, 200, 200, 0.8);
+			content: '';
+			height: 29px;
+			opacity: 0;
+			position: absolute;
+			top: 40px;
+			transition: .7s;
+			width: 7.5rem;
+		}
+
+		&::before {
+			right: -25px;
+			top: 20px;
+			transform: rotate(45deg);
+			transition: .7s 1s;
+		}
+
+		&::after {
+			left: -50px;
+			transform: rotate(-30deg);
+			transition: .7s .5s;
+		}
+
+		div.line {
+			border-bottom: 2px solid #999;
+			height: 50px;
+			line-height: 40px;
+			padding: 5px 0;
+
+			&.special {
+				height: auto;
+				padding: 0;
+
+				p {
+					line-height: 50px;
+					position: relative;
+
+					hr {
+						background-color: #999;
+						border: none;
+						height: 2px;
+						left: 0;
+						position: absolute;
+						width: 100%;
+					}
+				}
+			}
+
+			h2 {
+				transition: 1.2s 1.2s;
+				transform: translateX(-50vw);
+			}
+
+			p {
+				color: #2a118b;
+				height: 100%;
+				overflow: hidden;
+				position: relative;
+				text-indent: 2em;
+				transform: translateX(100vw);
+
+				a {
+					color: #2a118b;
+					text-decoration: underline;
+				}
+
+				span {
+					color: #0f0;
+					position: absolute;
+					right: 0;
+				}
+			}
+
+			@for $i from 1 through 100 {
+				&:nth-child(#{$i}) {
+					p {
+						transition: 1.2s (1s + .3s * $i);
+					}
+				}
+			}
+		}
+	}
 }
 </style>
 
 <template>
 	<div class="content-comp-container">
-		我是移动端的content
+		<div :class="['paper', isShowBar && 'show']">
+			<div class="block">
+				<div class="line">
+					<h2>基本信息:</h2>
+				</div>
+				<div class="line">
+					<p>姓名: {{baseInfo.name}}</p>
+				</div>
+				<div class="line">
+					<p>求职意向: 前端开发</p>
+				</div>
+				<div class="line" v-for="item in baseInfo.infoArray">
+					<p>{{item}}</p>
+				</div>
+				<div class="line">
+					<p>QQ: <a :href="`mqqwpa://im/chat?uin=${baseInfo.QQ}`">{{baseInfo.QQ}}</a></p>
+				</div>
+				<div class="line">
+					<p>TEL: <a :href="`tel:${baseInfo.phoneNumber}`">{{baseInfo.phoneNumber}}</a></p>
+				</div>
+				<div class="line"></div>
+			</div>
+			<div class="block">
+				<div class="line">
+					<h2>个人技能:</h2>
+				</div>
+				<div class="line" v-for="skill in skillInfoArray">
+					<p>{{skill.name}} <span>{{'■'.repeat(skill.percent / 10)}}</span></p>
+				</div>
+				<div class="line"></div>
+			</div>
+			<div class="block">
+				<div class="line">
+					<h2>项目经历:</h2>
+				</div>
+				<div class="line" v-for="project in projectArray.slice(0, -1)">
+					<p><a href="javascript:;" :data-url="project.link" target="_blank" @click="openBlank">{{project.name}}</a></p>
+				</div>
+				<div class="line special">
+					<p>{{projectArray.slice(-1)[0].name.concat(projectArray.slice(-1)[0].intro)}}</p>
+				</div>
+				<div class="line"></div>
+			</div>
+			<div class="block">
+				<div class="line">
+					<h2>自我评价:</h2>
+				</div>
+				<div class="line special">
+					<p>{{selfAssessment}}</p>
+				</div>
+				<div class="line"></div>
+			</div>
+			<div class="line" style="text-align: center;">额···就这样吧~(⊙﹏⊙)</div>
+		</div>
 	</div>
 </template>
 
 <script>
+import {userInfo} from '@/assets/js/store.js'
+
 export default {
 	data() {
 		return {
-
+			isShowBar: false
 		}
 	},
 
 	computed: {
+		baseInfo() {
+			return userInfo.baseInfo
+		},
 
+		skillInfoArray() {
+			return userInfo.skillInfoArray
+		},
+
+		selfAssessment() {
+			return userInfo.selfAssessment
+		},
+
+		projectArray() {
+			return userInfo.projectArray
+		}
+	},
+
+	methods: {
+		fff() {
+			console.log('sfsdfsfd')
+
+			localStorage.setItem('hellowIsShowed', false)
+			setTimeout(() => location.reload())
+		},
+
+		openBlank(e) {
+			if (e.target.dataset.url === 'javascript:;') return;
+			window.open(e.target.dataset.url, '_blank')
+		},
+
+		addLineForSpecialLine() {
+			Array.from(document.querySelectorAll('div.line.special p')).forEach($p => {
+				const number = $p.clientHeight / 50
+
+				for(let i = 1; i < number; i++) {
+					const hr = document.createElement("Hr")
+					hr.style.top = i * 48 + 'px'
+					$p.appendChild(hr)
+				}
+			})
+		}
+	},
+
+	mounted() {
+		const seconds = JSON.parse(localStorage.getItem('hellowIsShowed')) ? 300 : 5800
+		setTimeout(() => this.isShowBar = true, seconds)
+		this.addLineForSpecialLine()
 	}
 }
 </script>
