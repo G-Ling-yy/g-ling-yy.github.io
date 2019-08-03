@@ -71,6 +71,7 @@
 
 			&.special {
 				height: auto;
+				margin-top: -2px;
 				padding: 0;
 
 				p {
@@ -90,7 +91,7 @@
 
 			h2 {
 				transition: 1.2s 1.2s;
-				transform: translateX(-50vw);
+				transform: translateX(-100vw);
 			}
 
 			p {
@@ -213,13 +214,6 @@ export default {
 	},
 
 	methods: {
-		fff() {
-			console.log('sfsdfsfd')
-
-			localStorage.setItem('hellowIsShowed', false)
-			setTimeout(() => location.reload())
-		},
-
 		openBlank(e) {
 			if (e.target.dataset.url === 'javascript:;') return;
 			window.open(e.target.dataset.url, '_blank')

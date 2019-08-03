@@ -58,7 +58,7 @@
 				width: 100%;
 
 				#pi_head {
-					background: url(../assets/img/pc_avatar.jpg) center /contain no-repeat #f9fbf8;
+					background: url(../assets/img/pc_avatar.jpg) center/ contain no-repeat #f9fbf8;
 					border-radius: 50%;
 					box-shadow: 0 .1rem .2rem #666; 
 					height: 7rem;
