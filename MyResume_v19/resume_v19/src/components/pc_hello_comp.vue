@@ -104,7 +104,7 @@ export default {
 	created() {
 		const myPic = new Image()
 		window.myPic = myPic
-		myPic.src = '../assets/img/pc_pic.jpg'
+		myPic.src = './img/pc_pic.jpg'
 		myPic.onload = () => this.imgLoaded = true
 	},
 
