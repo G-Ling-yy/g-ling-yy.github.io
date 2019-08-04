@@ -7,7 +7,7 @@
 	min-width: 800px;
 
 	.face-wrapper {
-		background: url(../assets/img/pc_pic.jpg) 0 0/100% 100% no-repeat;
+		background: url(https://g-ling-yy.github.io/MyResume_v19/img/pc_pic.jpg) 0 0/100% 100% no-repeat;
 		height: 42rem;
 		left: 50%;
 		position: absolute;
@@ -104,7 +104,7 @@ export default {
 	created() {
 		const myPic = new Image()
 		window.myPic = myPic
-		myPic.src = './img/pc_pic.jpg'
+		myPic.src = 'https://g-ling-yy.github.io/MyResume_v19/img/pc_pic.jpg'
 		myPic.onload = () => this.imgLoaded = true
 	},
 
