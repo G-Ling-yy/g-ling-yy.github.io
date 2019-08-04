@@ -103,7 +103,6 @@ export default {
 
 	created() {
 		const myPic = new Image()
-		window.myPic = myPic
 		myPic.src = 'https://g-ling-yy.github.io/MyResume_v19/img/pc_pic.jpg'
 		myPic.onload = () => this.imgLoaded = true
 	},

@@ -24,7 +24,7 @@
 
 <template>
 	<div class="hello-comp-container">
-		<div class="pic-wrapper" ref="picWrapper">
+		<div class="pic-wrapper" ref="picWrapper" v-show="isPicsLoaded">
 		</div>
 	</div>
 </template>
@@ -35,13 +35,30 @@ import {mutation} from '@/assets/js/store.js'
 export default {
 	data() {
 		return {
-			// picArray: [
-			// 	require('https://g-ling-yy.github.io/MyResume_v19/img/m_pic_1.png'),
-			// 	require('https://g-ling-yy.github.io/MyResume_v19/img/m_pic_2.png'),
-			// 	require('https://g-ling-yy.github.io/MyResume_v19/img/m_pic_3.png')
-			// ],
-			// curIndex: 0
+			picArray: [
+				'https://g-ling-yy.github.io/MyResume_v19/img/m_pic_1.png',
+				'https://g-ling-yy.github.io/MyResume_v19/img/m_pic_2.png',
+				'https://g-ling-yy.github.io/MyResume_v19/img/m_pic_3.png'
+			],
+			picLeftCount: 3,
+			isPicsLoaded: false
 		}
+	},
+
+	watch: {
+		picLeftCount(newV, oldV) {
+			if (newV === 0) {
+				this.isPicsLoaded = true
+			}
+		}
+	},
+
+	created() {
+		this.picArray.forEach(url => {
+			const myPic = new Image()
+			myPic.src = url
+			myPic.onload = () => this.picLeftCount--
+		})
 	},
 
 	mounted() {
