@@ -81,11 +81,11 @@
 
 <template>
 	<div class="pc-hello-comp-container">
-		<div class="face-wrapper">
+		<div class="face-wrapper" v-show="imgLoaded">
 			<div class="left-eye"></div>
 			<div class="right-eye"></div>
 		</div>
-		<div class="process">
+		<div class="process" v-show="imgLoaded">
 			<div ref="processBar"></div>
 		</div>
 	</div>
@@ -97,8 +97,15 @@ import {mutation} from '@/assets/js/store.js'
 export default {
 	data() {
 		return {
-
+			imgLoaded: false
 		}
+	},
+
+	created() {
+		const myPic = new Image()
+		window.myPic = myPic
+		myPic.src = require('../assets/img/pc_pic.jpg')
+		myPic.onload = () => this.imgLoaded = true
 	},
 
 	mounted() {
