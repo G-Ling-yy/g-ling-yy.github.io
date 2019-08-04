@@ -337,7 +337,7 @@
 </template>
 
 <script>
-import {userInfo} from '@/assets/js/store.js'
+import {userInfo, store} from '@/assets/js/store.js'
 
 export default {
 	data() {
@@ -361,6 +361,22 @@ export default {
 
 		projectArray() {
 			return userInfo.projectArray
+		},
+
+		isShowed() {
+			return store.isShowed
+		},
+
+		canRunAnimation() {
+			return store.canRunAnimation
+		}
+	},
+
+	watch: {
+		canRunAnimation(newV, oldV) {
+			if (newV && !this.isShowed) {
+				setTimeout(() => this.isShowSkillBar = true, 2000)
+			}
 		}
 	},
 
@@ -373,8 +389,9 @@ export default {
 	},
 
 	mounted() {
-		const seconds = JSON.parse(localStorage.getItem('hellowIsShowed')) ? 300 : 4400
-		setTimeout(() => this.isShowSkillBar = true, seconds)
+		if (this.isShowed) {
+			setTimeout(() => this.isShowSkillBar = true, 300)
+		}
 	}
 }
 </script>

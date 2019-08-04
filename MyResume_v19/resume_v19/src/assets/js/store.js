@@ -108,7 +108,7 @@ export const mutation = {
 	setCanRunAnimation(boolV) {
 		store.canRunAnimation = !!boolV
 
-		const seconds = isPC ? 1600 : 3000
+		const seconds = isPC ? 1700 : 3000
 		setTimeout(() => this.setIsShowedTrue(), seconds)
 	}
 }
