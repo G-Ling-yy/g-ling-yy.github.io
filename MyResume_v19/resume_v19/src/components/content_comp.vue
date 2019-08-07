@@ -162,6 +162,24 @@
 			</div>
 			<div class="block">
 				<div class="line">
+					<h2>工作经历:</h2>
+				</div>
+				<div class="line special">
+					<p>起始时间: 18.9.5 - 19.7.23</p>
+				</div>
+				<div class="line special">
+					<p>公司: 小诚文化传媒有限公司</p>
+				</div>
+				<div class="line special">
+					<p>职位: 前端</p>
+				</div>
+				<div class="line special">
+					<p>工作内容: 微信小程序, H5的移动端及大屏端等</p>
+				</div>
+				<div class="line"></div>
+			</div>
+			<div class="block">
+				<div class="line">
 					<h2>项目经历:</h2>
 				</div>
 				<div class="line" v-for="project in projectArray.slice(0, -1)">

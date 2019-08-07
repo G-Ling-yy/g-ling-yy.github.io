@@ -156,7 +156,7 @@
 				transition: 1.7s;
 
 				&.changing {
-					max-height: 1000px;
+					max-height: 9999px;
 					padding: 1rem 0 .5rem 20%;
 				}
 			}
@@ -226,7 +226,7 @@
 				width: .5rem;
 			}
 
-			#pi_items a, #pi_education h4 {
+			#pi_items a, #pi_education h4, #pi_experience h4 {
 				color: #4D9BB2;
 				display: inline-block;
 				margin-bottom: 1rem;
@@ -256,6 +256,17 @@
 						margin-bottom: 1rem;
 						padding-left: 2rem;
 					}
+				}
+			}
+
+			#pi_experience {
+				a {
+					color: #4D9BB2;
+				}
+
+				p {
+					margin-bottom: 1rem;
+					padding-left: 2rem;
 				}
 			}
 		}
@@ -317,7 +328,7 @@
 					<h1 class="color_blue"><i class="fa fa-user" aria-hidden="true"></i>自我评价</h1>
 					<p>{{selfAssessment}}</p>
 				</div>
-				<div id="pi_items_wrapper" :style="{'max-height': `${isShowSkillBar ? '1000px' : 'calc(2.75vw + 32px)'}`}">
+				<div id="pi_items_wrapper" :style="{'max-height': `${isShowSkillBar ? '9999px' : 'calc(2.75vw + 32px)'}`}">
 					<div id="pi_items" class="block">
 						<h1 class="color_blue"><i class="fa fa-database"></i> 项目经历</h1>
 						<div v-for="(project, index) in projectArray" :key="index">
@@ -326,8 +337,13 @@
 						</div>
 					</div>
 				</div>
+				<div id="pi_experience" class="block">
+					<h1 class="color_blue"><i class="fa fa-book"></i>工作经历</h1>
+					<h4><a href="https://www.vxiaocheng.com/" target="_blank">小诚文化传媒有限公司</a></h4>
+					<p>2018.9.5 - 2019.7.23 间在该公司任职前端, 主要工作内容为微信小程序, H5的移动端PC端</p>
+				</div>
 				<div id="pi_education" class="block">
-					<h1 class="color_blue"><i class="fa fa-book"></i> 教育背景</h1>
+					<h1 class="color_blue"><i class="fa fa-book"></i>教育背景</h1>
 					<h4>2013 - 2016 软件技术</h4>
 					<p>苏州市职业大学</p>
 				</div>
