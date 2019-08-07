@@ -338,7 +338,7 @@
 					</div>
 				</div>
 				<div id="pi_experience" class="block">
-					<h1 class="color_blue"><i class="fa fa-book"></i>工作经历</h1>
+					<h1 class="color_blue"><i class="fa fa-briefcase"></i>工作经历</h1>
 					<h4><a href="https://www.vxiaocheng.com/" target="_blank">小诚文化传媒有限公司</a></h4>
 					<p>2018.9.5 - 2019.7.23 间在该公司任职前端, 主要工作内容为微信小程序, H5的移动端PC端</p>
 				</div>
