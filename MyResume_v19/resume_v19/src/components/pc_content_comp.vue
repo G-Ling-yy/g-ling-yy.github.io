@@ -256,6 +256,13 @@
 						margin-bottom: 1rem;
 						padding-left: 2rem;
 					}
+
+					img {
+						display: block;
+						height: auto;
+						margin-left: 2em;
+						width: 15rem;
+					}
 				}
 			}
 
@@ -334,6 +341,7 @@
 						<div v-for="(project, index) in projectArray" :key="index">
 							<a :href="project.link" target="_blank">{{project.name}}</a>
 							<p v-html="project.intro"></p>
+							<img v-if="project.image" v-for="img in project.image" :src="img" alt="">
 						</div>
 					</div>
 				</div>

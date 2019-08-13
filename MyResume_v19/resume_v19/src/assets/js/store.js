@@ -85,9 +85,10 @@ export const userInfo = Vue.observable({
 			link: 'https://g-ling-yy.github.io/QQmusic/'
 		},
 		{
-			name: '星秀泡泡, 星宿魔方等微信小程序(无连接)',
-			intro: '因为微信小程序只能允许内部打开页面可以跳转小程序所以这里无法给出链接',
-			link: 'javascript:;'
+			name: '星秀泡泡, 星宿魔方等微信小程序(无link连接)',
+			intro: '因为微信小程序只能允许内部打开页面可以跳转小程序所以这里无法给出link页面链接',
+			link: 'javascript:;',
+			image: ['https://g-ling-yy.github.io/MyResume_v19/img/qrcode_paopao.jpg']
 		}
 	]
 })

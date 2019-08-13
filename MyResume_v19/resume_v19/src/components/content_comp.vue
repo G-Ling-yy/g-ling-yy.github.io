@@ -187,6 +187,9 @@
 				</div>
 				<div class="line special">
 					<p>{{projectArray.slice(-1)[0].name.concat(projectArray.slice(-1)[0].intro)}}</p>
+					<div style="border-top: 2px solid #999;" v-for="img in projectArray.slice(-1)[0].image">
+						<img style="display: block;height: auto;margin: 0 auto;width: 60vw;" :src="img" alt="">
+					</div>
 				</div>
 				<div class="line"></div>
 			</div>
