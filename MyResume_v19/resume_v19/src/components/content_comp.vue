@@ -165,6 +165,18 @@
 					<h2>工作经历:</h2>
 				</div>
 				<div class="line special">
+					<p>起始时间: 2017.3.15 - 2018.6.30</p>
+				</div>
+				<div class="line special">
+					<p>公司: 微众传媒有限公司</p>
+				</div>
+				<div class="line special">
+					<p>职位: 前端</p>
+				</div>
+				<div class="line special">
+					<p>工作内容: 微信小程序及浏览器H5页面</p>
+				</div>
+				<div class="line special">
 					<p>起始时间: 18.9.5 - 19.7.23</p>
 				</div>
 				<div class="line special">
@@ -174,7 +186,7 @@
 					<p>职位: 前端</p>
 				</div>
 				<div class="line special">
-					<p>工作内容: 微信小程序, H5的移动端及大屏端等</p>
+					<p>工作内容: 微信小程序, Vue移动端及PC端等</p>
 				</div>
 				<div class="line"></div>
 			</div>
