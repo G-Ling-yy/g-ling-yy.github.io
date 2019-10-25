@@ -10,7 +10,7 @@ export const userInfo = Vue.observable({
 			'性 别： 男',
 			'籍 贯： 江苏徐州',
 			'学 历： 大专',
-			'工作经验: 2 年'
+			'工作经验: 3 年'
 		]
 	},
 
