@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+html {
+	font-size: 20px;
+}
+
+@media screen and (max-height: 768px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-height: 600px) {
+	html {
+		font-size: 12px;
+	}
+}
