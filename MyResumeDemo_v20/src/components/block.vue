@@ -1,24 +1,24 @@
 <style lang="scss" scoped>
 	.block-comp {
 		background-color: #fff;
-		border-top: 72px solid #ececec;
-		border-bottom: 72px solid #ececec;
-		padding: 50px 0;
+		border-top: 3.6rem solid #ececec;
+		border-bottom: 3.6rem solid #ececec;
+		padding: 2.5rem 0;
 		position: relative;
 
 		.title {
 			background-color: #4a4f5a;
-			border-radius: 10px;
+			border-radius: .5rem;
 			color: #fff;
 			font-size: 2rem;
 			font-weight: bold;
-			height: 72px;
+			height: 3.6rem;
 			left: 5%;
-			line-height: 72px;
+			line-height: 3.6rem;
 			overflow: hidden;
-			padding: 0 50px;
+			padding: 0 2.5rem;
 			position: absolute;
-			top: -36px;
+			top: -1.8rem;
 			max-width: 70%;
 		}
 
@@ -34,9 +34,9 @@
 				.key {
 					color: #333;
 					font-size: 1.4rem;
-					height: 50px;
-					line-height: 50px;
-					padding-left: 30px;
+					height: 2.5rem;
+					line-height: 2.5rem;
+					padding-left: 1.5rem;
 					position: relative;
 					width: 100%;
 
@@ -44,11 +44,11 @@
 						background-color: #333;
 						border-radius: 50%;
 						content: '';
-						height: 10px;
+						height: .5rem;
 						left: 0;
 						position: absolute;
-						top: 20px;
-						width: 10px;
+						top: 1rem;
+						width: .5rem;
 					}
 
 					.tip {
@@ -60,15 +60,15 @@
 				.value {
 					color: #666;
 					font-size: 1rem;
-					height: 50px;
-					line-height: 30px;
-					padding-left: 30px;
+					height: 2.5rem;
+					line-height: 1.5rem;
+					padding-left: 1.5rem;
 				}
 
 				ul {
 					color: #666;
 					list-style: none;
-					padding-left: 30px;
+					padding-left: 1.5rem;
 
 					li {
 						position: relative;
@@ -78,11 +78,11 @@
 							background-color: #666;
 							border-radius: 50%;
 							content: '';
-							height: 7px;
+							height: .35rem;
 							left: 0;
 							position: absolute;
-							top: 9px;
-							width: 7px;
+							top: .45rem;
+							width: .35rem;
 						}
 					}
 				}
@@ -90,7 +90,7 @@
 
 			&.oneColumn {
 				.option {
-					margin-bottom: 33px;
+					margin-bottom: 1.65rem;
 					width: 100%;
 
 					.value {
@@ -100,7 +100,39 @@
 
 					ul {
 						li {
-							margin-bottom: 7px;
+							margin-bottom: .35rem;
+						}
+					}
+				}
+			}
+		}
+
+		&:last-child .content .option:last-child .value{
+			user-select: auto;
+		}
+	}
+
+	@media screen and (max-width: 520px) {
+		.block-comp {
+			border-bottom: 1.2rem solid #ececec;
+			padding: 2.5rem 0 1rem;
+
+			.title {
+				font-size: 1.8rem;
+			}
+
+			.content {
+				.option {
+					.key {
+						max-width: 6em;
+					}
+				}
+
+				&.oneColumn {
+					.option {
+						.key {
+							height: auto;
+							max-width: 100%;
 						}
 					}
 				}

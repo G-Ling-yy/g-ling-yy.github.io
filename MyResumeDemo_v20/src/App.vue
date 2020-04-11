@@ -17,19 +17,26 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-#app {
-	background-color: #ececec;
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-	height: 100vh;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	min-width: 1080px;
-	&::-webkit-scrollbar {
-		display: none;
+	#app {
+		background-color: #ececec;
+		font-family: Avenir, Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		color: #2c3e50;
+		height: 100vh;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		user-select: none;
+		min-width: 54rem;
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
-}
+
+	@media screen and (max-width: 520px) {
+		#app {
+			min-width: 100vw;
+		}
+	}
 </style>
