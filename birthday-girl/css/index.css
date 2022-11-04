@@ -3,7 +3,7 @@ body {
   background-color: #bbb; }
 
 .girl {
-  background-color: #fff9;
+  outline: 1px solid #00f;
   height: 84px;
   left: 632px;
   opacity: .95;
@@ -16,6 +16,8 @@ body {
   .girl .fringe {
     background-position: -32px -44px;
     height: 44px;
+    left: -6px;
+    top: -30px;
     width: 38px; }
   .girl .hat {
     background-position: -79px -8px;
@@ -26,10 +28,14 @@ body {
   .girl .brim {
     background-position: -200px -12px;
     height: 78px;
+    left: 22px;
+    top: -15px;
     width: 91px; }
-  .girl .insignia {
+  .girl .headwear {
     background-position: -334px -32px;
     height: 86px;
+    right: -41px;
+    top: -28px;
     width: 64px; }
   .girl .hair {
     background-position: -25px -138px;
@@ -40,16 +46,20 @@ body {
   .girl .face {
     background-position: -174px -112px;
     height: 84px;
-    opacity: .3;
     width: 120px; }
-  .girl .braid {
-    background-position: -318px -160px;
-    height: 42px;
-    width: 59px; }
-  .girl .plait {
+  .girl .plait1 {
     background-position: -400px -165px;
+    bottom: -4px;
     height: 45px;
+    right: 15px;
     width: 34px; }
+  .girl .plait2 {
+    background-position: -318px -160px;
+    bottom: -26px;
+    height: 42px;
+    right: -10px;
+    width: 59px;
+    z-index: -1; }
   .girl .skirt {
     background-position: -53px -239px;
     height: 81px;
@@ -57,10 +67,14 @@ body {
   .girl .right-eyelashes {
     background-position: -212px -210px;
     height: 26px;
+    left: 23px;
+    top: 21px;
     width: 24px; }
   .girl .left-eyelashes {
     background-position: -248px -214px;
     height: 29px;
+    left: 59px;
+    top: 25px;
     width: 29px; }
   .girl .eyelashes {
     background-position: -215px -211px;
@@ -83,17 +97,19 @@ body {
   .girl .mouse {
     background-position: -230px -289px;
     height: 21px;
-    left: 28px;
-    top: 37px;
+    left: 40px;
+    top: 58px;
     width: 21px; }
   .girl .right-hand {
     background-position: -338px -240px;
     height: 19px;
     width: 25px; }
   .girl .right-arm {
-    background-position: -328px -277px;
+    background: url(../imgs/girl_sprites.png) -342px -230px/auto no-repeat, url(../imgs/girl_sprites.png) -325px -277px/auto no-repeat;
+    bottom: -31px;
     height: 35px;
-    width: 53px; }
+    left: -6px;
+    width: 56px; }
   .girl .left-arm {
     background-position: -390px -274px;
     height: 31px;
