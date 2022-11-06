@@ -3,12 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="favicon.ico"/>
 	<title>Happy Birthday</title>
 	<style>
 		* {
 			box-sizing: border-box;
 			margin: 0;
 			padding: 0;
+			user-select: none;
 		}
 		html, body {
 			height: 100%;
@@ -18,17 +20,12 @@
 	<link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-	<img style="background: #fff3;" src="./imgs/girl_sprites.png" alt="">
-
-	<img style="background: #f003;height: 260px;width: 200px;object-fit: none;object-position: right 70%;" src="./imgs/keli.png" alt="">
-
-	<img style="background: #f003;height: 260px;width: 200px;object-fit: none;object-position: right 70%;" src="./imgs/keli.png" alt="">
-
-<div class="bg" style="position: absolute;background: #fff8;height: 260px;width:200px;
-left: 605px;top: 190px;"></div>
 
 	<!-- 小女孩 -->
 	<div class="girl">
+		<!-- 星星 -->
+		<div class="stars before"></div>
+		<div class="stars after"></div>
 		<!-- 帽子 -->
 		<div class="hat"></div>
 		<!-- 脸（定位中心） -->
@@ -56,11 +53,38 @@ left: 605px;top: 190px;"></div>
 		<!-- 身体 -->
 		<!-- 右臂 -->
 		<div class="right-arm"></div>
+		<!-- 蛋糕 -->
+		<div class="cake"></div>
+		<!-- 左臂 -->
+		<div class="left-arm"></div>
+		<!-- 肩膀 -->
+		<div class="shoulder"></div>
+		<!-- 裙子 -->
+		<div class="skirt"></div>
+		<!-- 右腿 -->
+		<div class="right-leg"></div>
+		<!-- 左小腿 -->
+		<div class="left-shank"></div>
+		<!-- 左大腿 -->
+		<div class="left-thigh"></div>
+		<!-- 背包 -->
+		<div class="bag"></div>
+		<!-- 挂饰 -->
+		<div class="ornaments"></div>
+		<!-- 影子 -->
+		<div class="shadow"></div>
+
+
+		
+		
+
 
 		
 
 		
 		
 	</div>
+
+	<script async src="./js/index.js"></script>
 </body>
 </html>

@@ -1,24 +1,56 @@
 @charset "UTF-8";
 body {
-  background-color: #bbb; }
+  background-color: #eee; }
 
 .girl {
-  outline: 1px solid #00f;
+  bottom: 20%;
+  cursor: pointer;
   height: 84px;
-  left: 632px;
   opacity: .95;
   position: fixed;
-  top: 232px;
+  right: 10%;
   width: 120px; }
   .girl > * {
     background: url(../imgs/girl_sprites.png);
     position: absolute; }
+  .girl.walking {
+    /* 呆毛 刘海 */
+    /* 裙子 */
+    /* 包 */
+    /* 挂饰 */
+    /* 左大腿 */
+    /* 左小腿 */
+    /* 右腿 */ }
+    .girl.walking .fringe {
+      animation: fringe 1s infinite alternate; }
+    .girl.walking .skirt {
+      animation: skirt 1.5s linear infinite; }
+    .girl.walking .bag {
+      animation: bag 1.5s linear infinite; }
+    .girl.walking .ornaments {
+      animation: ornaments 1.5s linear infinite; }
+    .girl.walking .left-thigh {
+      animation: left-thigh 1.5s .75s linear infinite; }
+    .girl.walking .left-shank {
+      animation: left-shank 1.5s .75s linear infinite; }
+    .girl.walking .right-leg {
+      animation: right-leg 1.5s linear infinite; }
   .girl .fringe {
     background-position: -32px -44px;
     height: 44px;
     left: -6px;
     top: -30px;
+    transition: .5s;
+    transform-origin: 100% 100%;
     width: 38px; }
+
+@keyframes fringe {
+  0% {
+    transform: rotate(0);
+    transform-origin: 100% 100%; }
+  100% {
+    transform: rotate(15deg);
+    transform-origin: 100% 100%; } }
   .girl .hat {
     background-position: -79px -8px;
     height: 106px;
@@ -30,155 +62,268 @@ body {
     height: 78px;
     left: 22px;
     top: -15px;
-    width: 91px; }
+    width: 91px;
+    z-index: 2; }
   .girl .headwear {
     background-position: -334px -32px;
     height: 86px;
     right: -41px;
     top: -28px;
-    width: 64px; }
+    width: 64px;
+    z-index: 2; }
   .girl .hair {
     background-position: -25px -138px;
     height: 70px;
     left: 14px;
     top: -3px;
-    width: 99px; }
+    width: 99px;
+    z-index: 2; }
   .girl .face {
     background-position: -174px -112px;
     height: 84px;
-    width: 120px; }
+    width: 120px;
+    z-index: 1; }
   .girl .plait1 {
     background-position: -400px -165px;
     bottom: -4px;
     height: 45px;
     right: 15px;
-    width: 34px; }
+    width: 34px;
+    z-index: 1; }
   .girl .plait2 {
     background-position: -318px -160px;
     bottom: -26px;
     height: 42px;
     right: -10px;
-    width: 59px;
-    z-index: -1; }
+    width: 59px; }
   .girl .skirt {
-    background-position: -53px -239px;
-    height: 81px;
-    width: 89px; }
+    background-position: -54px -242px;
+    bottom: -61px;
+    height: 77px;
+    left: 14px;
+    width: 86px; }
+
+@keyframes skirt {
+  0% {
+    transform: rotate(0);
+    transform-origin: 50% 20%; }
+  25% {
+    transform: rotate(3deg);
+    transform-origin: 50% 20%; }
+  50% {
+    transform: rotate(3deg);
+    transform-origin: 50% 20%; }
+  100% {
+    transform: rotate(0);
+    transform-origin: 50% 20%; } }
   .girl .right-eyelashes {
     background-position: -212px -210px;
     height: 26px;
-    left: 23px;
+    left: 22px;
     top: 21px;
-    width: 24px; }
+    width: 24px;
+    z-index: 1; }
   .girl .left-eyelashes {
     background-position: -248px -214px;
     height: 29px;
     left: 59px;
     top: 25px;
-    width: 29px; }
+    width: 29px;
+    z-index: 1; }
   .girl .eyelashes {
     background-position: -215px -211px;
     height: 32px;
-    width: 63px; }
-  .girl .right-eye {
-    background-position: -217px -253px;
-    height: 20px;
-    width: 15px; }
-  .girl .left-eye {
-    background-position: -249px -257px;
-    height: 20px;
-    width: 16px; }
+    width: 63px;
+    z-index: 1; }
   .girl .eyes {
     background-position: -218px -254px;
     height: 23px;
-    left: 28px;
-    top: 37px;
-    width: 49px; }
+    left: 30px;
+    top: 34px;
+    width: 49px;
+    z-index: 1; }
   .girl .mouse {
     background-position: -230px -289px;
     height: 21px;
-    left: 40px;
+    left: 37px;
     top: 58px;
-    width: 21px; }
-  .girl .right-hand {
-    background-position: -338px -240px;
-    height: 19px;
-    width: 25px; }
+    width: 21px;
+    z-index: 1; }
   .girl .right-arm {
     background: url(../imgs/girl_sprites.png) -342px -230px/auto no-repeat, url(../imgs/girl_sprites.png) -325px -277px/auto no-repeat;
-    bottom: -31px;
+    bottom: -28px;
     height: 35px;
-    left: -6px;
+    left: -1px;
     width: 56px; }
   .girl .left-arm {
     background-position: -390px -274px;
+    bottom: -25px;
     height: 31px;
-    width: 64px; }
+    left: 19px;
+    width: 64px;
+    z-index: 1; }
+  .girl .shoulder {
+    background-position: -424px -346px;
+    bottom: -25px;
+    height: 35px;
+    right: 31px;
+    width: 24px; }
+  .girl .cake {
+    background: url(../imgs/cake.png) 0 0/contain no-repeat;
+    bottom: -40px;
+    height: 102px;
+    left: -81px;
+    width: 122px;
+    z-index: 1; }
   .girl .right-leg {
-    background-position: -43px -343px;
-    height: 66px;
-    width: 39px; }
-  .girl .trouser {
+    background-position: -45px -347px;
+    bottom: -98px;
+    height: 59px;
+    left: 31px;
+    width: 36px;
+    z-index: -1; }
+
+@keyframes right-leg {
+  0% {
+    transform: rotate(0);
+    transform-origin: 70% 0%; }
+  25% {
+    transform: rotate(15deg);
+    transform-origin: 70% 0%; }
+  50% {
+    transform: rotate(15deg) translateY(3px);
+    transform-origin: 70% 0%; }
+  100% {
+    transform: rotate(0);
+    transform-origin: 70% 0%; } }
+  .girl .left-thigh {
     background-position: -108px -330px;
+    bottom: -74px;
     height: 31px;
-    width: 42px; }
-  .girl .left-shoes {
+    left: 50px;
+    transform: rotate(7deg);
+    width: 42px;
+    z-index: -1; }
+
+@keyframes left-thigh {
+  0% {
+    transform: rotate(7deg);
+    transform-origin: 50% 0%; }
+  25% {
+    transform: rotate(15deg);
+    transform-origin: 50% 0%; }
+  50% {
+    transform: rotate(15deg);
+    transform-origin: 50% 0%; }
+  100% {
+    transform: rotate(7deg);
+    transform-origin: 50% 0%; } }
+  .girl .left-shank {
     background-position: -109px -367px;
+    bottom: -99px;
     height: 37px;
-    width: 33px; }
+    right: 33px;
+    transform: rotate(7deg);
+    width: 33px;
+    z-index: -1; }
+
+@keyframes left-shank {
+  0% {
+    transform: rotate(7deg);
+    transform-origin: 70% 0%; }
+  25% {
+    transform: rotate(23deg);
+    transform-origin: 70% 0%; }
+  50% {
+    transform: rotate(23deg) translateY(3px);
+    transform-origin: 70% 0%; }
+  100% {
+    transform: rotate(7deg);
+    transform-origin: 70% 0%; } }
   .girl .bag {
-    background-position: -207px -329px;
-    height: 69px;
-    width: 80px; }
-  .girl .pendant {
+    background-position: -210px -333px;
+    bottom: -57px;
+    height: 61px;
+    right: -28px;
+    width: 72px;
+    z-index: -1; }
+
+@keyframes bag {
+  0% {
+    transform: rotate(0);
+    transform-origin: 20% 10%; }
+  25% {
+    transform: rotate(3deg);
+    transform-origin: 20% 10%; }
+  50% {
+    transform: rotate(3deg);
+    transform-origin: 20% 10%; }
+  100% {
+    transform: rotate(0);
+    transform-origin: 20% 10%; } }
+  .girl .ornaments {
     background-position: -324px -338px;
+    bottom: -89px;
     height: 65px;
-    width: 79px; }
+    right: -53px;
+    width: 79px;
+    z-index: -1; }
+
+@keyframes ornaments {
+  0% {
+    transform: rotate(0);
+    transform-origin: 5% 0; }
+  25% {
+    transform: rotate(3deg);
+    transform-origin: 5% 0; }
+  50% {
+    transform: rotate(3deg);
+    transform-origin: 5% 0; }
+  100% {
+    transform: rotate(0);
+    transform-origin: 5% 0; } }
   .girl .sleeve {
     background-position: -423px -343px;
     height: 39px;
     width: 27px; }
   .girl .shadow {
-    background-position: -48px -429px;
-    height: 14px;
-    width: 116px; }
+    background-position: -48px -431px;
+    bottom: -103px;
+    height: 11px;
+    left: 6px;
+    width: 116px;
+    z-index: -9; }
+  .girl .stars {
+    animation: stars 3s infinite alternate;
+    background-position: -470px -40px;
+    height: 37px;
+    pointer-events: none;
+    width: 67px; }
+    .girl .stars.before {
+      left: -40px;
+      top: -40px;
+      transform: rotate(-45deg); }
+    .girl .stars.after {
+      right: -70px;
+      top: -60px;
+      transform: rotate(45deg); }
+
+@keyframes stars {
+  0% {
+    opacity: 1; }
+  70% {
+    opacity: 1; }
+  100% {
+    opacity: .6; } }
   .girl .small-star {
     background-position: -470px -40px;
     height: 36px;
-    width: 22px; }
+    pointer-events: none;
+    width: 22px;
+    z-index: 3; }
   .girl .big-star {
     background-position: -511px -38px;
     height: 38px;
-    width: 27px; }
-
-/* 
-
-fringe：32,44-70,88 ｜  38,44
-hat：79,8-192,114 ｜  113,106
-brim：200,12-291,90 ｜  91,78
-insignia：334,32-398,118 ｜  64,86
-hear：25,138-124,208 ｜  99,70
-face：174,112-294,196 ｜  120,84
-braid：318,160-377,202 ｜  59,42
-plait：400,165-434,210 ｜  34,45
-skirt：53,239-142,320 ｜  89,81
-right eyelashes：212,210-236,236 ｜  24,26
-left eyelashes：248,214-277,243 ｜  29,29
-eyelashes：215,211-278,243 ｜  63,32
-right eye：217,253-232,273 ｜  15,20
-left eye：249,257-265,277 ｜  16,20
-eyes：218,254-267,277 ｜  49,23
-mouse：230,289-251,310 ｜  21,21
-right hand：338,240-363,259 ｜  25,19
-right arm：328,277-381,312 ｜  53,35
-left arm：390,274-454,305 ｜  64,31
-right leg：43,343-82,409 ｜  39,66
-trouser：108,330-150,361 ｜  42,31
-left shoes：109,367-142,404 ｜  33,37
-bag：207,329-287,398 ｜  80,69
-pendant：324,338-403,403 ｜  79,65
-sleeve：423,343-450,382 ｜  27,39
-shadow：48,429-164,443 ｜  116,14
-small star：470,40-492,76 ｜  22,36
-big star：511,38-538,76 ｜  27,38
- */
+    pointer-events: none;
+    width: 27px;
+    z-index: 3; }
