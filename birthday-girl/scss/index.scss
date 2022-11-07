@@ -1,14 +1,73 @@
-body {
-	background-color: #eee;
+.clouds {
+  animation: clouds 300s linear infinite;
+	background: url(../imgs/clouds.png) 0 0/ contain repeat-x;
+  height: 75.66vw;
+  max-height: 30vh;
+  left: 0;
+  position: fixed;
+  top: 5vh;
+  width: 100vw;
+}
+
+@keyframes clouds {
+  0% {
+    background-position: 0 5%;
+  }
+
+  100% {
+    background-position: -1000vw 5%;
+  }
+}
+
+.bird {
+  background: url(../imgs/bird.png) 0 0/ contain no-repeat;
+  height: 15.12vw;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform: scale(.1);
+  transition: 3s;
+  width: 20vw;
+  &.fly {
+    left: 30vw;
+    top: 45vh;
+    transform: scale(1);
+  }
+}
+
+.tree-ground {
+  background: url(../imgs/tree_ground.png) 100% 0/ contain no-repeat;
+  bottom: 9vh;
+  height: 94.79vw;
+  max-height: 50vh;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+}
+
+.right-arrow {
+  background: url(../imgs/right_arrow.png) 0 0/ contain no-repeat;
+  bottom: 2vh;
+  filter: drop-shadow(2px 4px 6px #333);
+  height: 47px;  
+  position: fixed;
+  right: 2vh;
+  transition: .1s;
+  width: 96px;
+  &:active {
+    filter: drop-shadow(0 4px 0 transparent);
+  }
 }
 
 .girl {
-  bottom: 20%;
+  bottom: 23%;
   cursor: pointer;
 	height: 84px;
 	opacity: .95;
 	position: fixed;
-  right: 10%;
+  right: 0;
+  transform: translateX(160%) scale(0.9);
+  transition: 1s;
 	width: 120px;
 	> * {
 		background: url(../imgs/girl_sprites.png);
