@@ -93,5 +93,6 @@ $paper.addEventListener('transitionend', e => {
 })
 
 window.addEventListener('load', () => {
+	document.body.removeChild(document.querySelector('.loading-tip'))
 	$btn.classList.remove('hide')
 })

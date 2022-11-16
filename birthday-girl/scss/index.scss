@@ -11,7 +11,7 @@
       height: 91.27vw;
       left: 0;
       opacity: 1;
-      top: 50%;
+      top: 40%;
       transform: translateY(-50%);
       visibility: visible;
       width: 100vw;
@@ -54,7 +54,7 @@
   width: 20vw;
   &.fly {
     left: 30vw;
-    top: 45vh;
+    top: calc(91vh - 96vw);
     transform: scale(1);
   }
 
@@ -84,6 +84,44 @@
   left: 0;
   position: fixed;
   width: 100vw;
+}
+
+.loading-tip {
+  border-radius: 6px;
+  bottom: 2vh;
+  color: #fff;
+  height: 47px;
+  line-height: 47px;
+  overflow: hidden;
+  position: fixed;
+  right: 2vh;
+  text-align: center;
+  width: 96px;
+  &::after, &::before {
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: 100%;
+  }
+  &::after {
+    content: 'loading';
+  }
+  &::before {
+    animation: loading-tip 2s infinite;
+    background: linear-gradient(-90deg, #9da1bd, transparent) 0 0/ 50% 100%;
+    content: '';
+    width: 200%;
+  }
+}
+@keyframes loading-tip {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    background-position-x: 100%;
+  }
 }
 
 .right-arrow {
