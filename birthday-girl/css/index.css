@@ -8,24 +8,24 @@
   .stage.blur {
     opacity: .5; }
     .stage.blur ~ .paper {
-      height: 91.27vw;
+      height: calc(var(--vw) / 687 * 627);
       left: 0;
       opacity: 1;
+      padding: calc(var(--vw) / 100 * 6);
       top: 40%;
       transform: translateY(-50%);
       visibility: visible;
-      width: 100vw; }
+      width: var(--vw); }
     .stage.blur .bird-wrap img.little-paper {
       opacity: 0; }
 
 .clouds {
   animation: clouds 300s linear infinite;
   background: url(../imgs/clouds.png) 0 0/contain repeat-x;
-  height: 75.66vw;
-  max-height: 35vh;
+  height: 36vh;
   left: 0;
-  position: fixed;
-  top: 5vh;
+  position: absolute;
+  top: 4vh;
   width: 100vw; }
 
 @keyframes clouds {
@@ -35,16 +35,16 @@
     background-position: -1000vw 5%; } }
 
 .bird-wrap {
-  height: 15.12vw;
+  height: 76px;
   left: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
   transform: scale(0.1);
   transition: 11s linear;
-  width: 20vw; }
+  width: 100px; }
   .bird-wrap.fly {
-    left: 30vw;
-    top: calc(91vh - 96vw);
+    left: calc(var(--vw) / 10 * 3);
+    top: calc(91vh - var(--vw) / 768 * 728 - 30px);
     transform: scale(1); }
   .bird-wrap .bird {
     background: url(../imgs/bird.png) 0 0/contain no-repeat;
@@ -52,22 +52,22 @@
     width: 100%; }
   .bird-wrap img.little-paper {
     bottom: 0;
-    height: 9.127vw;
+    height: 41.8px;
     position: absolute;
     right: 0;
-    transform: rotate(25deg);
+    transform: rotate(30deg);
     transition: .1s;
-    width: 10vw;
+    width: 45.8px;
     z-index: -1; }
 
 .tree-ground {
   background: url(../imgs/tree_ground.png) 100% 0/contain no-repeat;
   bottom: 9vh;
-  height: 94.79vw;
+  height: calc(var(--vw) / 768 * 728);
   max-height: 50vh;
   left: 0;
-  position: fixed;
-  width: 100vw; }
+  position: absolute;
+  width: var(--vw); }
 
 .loading-tip {
   border-radius: 6px;
@@ -76,7 +76,7 @@
   height: 47px;
   line-height: 47px;
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   right: 2vh;
   text-align: center;
   width: 96px; }
@@ -103,10 +103,11 @@
 .right-arrow {
   background: url(../imgs/right_arrow.png) 0 0/contain no-repeat;
   bottom: 2vh;
+  cursor: pointer;
   filter: drop-shadow(2px 4px 6px #333);
   height: 47px;
   opacity: 1;
-  position: fixed;
+  position: absolute;
   right: 2vh;
   transition: .1s;
   width: 96px; }
@@ -119,10 +120,11 @@
 .save-btn {
   background: url(../imgs/save.png) 0 0/contain no-repeat;
   bottom: 2vh;
+  cursor: pointer;
   filter: drop-shadow(2px 4px 6px #333);
   height: 47px;
   opacity: 1;
-  position: fixed;
+  position: absolute;
   right: 2vh;
   transition: .1s;
   width: 178.2px; }
@@ -137,25 +139,23 @@
   font-family: 'FangZhengYouYuan', serif;
   font-size: 1.5rem;
   color: #103e37;
-  height: 9.127vw;
+  height: 41.8px;
   line-height: 1.5;
-  left: 40vw;
-  opacity: 0;
-  padding: 6vw;
-  position: fixed;
-  top: calc(45vh + 5.99vw);
-  transform: rotate(25deg);
+  left: calc(var(--vw) / 10 * 3 + 54.2px);
+  opacity: 0.5;
+  position: absolute;
+  top: calc(91vh - var(--vw) / 768 * 728 + 4.8px);
+  transform: rotate(30deg);
   transition: all 3s, opacity 0s;
   visibility: hidden;
-  width: 10vw;
+  width: 45.8px;
   z-index: 1; }
 
 .girl {
   bottom: 23%;
-  cursor: pointer;
   height: 84px;
   opacity: .95;
-  position: fixed;
+  position: absolute;
   right: -4%;
   transform: translateX(160%) scale(0.9);
   transition: 11s linear;

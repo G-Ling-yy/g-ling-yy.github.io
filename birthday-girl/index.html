@@ -7,6 +7,9 @@
 	<title>Happy Birthday</title>
 	<style>
 		* {
+			--vw: 100vw;
+			--htmlbgc: #fff;
+
 			box-sizing: border-box;
 			margin: 0;
 			padding: 0;
@@ -14,12 +17,38 @@
 		}
 		html, body {
 			height: 100%;
+			margin: 0 auto;
 			overflow: hidden;
+			width: var(--vw);
 		}
 		html {
+			background-color: var(--htmlbgc);
 			font-size: 20px;
+
+		}
+		body {
+			background-color: #fff;
+			position: relative;
+		}
+		@media screen and (min-width: 425px) {
+			* {
+				--vw: 425px;
+				--htmlbgc: #aaa;
+			}
 		}
 	</style>
+	<script>
+		(function defend(pwd) {
+			const answer = prompt('请输入口令')
+			if (answer !== pwd) {
+				defend(pwd)
+			}
+		})('991118')
+
+		if (window.orientation === undefined) {
+			alert('为达到完整视觉体验，请在手机浏览器端打开本站，谢谢配合！')
+		}
+	</script>
 	<link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
