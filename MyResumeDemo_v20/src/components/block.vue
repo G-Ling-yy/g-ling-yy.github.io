@@ -1,24 +1,25 @@
 <style lang="scss" scoped>
 	.block-comp {
 		background-color: #fff;
-		border-top: 3.6rem solid #ececec;
-		border-bottom: 3.6rem solid #ececec;
-		padding: 2.5rem 0;
+		margin: 4rem 0;
+		padding: 2.5rem 0 0;
 		position: relative;
 
 		.title {
 			background-color: #4a4f5a;
-			border-radius: .5rem;
+			border-radius: 3rem;
+			border-bottom-left-radius: 0;
 			color: #fff;
-			font-size: 2rem;
+			font-size: 1.5rem;
 			font-weight: bold;
-			height: 3.6rem;
+			height: 3rem;
 			left: 5%;
-			line-height: 3.6rem;
+			line-height: 3rem;
 			overflow: hidden;
 			padding: 0 2.5rem;
 			position: absolute;
 			top: -1.8rem;
+			transform: rotate(-6deg);
 			max-width: 70%;
 		}
 
@@ -33,9 +34,8 @@
 
 				.key {
 					color: #333;
-					font-size: 1.4rem;
-					height: 2.5rem;
-					line-height: 2.5rem;
+					font-size: 1rem;
+					line-height: 1.5rem;
 					padding-left: 1.5rem;
 					position: relative;
 					width: 100%;
@@ -47,7 +47,7 @@
 						height: .5rem;
 						left: 0;
 						position: absolute;
-						top: 1rem;
+						top: .45rem;
 						width: .5rem;
 					}
 
@@ -90,7 +90,7 @@
 
 			&.oneColumn {
 				.option {
-					margin-bottom: 1.65rem;
+					margin-bottom: 1rem;
 					width: 100%;
 
 					.value {
@@ -107,36 +107,60 @@
 			}
 		}
 
+		.paperclip {
+			$color: #000;
+			$innerColor: #0005;
+
+			background: linear-gradient(to right, $innerColor, $innerColor) 0 22px/ 30px 3px no-repeat;
+			height: 60px;
+			left: 0;
+			overflow: hidden;
+			position: absolute;
+			top: -30px;
+			width: 100px;
+			&::before, .inner {
+				content: '';
+				display: block;
+				height: .5rem;
+				left: 0;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			&::before {
+				border: 3px solid $color;
+				border-radius: 20px;
+				height: 30px;
+				left: -30px;
+				width: 110px;
+				z-index: 99;
+			}
+			.inner {
+				height: 20px;
+				left: 30px;
+				overflow: hidden;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 70px;
+				z-index: 99;
+					&::before {
+					border: 3px solid $innerColor;
+					border-radius: 20px;
+					content: '';
+					display: block;
+					height: 10px;
+					left: -30px;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					width: 60px;
+					z-index: 99;
+				}
+			}
+		}
+
 		&:last-child .content .option:last-child .value{
 			user-select: auto;
-		}
-	}
-
-	@media screen and (max-width: 520px) {
-		.block-comp {
-			border-bottom: 1.2rem solid #ececec;
-			padding: 2.5rem 0 1rem;
-
-			.title {
-				font-size: 1.8rem;
-			}
-
-			.content {
-				.option {
-					.key {
-						max-width: 6em;
-					}
-				}
-
-				&.oneColumn {
-					.option {
-						.key {
-							height: auto;
-							max-width: 100%;
-						}
-					}
-				}
-			}
 		}
 	}
 </style>
@@ -150,11 +174,14 @@
 					{{option.key || 'option.key'}}
 					<p class="tip" v-if="option.tip">({{option.tip}})</p>
 				</div>
-				<div class="value">{{option.value || 'option.value'}}</div>
+				<div v-if="option.value !== 'null'" class="value">{{option.value || 'option.value'}}</div>
 				<ul v-if="option.details && option.details.length">
 					<li v-for="(detail, index) in option.details" :key="index">{{detail}}</li>
 				</ul>
 			</div>
+		</div>
+		<div class="paperclip">
+			<div class="inner"/>
 		</div>
 	</div>
 </template>

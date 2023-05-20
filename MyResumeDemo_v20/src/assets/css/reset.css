@@ -10,14 +10,14 @@ html {
 	transition: .3s;
 }
 
-@media screen and (max-width: 520px) {
-	html {
-		font-size: 14px;
-	}
+body {
+	--themeColor: #ececec;
+	
+	margin: 0 auto;
+	overflow: overlay;
+	width: 210mm; /* A4 210mm*297mm */
+	min-width: 210mm;
 }
-
-@media screen and (max-width: 320px) {
-	html {
-		font-size: 12px;
-	}
+body::-webkit-scrollbar {
+	display: none;
 }
