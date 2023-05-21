@@ -1,0 +1,113 @@
+{
+	"demo": {
+		"avatar": "",
+		"name": "name",
+		"profileText": "profileText",
+		"blocks": [{
+			"title": "单列title",
+			"columns": 1,
+			"options": [{
+				"tip": "options.tip",
+				"details": ["options.details.item"]
+			}]
+		}, {
+			"title": "双列title",
+			"columns": 2,
+			"options": [{
+				"key": "option.key",
+				"value": "option.value"
+			}, {
+				"key": "option.key",
+				"value": "option.value"
+			}]
+		}]
+	},
+	"user": {
+		"avatar": "",
+		"name": "高大全",
+		"profileText": "性格开朗、待人真诚、沉着稳重、认真负责。有较强的团队协作精神，较好的社交能力，能尽快适应各种环境并融入其中。实现功能，满足需求，100%还原设计稿，精确到像素。",
+		"blocks": [{
+			"title": "期望选择",
+			"options": [{
+				"key": "期望行业",
+				"value": "互联网"
+			}, {
+				"key": "期望职位",
+				"value": "前端开发"
+			}, {
+				"key": "期望薪资",
+				"value": "15k"
+			}]
+		}, {
+			"title": "工作经历",
+			"columns": 1,
+			"options": [
+				{
+					"key": "凯瑞得信息科技",
+					"tip": "2020.5.17-至今",
+					"value": "前端开发",
+					"details": [
+						"同比例1k、2k、4k屏下分辨率的适配功能实现",
+						"通过provide/inject、vuex等实现弹窗的任意拖拽和页面间数据联动效果",
+						"对build打包后的前端项目接口路径提供可修改配置功能实现",
+						"vue3.0 + element-plus框架的搭建及表格等组件的公共方法的抽离",
+						"多个vue2.x + element-UI的卫星通信网管系统项目的维护修改工作贯穿始终"
+					]
+				},
+				{
+					"key": "史徕克网络科技",
+					"tip": "2019.8.11-2020.3.20",
+					"value": "前端开发",
+					"details": [
+						"绿小怪点评后台小程序：通过canvas实现手写笔迹记录并可与录音同时复现展示以达到能够让教师在线上对作业进行点评和教学的类似视频的功能",
+						"分销系统web端：实现分销所有页面及所需数据展示，通过vue-router的导航守卫实现h5非登录状态不得进入登录页以外的其它页面",
+						"h5实现微信账号登录并可选择指定商品进行微信支付功能"
+					]
+				},
+								{
+					"key": "小诚文化传媒",
+					"tip": "2017.9.5-2019.7.23",
+					"value": "前端开发",
+					"details": [
+						"星秀泡泡小程序：wepy框架下实现陌生人自拍美图左划不喜欢右划喜欢的快速筛选添加好友功能",
+						"制作组件实现类似朋友圈的文字图片提交动态展示功能",
+						"对悬赏动态进行评论及点赞、打赏等功能，评论内容显示随条数增多可折叠展开",
+						"小程序内嵌趣味倒计时答题小游戏，翻牌喝酒、时间刚刚好、转盘抽奖喝酒等h5小游戏",
+						"星秀魔方小程序：九宫格多功能展示，扫码点餐、优惠寄存、快速预定、定位导航等功能集合",
+						"摇一摇大屏互动游戏web大屏端：javascript + jquery实现通过对后台数据的实时获取动态展示参与者分数及对应的各种增长和互动动效"
+					]
+				}
+			]
+		}, {
+			"title": "技能手段",
+			"options": [{
+				"key": "css",
+				"value": "css3, scss, less, flex, grid"
+			}, {
+				"key": "js",
+				"value": "原生js, jquery, wepy, vue"
+			}, {
+				"key": "组件库",
+				"value": "vonic, vant, element-UI, element-plus"
+			}, {
+				"key": "其它",
+				"value": "git, oss"
+			}]
+		}, {
+			"title": "联系个人",
+			"options": [{
+				"key": "姓名",
+				"value": "高大全"
+			}, {
+				"key": "大学专业",
+				"value": "软件技术"
+			}, {
+				"key": "毕业时间",
+				"value": "2016.6"
+			}, {
+				"key": "手机",
+				"value": "18860913014"
+			}]
+		}]
+	}
+}

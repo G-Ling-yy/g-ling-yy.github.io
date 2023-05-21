@@ -4,11 +4,15 @@
 		margin: 4rem 0;
 		padding: 2.5rem 0 0;
 		position: relative;
+		&:last-child {
+			margin-bottom: 2rem;
+		}
 
 		.title {
 			background-color: #4a4f5a;
 			border-radius: 3rem;
 			border-bottom-left-radius: 0;
+			box-shadow: 3px 2px 6px 0 #8f8a8a;
 			color: #fff;
 			font-size: 1.5rem;
 			font-weight: bold;
@@ -26,7 +30,55 @@
 		.content {
 			display: flex;
 			flex-wrap: wrap;
-			padding: 0 10%;
+			padding: 0 5%;
+			&.column-1 {
+				.option {
+					margin-bottom: 1rem;
+					width: 100%;
+
+					.value {
+						color: #333;
+						font-size: 1.1rem;
+					}
+
+					ul {
+						li {
+							margin-bottom: .35rem;
+						}
+					}
+				}
+			}
+			&.column-3 {
+				.option {
+					margin-bottom: 1rem;
+					width: 33.33%;
+					&:nth-child(2) {
+						text-align: center;
+					}
+					&:nth-child(3) {
+						text-align: right;
+					}
+
+					.key {
+						padding-left: 0;
+						&::before {
+							content: none;
+						}
+
+					}
+
+					.value {
+						color: #333;
+						font-size: 1.1rem;
+					}
+
+					ul {
+						li {
+							margin-bottom: .35rem;
+						}
+					}
+				}
+			}
 
 			.option {
 				text-align: left;
@@ -39,7 +91,6 @@
 					padding-left: 1.5rem;
 					position: relative;
 					width: 100%;
-
 					&::before {
 						background-color: #333;
 						border-radius: 50%;
@@ -88,35 +139,20 @@
 				}
 			}
 
-			&.oneColumn {
-				.option {
-					margin-bottom: 1rem;
-					width: 100%;
 
-					.value {
-						color: #333;
-						font-size: 1.1rem;
-					}
-
-					ul {
-						li {
-							margin-bottom: .35rem;
-						}
-					}
-				}
-			}
 		}
 
 		.paperclip {
 			$color: #000;
 			$innerColor: #0005;
 
-			background: linear-gradient(to right, $innerColor, $innerColor) 0 22px/ 30px 3px no-repeat;
+			background: linear-gradient(to right, $innerColor, $innerColor) 0 22px/ 25px 3px no-repeat;
 			height: 60px;
 			left: 0;
 			overflow: hidden;
 			position: absolute;
 			top: -30px;
+			transform: rotate(3deg);
 			width: 100px;
 			&::before, .inner {
 				content: '';
@@ -137,7 +173,7 @@
 			}
 			.inner {
 				height: 20px;
-				left: 30px;
+				left: 25px;
 				overflow: hidden;
 				top: 50%;
 				transform: translateY(-50%);
@@ -149,7 +185,7 @@
 					content: '';
 					display: block;
 					height: 10px;
-					left: -30px;
+					left: -40px;
 					position: absolute;
 					top: 50%;
 					transform: translateY(-50%);
@@ -157,18 +193,14 @@
 					z-index: 99;
 				}
 			}
-		}
-
-		&:last-child .content .option:last-child .value{
-			user-select: auto;
-		}
+		}		
 	}
 </style>
 
 <template>
 	<div class="block-comp">
 		<div class="title">{{blockValue.title || 'title'}}</div>
-		<div class="content" :class="[blockValue.columns == 1 && 'oneColumn']">
+		<div class="content" :class="`column-${blockValue.columns}`">
 			<div class="option" v-for="(option, index) in blockValue.options" :key="index">
 				<div class="key">
 					{{option.key || 'option.key'}}
