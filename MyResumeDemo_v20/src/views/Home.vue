@@ -119,6 +119,14 @@
 			}
 		}
 
+		main {
+			&::after {
+				content: '';
+				display: block;
+				height: 25.2rem;
+			}
+		}
+
 		footer {
 			height: 5rem;
 			line-height: 5rem;

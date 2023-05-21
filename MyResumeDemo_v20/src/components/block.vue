@@ -4,6 +4,13 @@
 		margin: 4rem 0;
 		padding: 2.5rem 0 0;
 		position: relative;
+		&:first-child {
+			&::after {
+				content: '';
+				display: block;
+				height: 5.2rem;
+			}
+		}
 		&:last-child {
 			margin-bottom: 2rem;
 		}
@@ -144,7 +151,7 @@
 
 		.paperclip {
 			$color: #000;
-			$innerColor: #0005;
+			$innerColor: #888;
 
 			background: linear-gradient(to right, $innerColor, $innerColor) 0 22px/ 25px 3px no-repeat;
 			height: 60px;
