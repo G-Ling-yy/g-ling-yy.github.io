@@ -24,7 +24,7 @@ export default class App extends Vue {}
 		-moz-osx-font-smoothing: grayscale;
 		text-align: center;
 		color: #2c3e50;
-		min-height: 300vh;
+		min-height: 500vh;
 		// overflow-x: hidden;
 		// overflow-y: scroll;
 		user-select: none;

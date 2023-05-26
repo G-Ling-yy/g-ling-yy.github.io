@@ -50,7 +50,7 @@
 
 					ul {
 						li {
-							margin-bottom: .35rem;
+							margin-bottom: .5rem;
 						}
 					}
 				}
@@ -107,6 +107,12 @@
 						position: absolute;
 						top: .45rem;
 						width: .5rem;
+					}
+					&.no-key-before {
+						padding-left: 0;
+						&::before {
+							content: none;
+						}
 					}
 
 					.tip {
@@ -209,7 +215,7 @@
 		<div class="title">{{blockValue.title || 'title'}}</div>
 		<div class="content" :class="`column-${blockValue.columns}`">
 			<div class="option" v-for="(option, index) in blockValue.options" :key="index">
-				<div class="key">
+				<div :class="['key', option['no-key-before'] && 'no-key-before']">
 					{{option.key || 'option.key'}}
 					<p class="tip" v-if="option.tip">({{option.tip}})</p>
 				</div>
