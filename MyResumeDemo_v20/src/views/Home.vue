@@ -66,6 +66,10 @@
 					position: relative;
 					width: 90%;
 
+					* {
+						opacity: 0;
+					}
+
 					.left-eye, .right-eye {
 						border-radius: 50%;
 						height: 2rem;
@@ -123,7 +127,7 @@
 			&::after {
 				content: '';
 				display: block;
-				height: 25.2rem;
+				height: 22.2rem;
 			}
 		}
 
