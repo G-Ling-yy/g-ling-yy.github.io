@@ -1,0 +1,79 @@
+{
+  "id": "1784672",
+  "name": "云联网2.3",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "826169",
+      "name": "主页",
+      "font_class": "home-page",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "3996617",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "5354333",
+      "name": "94-Manager",
+      "font_class": "-Manager",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "5838475",
+      "name": "统计",
+      "font_class": "tongji",
+      "unicode": "e856",
+      "unicode_decimal": 59478
+    },
+    {
+      "icon_id": "7239716",
+      "name": "dashboard",
+      "font_class": "dashboard",
+      "unicode": "e726",
+      "unicode_decimal": 59174
+    },
+    {
+      "icon_id": "7905568",
+      "name": "系统管理",
+      "font_class": "xitongguanli",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "8668829",
+      "name": "系统设置",
+      "font_class": "xitongshezhi",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "9118049",
+      "name": "设备消息",
+      "font_class": "shebeixiaoxi",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "11799034",
+      "name": "设备管理",
+      "font_class": "shebeiguanli",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "13412650",
+      "name": "数据对接",
+      "font_class": "shujuduijie",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    }
+  ]
+}

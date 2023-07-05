@@ -1,0 +1,508 @@
+@font-face {
+  font-family: SourceHanSansCN-Normal;
+  src: url(../assets/iconfont/SourceHanSansCN-Normal.otf);
+}
+
+a {
+  outline: 0;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+a,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+a:focus,
+a:hover {
+  /**/
+  color: #fff;
+  text-decoration: none;
+}
+a:focus,
+a:hover,
+button,
+button:focus {
+  outline: 0 !important;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: 0;
+}
+th {
+  text-align: left;
+}
+label {
+  font-weight: 500;
+}
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*选择文字块颜色*/
+::selection {
+  background-color: #1f628c;
+  color: #fff;
+}
+::-moz-selection {
+  background-color: #1f628c;
+  color: #fff;
+}
+
+input:focus::-webkit-contacts-auto-fill-button {
+  display: none !important;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  overflow: hidden;
+  _zoom: 1;
+}
+
+/*背景色*/
+.bg-light {
+  background-color: #fff !important;
+}
+.bg-gray-light {
+  background-color: #f8f8f8 !important;
+}
+.bg-gray {
+  background-color: #e6eaed !important;
+}
+.bg-gray-dark {
+  background-color: #c8d1d8 !important;
+}
+.bg-light,
+.bg-light a {
+  color: #758697;
+}
+.bg-gray,
+.bg-gray a {
+  color: #758697;
+}
+.bg-gray-dark,
+.bg-gray-dark a {
+  color: #758697;
+}
+.bg-trans {
+  background-color: transparent;
+}
+.bg-trans-light {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+.bg-trans-light,
+.bg-trans-light a {
+  color: inherit;
+}
+.bg-trans-dark {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.bg-trans-dark,
+.bg-trans-dark a {
+  color: inherit;
+}
+.bg-primary {
+  background-color: #42a5f5;
+}
+.bg-primary,
+.bg-primary a {
+  color: #fff;
+}
+.bg-info {
+  background-color: #00bcd4;
+}
+.bg-info,
+.bg-info a {
+  color: #fff;
+}
+.bg-info-deep {
+  background-color: #0e69ff;
+}
+.bg-info-deep,
+.bg-info-deep a {
+  color: #fff;
+}
+.bg-info-s {
+  background-color: #0fa6eb;
+}
+.bg-info-s,
+.bg-info-s a {
+  color: #fff;
+}
+.bg-info-l {
+  background-color: #26d3c9;
+}
+.bg-info-l,
+.bg-info-l a {
+  color: #fff;
+}
+.bg-info-p {
+  background-color: #607afb;
+}
+.bg-info-p,
+.bg-info-p a {
+  color: #fff;
+}
+.bg-success {
+  background-color: #60d836;
+}
+.bg-success,
+.bg-success a {
+  color: #fff;
+}
+.bg-warning {
+  background-color: #ffa726;
+}
+.bg-warning,
+.bg-warning a {
+  color: #fff;
+}
+.bg-danger {
+  background-color: #ef5350;
+}
+.bg-danger,
+.bg-danger a {
+  color: #fff;
+}
+.bg-mint {
+  background-color: #26a69a;
+}
+.bg-mint,
+.bg-mint a {
+  color: #fff;
+}
+.bg-purple {
+  background-color: #ba68c8;
+}
+.bg-purple,
+.bg-purple a {
+  color: #fff;
+}
+.bg-pink {
+  background-color: #ec407a;
+}
+.bg-pink,
+.bg-pink a {
+  color: #fff;
+}
+.bg-dark {
+  background-color: #263238;
+}
+.bg-dark,
+.bg-dark a,
+.text-light,
+a.text-light:focus,
+a.text-light:hover {
+  color: #fff;
+}
+
+/*字体大小 基于html设置的size*/
+.font-hf {
+  font-size: 50% !important;
+}
+.font-xs {
+  font-size: 90% !important;
+}
+.font-sm {
+  font-size: 1.1rem !important;
+}
+.font-md {
+  font-size: 1.2rem !important;
+}
+.font-lg {
+  font-size: 1.5rem !important;
+}
+.font-lx {
+  font-size: 2rem !important;
+}
+/*文字颜色*/
+.text-muted,
+a.text-muted:focus,
+a.text-muted:hover {
+  color: #afb9c3;
+}
+.text-primary,
+a.text-primary:focus,
+a.text-primary:hover {
+  color: #128ef2;
+}
+.text-info,
+a.text-info:focus,
+a.text-info:hover {
+  color: #008fa1;
+}
+.text-success,
+a.text-success:focus,
+a.text-success:hover {
+  color: #71a436;
+}
+.text-yellow,
+a.text-yellow:focus,
+a.text-yellow:hover {
+  color: #fcba08;
+}
+.text-warning,
+a.text-warning:focus,
+a.text-warning:hover {
+  color: #f29000;
+}
+.text-orange,
+a.text-orange:focus,
+a.text-orange:hover {
+  color: #fc7200;
+}
+.text-danger,
+a.text-danger:focus,
+a.text-danger:hover {
+  color: #eb2521;
+}
+.text-main,
+a.text-main:focus,
+a.text-main:hover {
+  color: #2b425b;
+}
+.text-mint,
+a.text-mint:focus,
+a.text-mint:hover {
+  color: #1c7d74;
+}
+.text-purple,
+a.text-purple:focus,
+a.text-purple:hover {
+  color: #a844b9;
+}
+.text-pink,
+a.text-pink:focus,
+a.text-pink:hover {
+  color: #e2175b;
+}
+.text-dark,
+a.text-dark:focus,
+a.text-dark:hover {
+  color: #11171a;
+}
+.text-gray,
+a.text-gray:focus,
+a.text-gray:hover {
+  color: #cfcfcf;
+}
+
+*,
+:after,
+:before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: inherit;
+}
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  box-sizing: border-box;
+  /*font-family: Playbold,PingFang SC,Arial,serif;
+  font-family: "PingFang SC","Microsoft YaHei","微软雅黑","Helvetica Neue",Helvetica,"Hiragino Sans GB",Arial,sans-serif;*/
+  // font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana,
+    sans-serif;
+  height: 100%;
+  overflow: hidden;
+  line-height: 1.15;
+}
+body {
+  font-weight: 400;
+  font-variant: normal;
+  position: relative;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased !important;
+  color: #000;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+video:focus {
+  outline: none;
+}
+
+.magnify-modal {
+  // z-index: 3000 !important;
+}
+
+.select-box {
+  min-height: 33px;
+}
+
+.amap-container {
+  .amap-maps {
+    color: #fff;
+    outline: none !important;
+  }
+  .amap-logo,
+  .amap-copyright {
+    display: none !important;
+  }
+}
+
+.text-error {
+  color: @color-danger !important;
+}
+.text-info {
+  color: @color-info !important;
+}
+.text-success {
+  color: @color-success !important;
+}
+.text-primary {
+  color: @color-primary !important;
+}
+.text-grey {
+  color: @ph !important;
+}
+
+.el-radio-button:focus:not(.is-focus):not(:active):not(.is-disabled) {
+  -webkit-box-shadow: 0 0 2px 2px #084383;
+  box-shadow: 0 0 2px 2px #084383;
+}
+
+/*.el-radio-group{
+  .el-radio-button{
+    &:focus:not(.is-focus):not(:active):not(.is-disabled){
+      -webkit-box-shadow: 0 0 2px 2px #ff780b;
+      box-shadow: 0 0 2px 2px #ff780b;
+    }
+
+    .el-radio-button__inner:hover {
+      color: #ff780b;
+    }
+
+    >.el-radio-button__orig-radio{
+      &:checked+.el-radio-button__inner{
+        color: #FFF;
+        background-color: #ff780b;
+        border-color: #ff780b;
+        -webkit-box-shadow: -1px 0 0 0 #ff780b;
+        box-shadow: -1px 0 0 0 #ff780b;
+      }
+    }
+  }
+}*/
+
+dl {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  dt,
+  dd {
+    line-height: 1.42857143;
+  }
+  dt {
+    font-weight: 400;
+  }
+  dd {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    float: left;
+    width: 120px;
+    overflow: hidden;
+    clear: left;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 135px;
+  }
+}
+
+.camera-details-error {
+  .el-tabs__content {
+    background: #fff0d5;
+  }
+
+  .dl-horizontal dt {
+    width: 90px;
+  }
+
+  .dl-horizontal dd {
+    margin-left: 95px;
+  }
+}
+
+// 查看详情
+.view-camera-info-dialog {
+  .el-dialog {
+    .el-dialog__body {
+      padding: 0px 20px 20px;
+
+      > .title-text-box {
+        display: block;
+        height: 1px;
+        width: 100%;
+        margin: 24px 0;
+        background-color: #dcdfe6;
+        position: relative;
+
+        > .title-text {
+          position: absolute;
+          background-color: #fcfcfc;
+          padding: 0 20px;
+          color: #333;
+          left: 20px;
+          transform: translateY(-50%);
+        }
+      }
+
+      > .cameraModule {
+        .left-box,
+        .right-box {
+          display: inline-block;
+          width: 50%;
+          line-height: 35px;
+
+          > div:first-child {
+            display: inline-block;
+            width: 30%;
+            color: #555555;
+            font-size: 13px;
+          }
+
+          > div:last-child {
+            display: inline-block;
+            width: 70%;
+            padding-right: 20px;
+            box-sizing: border-box;
+            color: #1358a4;
+          }
+        }
+      }
+    }
+  }
+}

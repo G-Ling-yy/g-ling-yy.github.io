@@ -1,0 +1,257 @@
+{
+  "detailList": [
+    {
+      "NewIntake": "209",
+      "province": "江苏省",
+      "onlineCount": {
+        "numOnline": 3600,
+        "onlineRate": "76%",
+        "relativeRatio": "5%"
+      },
+      "offLineCount": {
+        "numOffLine": 200,
+        "offLineRepair": 100,
+        "currentOffLine": 100,
+        "offLineRate": "5%",
+        "relativeRatio": "2.5%"
+      },
+      "abnormalCount": {
+        "numAbnormal": 120,
+        "abnormalRepair": 100,
+        "currentAbnormal": 20,
+        "abnormalRate": "6%",
+        "relativeRatio": "-1.5%"
+      }
+    },
+    {
+      "NewIntake": "209",
+      "province": "江苏省",
+      "onlineCount": {
+        "numOnline": 3600,
+        "onlineRate": "76%",
+        "relativeRatio": "-5%"
+      },
+      "offLineCount": {
+        "numOffLine": 200,
+        "offLineRepair": 100,
+        "currentOffLine": 100,
+        "offLineRate": "5%",
+        "relativeRatio": "2.5%"
+      },
+      "abnormalCount": {
+        "numAbnormal": 120,
+        "abnormalRepair": 100,
+        "currentAbnormal": 20,
+        "abnormalRate": "6%",
+        "relativeRatio": "1.5%"
+      }
+    },
+    {
+      "NewIntake": "209",
+      "province": "江苏省",
+      "onlineCount": {
+        "numOnline": 3600,
+        "onlineRate": "76%",
+        "relativeRatio": "-5%"
+      },
+      "offLineCount": {
+        "numOffLine": 200,
+        "offLineRepair": 100,
+        "currentOffLine": 100,
+        "offLineRate": "5%",
+        "relativeRatio": "2.5%"
+      },
+      "abnormalCount": {
+        "numAbnormal": 120,
+        "abnormalRepair": 100,
+        "currentAbnormal": 20,
+        "abnormalRate": "6%",
+        "relativeRatio": "-1.5%"
+      }
+    },
+    {
+      "NewIntake": "209",
+      "province": "江苏省",
+      "onlineCount": {
+        "numOnline": 3600,
+        "onlineRate": "76%",
+        "relativeRatio": "5%"
+      },
+      "offLineCount": {
+        "numOffLine": 200,
+        "offLineRepair": 100,
+        "currentOffLine": 100,
+        "offLineRate": "5%",
+        "relativeRatio": "-2.5%"
+      },
+      "abnormalCount": {
+        "numAbnormal": 120,
+        "abnormalRepair": 100,
+        "currentAbnormal": 20,
+        "abnormalRate": "6%",
+        "relativeRatio": "-1.5%"
+      }
+    },
+    {
+      "NewIntake": "209",
+      "province": "安徽省",
+      "onlineCount": {
+        "numOnline": 3600,
+        "onlineRate": "76%",
+        "relativeRatio": "5%"
+      },
+      "offLineCount": {
+        "numOffLine": 200,
+        "offLineRepair": 100,
+        "currentOffLine": 100,
+        "offLineRate": "5%",
+        "relativeRatio": "2.5%"
+      },
+      "abnormalCount": {
+        "numAbnormal": 120,
+        "abnormalRepair": 100,
+        "currentAbnormal": 20,
+        "abnormalRate": "6%",
+        "relativeRatio": "1.5%"
+      }
+    },
+    {
+      "NewIntake": "209",
+      "province": "浙江省",
+      "onlineCount": {
+        "numOnline": 3600,
+        "onlineRate": "76%",
+        "relativeRatio": "5%"
+      },
+      "offLineCount": {
+        "numOffLine": 200,
+        "offLineRepair": 100,
+        "currentOffLine": 100,
+        "offLineRate": "5%",
+        "relativeRatio": "2.5%"
+      },
+      "abnormalCount": {
+        "numAbnormal": 120,
+        "abnormalRepair": 100,
+        "currentAbnormal": 20,
+        "abnormalRate": "6%",
+        "relativeRatio": "1.5%"
+      }
+    },
+    {
+      "NewIntake": "209",
+      "province": "江苏省",
+      "onlineCount": {
+        "numOnline": 3600,
+        "onlineRate": "76%",
+        "relativeRatio": "-5%"
+      },
+      "offLineCount": {
+        "numOffLine": 200,
+        "offLineRepair": 100,
+        "currentOffLine": 100,
+        "offLineRate": "5%",
+        "relativeRatio": "2.5%"
+      },
+      "abnormalCount": {
+        "numAbnormal": 120,
+        "abnormalRepair": 100,
+        "currentAbnormal": 20,
+        "abnormalRate": "6%",
+        "relativeRatio": "1.5%"
+      }
+    },
+    {
+      "NewIntake": "209",
+      "province": "安徽省",
+      "onlineCount": {
+        "numOnline": 3600,
+        "onlineRate": "76%",
+        "relativeRatio": "5%"
+      },
+      "offLineCount": {
+        "numOffLine": 200,
+        "offLineRepair": 100,
+        "currentOffLine": 100,
+        "offLineRate": "5%",
+        "relativeRatio": "2.5%"
+      },
+      "abnormalCount": {
+        "numAbnormal": 120,
+        "abnormalRepair": 100,
+        "currentAbnormal": 20,
+        "abnormalRate": "6%",
+        "relativeRatio": "1.5%"
+      }
+    },
+    {
+      "NewIntake": "209",
+      "province": "广东省",
+      "onlineCount": {
+        "numOnline": 3600,
+        "onlineRate": "66%",
+        "relativeRatio": "-5%"
+      },
+      "offLineCount": {
+        "numOffLine": 200,
+        "offLineRepair": 100,
+        "currentOffLine": 100,
+        "offLineRate": "5%",
+        "relativeRatio": "2.5%"
+      },
+      "abnormalCount": {
+        "numAbnormal": 120,
+        "abnormalRepair": 100,
+        "currentAbnormal": 20,
+        "abnormalRate": "6%",
+        "relativeRatio": "1.5%"
+      }
+    },
+    {
+      "NewIntake": "209",
+      "province": "云南省",
+      "onlineCount": {
+        "numOnline": 3600,
+        "onlineRate": "86%",
+        "relativeRatio": "-5%"
+      },
+      "offLineCount": {
+        "numOffLine": 200,
+        "offLineRepair": 100,
+        "currentOffLine": 100,
+        "offLineRate": "5%",
+        "relativeRatio": "2.5%"
+      },
+      "abnormalCount": {
+        "numAbnormal": 120,
+        "abnormalRepair": 100,
+        "currentAbnormal": 20,
+        "abnormalRate": "6%",
+        "relativeRatio": "1.5%"
+      }
+    },
+    {
+      "NewIntake": "209",
+      "province": "浙江省",
+      "onlineCount": {
+        "numOnline": 3600,
+        "onlineRate": "78%",
+        "relativeRatio": "5%"
+      },
+      "offLineCount": {
+        "numOffLine": 200,
+        "offLineRepair": 100,
+        "currentOffLine": 100,
+        "offLineRate": "5%",
+        "relativeRatio": "2.5%"
+      },
+      "abnormalCount": {
+        "numAbnormal": 120,
+        "abnormalRepair": 100,
+        "currentAbnormal": 20,
+        "abnormalRate": "6%",
+        "relativeRatio": "1.5%"
+      }
+    }
+  ]
+}

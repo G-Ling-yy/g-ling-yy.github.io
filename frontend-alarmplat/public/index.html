@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <link href="<%= BASE_URL %>static/css/loading.css" rel="stylesheet" />
+  <!-- <script>
+      window
+    .fetch?.(`./v1/user/auth/captcha?_t=${Date.now()}`, {
+      headers: {
+        client_auth_type: 'cas',
+        Authorization: 'fdskj'
+      },
+      credentials: 'same-origin', // include, *same-origin, omit
+      mode: 'cors'
+    })
+    .then(res => res.json()).then(res => {console.log('ssdfklj res', res)})
+    // .then(({ status, message }) => {
+    //   if (status == 202) {
+    //     location.href = message
+    //   } else {
+    //     sessionStorage.setItem('isLogin', true)
+    //   }
+    // })
+    .catch(err => {
+      // location.reload()
+    })
+    </script> -->
+</head>
+
+<body>
+  <noscript>
+    <strong>
+      We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly
+        without JavaScript enabled. Please enable it to continue.
+    </strong>
+  </noscript>
+  <div id="app">
+    <div class="first-loading-wrp">
+      <div class="loading-wrp">
+        <span class="dot dot-spin">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+      </div>
+      <h1>
+        <%= VUE_APP_TITLE %>
+      </h1>
+    </div>
+  </div>
+
+  <div id="layers"></div>
+  <script src="./outconfig.js">
+  </script>
+
+  <!-- gcoord -->
+  <script name="gcoord" src="./static/js/gcoord.js"></script>
+
+  <!-- websocket -->
+  <script name="sockjs" data-src="./static/js/sockjs.min.js"></script>
+  <script name="stomp" data-src="./static/js/stomp.min.js"></script>
+
+  <!-- jquery-1.10.2.min -->
+  <script
+    name="jquery-1.10.2.min"
+    src="./static/js/jquery-1.10.2.min.js"
+  ></script>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>

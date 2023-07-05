@@ -1,0 +1,4 @@
+/node_modules/ 
+vue.js 
+# 外来组件较多暂时忽略
+/src/components

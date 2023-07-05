@@ -1,0 +1,138 @@
+@import './normalize.less';
+
+html {
+
+  body {
+    * {
+      box-sizing: border-box;
+      user-select: none !important;
+    }
+
+    #app {
+      position: relative;
+    }
+
+    #layers {
+      left: 0;
+      position: fixed;
+      top: 0;
+      z-index: 9999;
+    }
+
+    .ant-layout {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ant-input-search搜索框 */
+    .ant-input-search {
+      max-width: 250px;
+    }
+
+    /* ant-pagination分页 */
+    .ant-pagination {
+      margin-top: @layout-margin;
+      text-align: center;
+
+      &.ant-table-pagination {
+        float: none !important;
+        margin-top: @layout-margin;
+      }
+    }
+
+    /* ant-modal弹窗 */
+    .ant-modal-wrap {
+      &.ant-modal-centered > .ant-modal {
+        padding-bottom: 0;
+      }
+    }
+
+    /* ant-table表格 */
+    .ant-table-wrapper {
+      *:not(.btn, .ant-btn span, .ant-pagination) {
+        user-select: text!important;
+      }
+
+      /* ant-pagination分页 */
+      .ant-pagination * {
+        user-select: none !important;
+      }
+    }
+
+    /* ant-notification通知 */
+    .ant-notification {
+      margin-right: 20px;
+      width: fit-content;
+    }
+
+    /* ant-cascader-picker联级框 */
+    .ant-cascader-picker {
+      .ant-cascader-picker-arrow {
+        margin-right: 0!important;
+        right: 11px;
+      }
+    }
+
+    /* ant-tree树 */
+    .ant-tree {
+      /* 收展图标 */
+      .ant-tree-switcher {
+        color: @layout-color;
+        &.ant-tree-switcher-noop {
+          display: none;
+        }
+      }
+    }
+  }
+}
+/* 全局滚动条样式 */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(221, 220, 220, 0.2);
+  background: #ddd;
+}
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(201, 201, 201, 0.2);
+  border-radius: 0;
+  background: rgba(201, 201, 201, 0.1);
+}
+/deep/ *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+/deep/ *::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(221, 220, 220, 0.2);
+  background: #ddd;
+}
+/deep/ *::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(201, 201, 201, 0.2);
+  border-radius: 0;
+  background: rgba(201, 201, 201, 0.1);
+}
+.ant-table-header {
+  overflow: auto !important;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 1920px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,182 @@
+// 公用样式
+.wrapper{
+    font-size: 14px;
+    font-family:Source Han Sans CN;
+    color:#000;
+    height: calc(100% - 34px);
+    .aprop{
+        .el-radio__input.is-checked+.el-radio__label{
+            color:#1274ee;
+        }
+        .el-radio__input.is-checked .el-radio__inner{
+            border-color: #1274ee;
+        background: #1274ee;
+        }
+       
+        
+    }
+
+}
+
+// 角色详情页
+#roleList-detail, #userList-detail{
+    background-color: #fff;
+    .el-button.el-button--primary{
+        width:66px!important;
+        height:32px!important;
+        background:rgba(18,116,238,1);
+        border-radius:2px;
+        padding:0!important;
+        text-align: center;
+        span{
+            color:#fff;
+            margin:0;
+        }
+    }
+    .title{
+        padding:15px 10px 15px 30px;
+        border-bottom:1px solid rgba(212,212,212,1);
+        overflow: hidden;
+        span{
+            font-size:14px;
+            font-family:Source Han Sans CN;
+            color:rgba(0,0,0,1);
+            margin-right:10px;
+        }
+        .anote{
+            float:right;
+            line-height: 32px;
+            span{
+                font-size:14px;
+                font-family:Arial;
+                color:rgba(10,17,33,1);
+                opacity:0.5;
+            }
+        }
+    }
+    .content{
+        dd{
+            color:rgba(10,17,33,1);
+            line-height:50px;
+        }
+        .tit{
+            position: relative;
+            .line{
+                position: absolute;
+                width:3px;
+                height:12px;
+                top:50%;
+                left:-10px;
+                transform:translateY(-50%);
+                background:rgba(18,116,238,1);
+            }
+        }
+        .tableBox{
+            margin-bottom:20px;
+            .el-switch.is-checked .el-switch__core {
+                border-color: #1274EE;
+                background-color: #1274EE;
+            }
+        }
+    }
+    .el-tree{
+        padding:10px 0 20px;
+    }
+}
+
+// 用户列表
+.el-dialog{
+    .addUserContent{
+        .aprop{
+            & > span{
+                display: inline-block;
+                width:70px;
+                margin-right:4px;
+            }
+            .el-select{
+                margin-right:0;
+            }
+            .el-input{
+                display:inline-block!important;
+                width:390px;
+                margin-right:0;
+                .el-input__inner{
+                    width:100%!important;
+                }
+            }
+            .dot{
+                color:#FF1111;
+            }
+        }
+    }
+}
+.roleSelect{
+    .el-tag.el-tag--info{
+        background:rgba(232,234,239,1);
+        border-radius:2px;
+        color:#000;
+        font-size:14px;
+        .el-tag__close.el-icon-close{
+            background-color: rgba(0,0,0,0);
+            color: rgba(255,20,20,1);
+            color: #ff1414;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+}
+.roleOption{
+    color:#000;
+    &.selected{
+        color:#000!important;
+        font-weight:400!important;
+        &::after{
+            content:""!important;
+            font-size:14px!important;
+            color:#2CB763!important;
+            /*background: url(../module/SystemRole/images/icon5.png) no-repeat center;*/
+        }
+    }
+    &::after{
+        width:14px;
+        height: 14px;
+        position: absolute;
+        right: 20px;
+        top:50%;
+        transform: translateY(-50%);
+        font-family: element-icons;
+        content: "";
+        font-size: 14px;
+        font-weight: 700;
+        /*background: url(../module/SystemRole/images/icon4.png) no-repeat center;*/
+    }
+}
+.roleInput{
+    width:95%;
+    margin:0 10px;
+    .el-input__inner{
+        width:100%;
+    }
+    .el-input__icon{
+        line-height: 32px;
+    }
+}
+
+
+// 用户列表详情
+#userList-detail{
+    .basicInfo {
+        border-bottom:1px dashed #d4d4d4;
+        padding-bottom:10px;
+    }.info{ 
+        margin:0 40px;
+        p{
+            display:inline-block;
+            color:#000;
+            margin-right:30px;
+            span{
+                color:#A9A9A9;
+            }
+        }
+    }
+}
