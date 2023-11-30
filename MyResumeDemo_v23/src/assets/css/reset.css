@@ -1,0 +1,33 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+html {
+	font-size: 20px;
+	transition: .3s;
+}
+
+body {
+	--themeColor: #ececec;
+
+	margin: 0 auto;
+	overflow: overlay;
+	width: 210mm; /* A4 210mm*297mm */
+	min-width: 210mm;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+
+@media print {
+	body {
+		margin: 0;
+	}
+}
+
+@page {
+	margin: ;
+}
